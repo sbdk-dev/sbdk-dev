@@ -1,0 +1,18 @@
+{
+  "project": "my_project",
+  "target": "dev",
+  "duckdb_path": "data/dev.duckdb",
+  "pipelines_path": "./pipelines",
+  "dbt_path": "./dbt",
+  "profiles_dir": "~/.dbt",
+  "tracking": {
+    "enabled": false,
+    "uuid": null,
+    "server_url": "https://api.sbdk.dev"
+  },
+  "development": {
+    "auto_reload": true,
+    "watch_paths": ["pipelines/", "dbt/models/"],
+    "webhook_port": 8000
+  }
+}

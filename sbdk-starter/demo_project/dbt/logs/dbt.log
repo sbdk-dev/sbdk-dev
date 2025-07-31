@@ -1,0 +1,3213 @@
+[0m16:52:41.104504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104315fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10528cb90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10528ca50>]}
+
+
+============================== 16:52:41.128691 | 81ae6705-97e7-4093-a3af-19328a387ec4 ==============================
+[0m16:52:41.128691 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:52:41.129127 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/mattstrautmann/.dbt', 'log_path': 'dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --project-dir dbt --profiles-dir /Users/mattstrautmann/.dbt', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:52:41.136667 [error] [MainThread]: Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 17
+    ------------------------------
+    14 |       path: '/Users/mattstrautmann/Documents/GitHub/sbdk-dev/sbdk-starter/demo_project/data/demo_project.duckdb'
+    15 |       schema: main
+    16 | EOF < /dev/null
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 16, column 1
+    could not find expected ':'
+      in "<unicode string>", line 17, column 1
+  
+[0m16:52:41.145498 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.06355071, "process_in_blocks": "0", "process_kernel_time": 0.187065, "process_mem_max_rss": "117768192", "process_out_blocks": "0", "process_user_time": 0.844501}
+[0m16:52:41.145886 [debug] [MainThread]: Command `dbt run` failed at 16:52:41.145820 after 0.06 seconds
+[0m16:52:41.146138 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050fb490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105172d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105117790>]}
+[0m16:52:41.146432 [debug] [MainThread]: Flushing usage events
+[0m16:52:42.233802 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:52:49.696518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107041fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118718b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118718a50>]}
+
+
+============================== 16:52:49.700045 | de0d1a19-9c9c-4d35-adc8-52beca46a11c ==============================
+[0m16:52:49.700045 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:52:49.700446 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/mattstrautmann/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --project-dir dbt --profiles-dir /Users/mattstrautmann/.dbt', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:52:49.705753 [error] [MainThread]: Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 17
+    ------------------------------
+    14 |       path: '/Users/mattstrautmann/Documents/GitHub/sbdk-dev/sbdk-starter/demo_project/data/demo_project.duckdb'
+    15 |       schema: main
+    16 | EOF < /dev/null
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 16, column 1
+    could not find expected ':'
+      in "<unicode string>", line 17, column 1
+  
+[0m16:52:49.707610 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.027943917, "process_in_blocks": "0", "process_kernel_time": 0.174687, "process_mem_max_rss": "102105088", "process_out_blocks": "0", "process_user_time": 0.829483}
+[0m16:52:49.707987 [debug] [MainThread]: Command `dbt run` failed at 16:52:49.707900 after 0.03 seconds
+[0m16:52:49.708271 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118487490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1184fed50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1184a3790>]}
+[0m16:52:49.708504 [debug] [MainThread]: Flushing usage events
+[0m16:52:50.215726 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:53:05.000152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103cddfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c57c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c57ed0>]}
+
+
+============================== 16:53:05.003663 | 403134c5-af66-4024-abce-fd38784df87d ==============================
+[0m16:53:05.003663 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:53:05.004055 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/mattstrautmann/.dbt', 'log_path': 'dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --project-dir dbt --profiles-dir /Users/mattstrautmann/.dbt', 'send_anonymous_usage_stats': 'True'}
+[0m16:53:05.199367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103fb5ba0>]}
+[0m16:53:05.247144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10365ae00>]}
+[0m16:53:05.249088 [info ] [MainThread]: Registered adapter: duckdb=1.9.4
+[0m16:53:05.359892 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m16:53:05.360551 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:53:05.360772 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d61f50>]}
+[0m16:53:06.190845 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- seeds
+[0m16:53:06.197917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10518fa70>]}
+[0m16:53:06.251233 [debug] [MainThread]: Wrote artifact WritableManifest to dbt/target/manifest.json
+[0m16:53:06.252699 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt/target/semantic_manifest.json
+[0m16:53:06.305491 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105555e10>]}
+[0m16:53:06.305843 [info ] [MainThread]: Found 5 models, 13 data tests, 3 sources, 429 macros
+[0m16:53:06.306029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051994a0>]}
+[0m16:53:06.307272 [info ] [MainThread]: 
+[0m16:53:06.307525 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:53:06.307696 [info ] [MainThread]: 
+[0m16:53:06.307979 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m16:53:06.310705 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_demo_project'
+[0m16:53:06.368411 [debug] [ThreadPool]: Using duckdb connection "list_demo_project"
+[0m16:53:06.368675 [debug] [ThreadPool]: On list_demo_project: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "list_demo_project"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"demo_project"'
+    
+  
+  
+[0m16:53:06.368846 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:53:06.448403 [debug] [ThreadPool]: SQL status: OK in 0.079 seconds
+[0m16:53:06.449727 [debug] [ThreadPool]: On list_demo_project: Close
+[0m16:53:06.450141 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_demo_project, now create_demo_project_main)
+[0m16:53:06.450397 [debug] [ThreadPool]: Creating schema "database: "demo_project"
+schema: "main"
+"
+[0m16:53:06.453927 [debug] [ThreadPool]: Using duckdb connection "create_demo_project_main"
+[0m16:53:06.454126 [debug] [ThreadPool]: On create_demo_project_main: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "create_demo_project_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='demo_project'
+        and type='sqlite'
+    
+  
+[0m16:53:06.454280 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:53:06.454979 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m16:53:06.455897 [debug] [ThreadPool]: Using duckdb connection "create_demo_project_main"
+[0m16:53:06.456115 [debug] [ThreadPool]: On create_demo_project_main: BEGIN
+[0m16:53:06.456391 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:53:06.456546 [debug] [ThreadPool]: Using duckdb connection "create_demo_project_main"
+[0m16:53:06.456692 [debug] [ThreadPool]: On create_demo_project_main: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "create_demo_project_main"} */
+
+    
+    
+        create schema if not exists "demo_project"."main"
+    
+[0m16:53:06.457271 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:53:06.457759 [debug] [ThreadPool]: On create_demo_project_main: COMMIT
+[0m16:53:06.457932 [debug] [ThreadPool]: Using duckdb connection "create_demo_project_main"
+[0m16:53:06.458090 [debug] [ThreadPool]: On create_demo_project_main: COMMIT
+[0m16:53:06.458321 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:53:06.458479 [debug] [ThreadPool]: On create_demo_project_main: Close
+[0m16:53:06.459583 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_demo_project_main, now list_demo_project_main_dbt_test__audit)
+[0m16:53:06.462520 [debug] [ThreadPool]: Using duckdb connection "list_demo_project_main_dbt_test__audit"
+[0m16:53:06.462706 [debug] [ThreadPool]: On list_demo_project_main_dbt_test__audit: BEGIN
+[0m16:53:06.462851 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:53:06.463128 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:53:06.463269 [debug] [ThreadPool]: Using duckdb connection "list_demo_project_main_dbt_test__audit"
+[0m16:53:06.463421 [debug] [ThreadPool]: On list_demo_project_main_dbt_test__audit: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "list_demo_project_main_dbt_test__audit"} */
+select
+      'demo_project' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_dbt_test__audit'
+    and lower(table_catalog) = 'demo_project'
+  
+[0m16:53:06.472874 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m16:53:06.473750 [debug] [ThreadPool]: On list_demo_project_main_dbt_test__audit: ROLLBACK
+[0m16:53:06.474638 [debug] [ThreadPool]: Failed to rollback 'list_demo_project_main_dbt_test__audit'
+[0m16:53:06.474865 [debug] [ThreadPool]: On list_demo_project_main_dbt_test__audit: Close
+[0m16:53:06.475397 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_demo_project_main_dbt_test__audit, now list_demo_project_main)
+[0m16:53:06.477130 [debug] [ThreadPool]: Using duckdb connection "list_demo_project_main"
+[0m16:53:06.477365 [debug] [ThreadPool]: On list_demo_project_main: BEGIN
+[0m16:53:06.477522 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:53:06.477860 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:53:06.478013 [debug] [ThreadPool]: Using duckdb connection "list_demo_project_main"
+[0m16:53:06.478168 [debug] [ThreadPool]: On list_demo_project_main: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "list_demo_project_main"} */
+select
+      'demo_project' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'demo_project'
+  
+[0m16:53:06.480036 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m16:53:06.480816 [debug] [ThreadPool]: On list_demo_project_main: ROLLBACK
+[0m16:53:06.481189 [debug] [ThreadPool]: Failed to rollback 'list_demo_project_main'
+[0m16:53:06.481357 [debug] [ThreadPool]: On list_demo_project_main: Close
+[0m16:53:06.481704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10564b950>]}
+[0m16:53:06.481974 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:53:06.482138 [debug] [MainThread]: On master: BEGIN
+[0m16:53:06.482283 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:53:06.482573 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:53:06.483183 [debug] [MainThread]: On master: COMMIT
+[0m16:53:06.483364 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:53:06.483532 [debug] [MainThread]: On master: COMMIT
+[0m16:53:06.483765 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:53:06.483929 [debug] [MainThread]: On master: Close
+[0m16:53:06.486896 [debug] [Thread-1 (]: Began running node model.sbdk_project.stg_events
+[0m16:53:06.487733 [info ] [Thread-1 (]: 1 of 5 START sql view model main.stg_events .................................... [RUN]
+[0m16:53:06.488034 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_demo_project_main, now model.sbdk_project.stg_events)
+[0m16:53:06.488253 [debug] [Thread-1 (]: Began compiling node model.sbdk_project.stg_events
+[0m16:53:06.492946 [debug] [Thread-1 (]: Writing injected SQL for node "model.sbdk_project.stg_events"
+[0m16:53:06.493771 [debug] [Thread-1 (]: Began executing node model.sbdk_project.stg_events
+[0m16:53:06.511960 [debug] [Thread-1 (]: Writing runtime sql for node "model.sbdk_project.stg_events"
+[0m16:53:06.512869 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_events"
+[0m16:53:06.513092 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: BEGIN
+[0m16:53:06.513272 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:06.513678 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:06.513895 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_events"
+[0m16:53:06.514517 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_events"} */
+
+  
+  create view "demo_project"."main"."stg_events__dbt_tmp" as (
+    
+
+with source_data as (
+    select * from main.raw_events
+),
+
+cleaned as (
+    select
+        event_id,
+        user_id,
+        session_id,
+        event_type,
+        timestamp,
+        utm_source,
+        utm_medium,
+        utm_campaign,
+        page_url,
+        referrer_url,
+        user_agent,
+        ip_address,
+        country,
+        device_type,
+        browser,
+        os,
+        screen_resolution,
+        is_mobile,
+        duration_seconds,
+        revenue,
+        
+        -- Calculated fields
+        date(timestamp) as event_date,
+        extract(hour from timestamp) as event_hour,
+        extract(dow from timestamp) as day_of_week,
+        
+        case 
+            when event_type in ('signup', 'purchase') then true
+            else false 
+        end as is_conversion_event,
+        
+        case 
+            when utm_source in ('google', 'bing') then 'search'
+            when utm_source in ('facebook', 'instagram', 'twitter', 'linkedin') then 'social'
+            when utm_source = 'email' then 'email'
+            when utm_source = 'direct' then 'direct'
+            else 'other'
+        end as traffic_category,
+        
+        -- Session indicators
+        case 
+            when session_id is not null then true
+            else false 
+        end as has_session_tracking,
+        
+        -- Revenue events
+        case 
+            when revenue > 0 then true
+            else false 
+        end as is_revenue_event
+        
+    from source_data
+    where timestamp is not null
+      and user_id is not null
+      and event_type is not null
+)
+
+select * from cleaned
+  );
+
+[0m16:53:06.521515 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_events"} */
+
+  
+  create view "demo_project"."main"."stg_events__dbt_tmp" as (
+    
+
+with source_data as (
+    select * from main.raw_events
+),
+
+cleaned as (
+    select
+        event_id,
+        user_id,
+        session_id,
+        event_type,
+        timestamp,
+        utm_source,
+        utm_medium,
+        utm_campaign,
+        page_url,
+        referrer_url,
+        user_agent,
+        ip_address,
+        country,
+        device_type,
+        browser,
+        os,
+        screen_resolution,
+        is_mobile,
+        duration_seconds,
+        revenue,
+        
+        -- Calculated fields
+        date(timestamp) as event_date,
+        extract(hour from timestamp) as event_hour,
+        extract(dow from timestamp) as day_of_week,
+        
+        case 
+            when event_type in ('signup', 'purchase') then true
+            else false 
+        end as is_conversion_event,
+        
+        case 
+            when utm_source in ('google', 'bing') then 'search'
+            when utm_source in ('facebook', 'instagram', 'twitter', 'linkedin') then 'social'
+            when utm_source = 'email' then 'email'
+            when utm_source = 'direct' then 'direct'
+            else 'other'
+        end as traffic_category,
+        
+        -- Session indicators
+        case 
+            when session_id is not null then true
+            else false 
+        end as has_session_tracking,
+        
+        -- Revenue events
+        case 
+            when revenue > 0 then true
+            else false 
+        end as is_revenue_event
+        
+    from source_data
+    where timestamp is not null
+      and user_id is not null
+      and event_type is not null
+)
+
+select * from cleaned
+  );
+
+[0m16:53:06.521825 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:06.522091 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: ROLLBACK
+[0m16:53:06.527227 [debug] [Thread-1 (]: Failed to rollback 'model.sbdk_project.stg_events'
+[0m16:53:06.527481 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: Close
+[0m16:53:06.529820 [debug] [Thread-1 (]: Runtime Error in model stg_events (models/staging/stg_events.sql)
+  Catalog Error: Table with name raw_events does not exist!
+  Did you mean "pragma_database_list"?
+  
+  LINE 8:     select * from main.raw_events
+                            ^
+[0m16:53:06.531596 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105681c80>]}
+[0m16:53:06.532243 [error] [Thread-1 (]: 1 of 5 ERROR creating sql view model main.stg_events ........................... [[31mERROR[0m in 0.04s]
+[0m16:53:06.532590 [debug] [Thread-1 (]: Finished running node model.sbdk_project.stg_events
+[0m16:53:06.532820 [debug] [Thread-1 (]: Began running node model.sbdk_project.stg_orders
+[0m16:53:06.533091 [debug] [Thread-4 (]: Marking all children of 'model.sbdk_project.stg_events' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_events (models/staging/stg_events.sql)
+  Catalog Error: Table with name raw_events does not exist!
+  Did you mean "pragma_database_list"?
+  
+  LINE 8:     select * from main.raw_events
+                            ^.
+[0m16:53:06.533382 [info ] [Thread-1 (]: 2 of 5 START sql view model main.stg_orders .................................... [RUN]
+[0m16:53:06.534257 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sbdk_project.stg_events, now model.sbdk_project.stg_orders)
+[0m16:53:06.534493 [debug] [Thread-1 (]: Began compiling node model.sbdk_project.stg_orders
+[0m16:53:06.536478 [debug] [Thread-1 (]: Writing injected SQL for node "model.sbdk_project.stg_orders"
+[0m16:53:06.537010 [debug] [Thread-1 (]: Began executing node model.sbdk_project.stg_orders
+[0m16:53:06.539360 [debug] [Thread-1 (]: Writing runtime sql for node "model.sbdk_project.stg_orders"
+[0m16:53:06.539837 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_orders"
+[0m16:53:06.540034 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: BEGIN
+[0m16:53:06.540243 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:06.540730 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:06.540936 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_orders"
+[0m16:53:06.541366 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_orders"} */
+
+  
+  create view "demo_project"."main"."stg_orders__dbt_tmp" as (
+    
+
+with source_data as (
+    select * from main.raw_orders
+),
+
+cleaned as (
+    select
+        order_id,
+        user_id,
+        order_number,
+        created_at,
+        completed_at,
+        status,
+        product_category,
+        product_sku,
+        quantity,
+        unit_price,
+        subtotal,
+        discount_amount,
+        discount_code,
+        tax_amount,
+        total_amount,
+        currency,
+        payment_method,
+        payment_processor,
+        billing_country,
+        billing_state,
+        billing_city,
+        billing_postal_code,
+        is_recurring,
+        subscription_period,
+        utm_source,
+        utm_campaign,
+        referral_code,
+        customer_notes,
+        shipping_required,
+        shipping_cost,
+        estimated_delivery,
+        
+        -- Calculated fields
+        date(created_at) as order_date,
+        extract(hour from created_at) as order_hour,
+        extract(dow from created_at) as day_of_week,
+        extract(month from created_at) as order_month,
+        extract(year from created_at) as order_year,
+        
+        case 
+            when completed_at is not null 
+            then date_diff('hour', created_at, completed_at)
+            else null 
+        end as hours_to_completion,
+        
+        case 
+            when discount_amount > 0 then true
+            else false 
+        end as has_discount,
+        
+        case 
+            when discount_amount > 0 
+            then round(discount_amount / subtotal * 100, 2)
+            else 0 
+        end as discount_percentage,
+        
+        case 
+            when status = 'completed' then true
+            else false 
+        end as is_completed,
+        
+        case 
+            when status in ('cancelled', 'refunded') then true
+            else false 
+        end as is_failed,
+        
+        case 
+            when total_amount >= 100 then 'high_value'
+            when total_amount >= 50 then 'medium_value'
+            else 'low_value'
+        end as order_value_tier,
+        
+        -- Payment categorization
+        case 
+            when payment_method in ('credit_card', 'stripe') then 'card'
+            when payment_method in ('paypal', 'bank_transfer') then 'alternative'
+            when payment_method = 'crypto' then 'crypto'
+            else 'other'
+        end as payment_category
+        
+    from source_data
+    where created_at is not null
+      and user_id is not null
+      and total_amount > 0
+)
+
+select * from cleaned
+  );
+
+[0m16:53:06.542494 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_orders"} */
+
+  
+  create view "demo_project"."main"."stg_orders__dbt_tmp" as (
+    
+
+with source_data as (
+    select * from main.raw_orders
+),
+
+cleaned as (
+    select
+        order_id,
+        user_id,
+        order_number,
+        created_at,
+        completed_at,
+        status,
+        product_category,
+        product_sku,
+        quantity,
+        unit_price,
+        subtotal,
+        discount_amount,
+        discount_code,
+        tax_amount,
+        total_amount,
+        currency,
+        payment_method,
+        payment_processor,
+        billing_country,
+        billing_state,
+        billing_city,
+        billing_postal_code,
+        is_recurring,
+        subscription_period,
+        utm_source,
+        utm_campaign,
+        referral_code,
+        customer_notes,
+        shipping_required,
+        shipping_cost,
+        estimated_delivery,
+        
+        -- Calculated fields
+        date(created_at) as order_date,
+        extract(hour from created_at) as order_hour,
+        extract(dow from created_at) as day_of_week,
+        extract(month from created_at) as order_month,
+        extract(year from created_at) as order_year,
+        
+        case 
+            when completed_at is not null 
+            then date_diff('hour', created_at, completed_at)
+            else null 
+        end as hours_to_completion,
+        
+        case 
+            when discount_amount > 0 then true
+            else false 
+        end as has_discount,
+        
+        case 
+            when discount_amount > 0 
+            then round(discount_amount / subtotal * 100, 2)
+            else 0 
+        end as discount_percentage,
+        
+        case 
+            when status = 'completed' then true
+            else false 
+        end as is_completed,
+        
+        case 
+            when status in ('cancelled', 'refunded') then true
+            else false 
+        end as is_failed,
+        
+        case 
+            when total_amount >= 100 then 'high_value'
+            when total_amount >= 50 then 'medium_value'
+            else 'low_value'
+        end as order_value_tier,
+        
+        -- Payment categorization
+        case 
+            when payment_method in ('credit_card', 'stripe') then 'card'
+            when payment_method in ('paypal', 'bank_transfer') then 'alternative'
+            when payment_method = 'crypto' then 'crypto'
+            else 'other'
+        end as payment_category
+        
+    from source_data
+    where created_at is not null
+      and user_id is not null
+      and total_amount > 0
+)
+
+select * from cleaned
+  );
+
+[0m16:53:06.542772 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:06.543032 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: ROLLBACK
+[0m16:53:06.545360 [debug] [Thread-1 (]: Failed to rollback 'model.sbdk_project.stg_orders'
+[0m16:53:06.545569 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: Close
+[0m16:53:06.547902 [debug] [Thread-1 (]: Runtime Error in model stg_orders (models/staging/stg_orders.sql)
+  Catalog Error: Table with name raw_orders does not exist!
+  Did you mean "pragma_database_list"?
+  
+  LINE 8:     select * from main.raw_orders
+                            ^
+[0m16:53:06.548236 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105958c30>]}
+[0m16:53:06.548637 [error] [Thread-1 (]: 2 of 5 ERROR creating sql view model main.stg_orders ........................... [[31mERROR[0m in 0.01s]
+[0m16:53:06.548949 [debug] [Thread-1 (]: Finished running node model.sbdk_project.stg_orders
+[0m16:53:06.549158 [debug] [Thread-1 (]: Began running node model.sbdk_project.stg_users
+[0m16:53:06.549390 [debug] [Thread-4 (]: Marking all children of 'model.sbdk_project.stg_orders' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_orders (models/staging/stg_orders.sql)
+  Catalog Error: Table with name raw_orders does not exist!
+  Did you mean "pragma_database_list"?
+  
+  LINE 8:     select * from main.raw_orders
+                            ^.
+[0m16:53:06.549631 [info ] [Thread-1 (]: 3 of 5 START sql view model main.stg_users ..................................... [RUN]
+[0m16:53:06.549936 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sbdk_project.stg_orders, now model.sbdk_project.stg_users)
+[0m16:53:06.550127 [debug] [Thread-1 (]: Began compiling node model.sbdk_project.stg_users
+[0m16:53:06.551624 [debug] [Thread-1 (]: Writing injected SQL for node "model.sbdk_project.stg_users"
+[0m16:53:06.552046 [debug] [Thread-1 (]: Began executing node model.sbdk_project.stg_users
+[0m16:53:06.554064 [debug] [Thread-1 (]: Writing runtime sql for node "model.sbdk_project.stg_users"
+[0m16:53:06.554541 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_users"
+[0m16:53:06.554755 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: BEGIN
+[0m16:53:06.554937 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:06.555333 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:06.555512 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_users"
+[0m16:53:06.555715 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_users"} */
+
+  
+  create view "demo_project"."main"."stg_users__dbt_tmp" as (
+    
+
+with source_data as (
+    select * from main.raw_users
+),
+
+cleaned as (
+    select
+        user_id,
+        username,
+        email,
+        first_name,
+        last_name,
+        created_at,
+        updated_at,
+        country,
+        city,
+        subscription_tier,
+        referrer,
+        is_active,
+        date_of_birth,
+        phone,
+        company,
+        job_title,
+        
+        -- Calculated fields
+        case 
+            when date_of_birth is not null 
+            then date_diff('year', date_of_birth, current_date)
+            else null 
+        end as age,
+        
+        case 
+            when subscription_tier in ('premium', 'enterprise') then true
+            else false 
+        end as is_paid_subscriber,
+        
+        date_diff('day', created_at, current_date) as days_since_signup,
+        
+        -- Data quality flags
+        case 
+            when email is null or email = '' then false
+            when first_name is null or first_name = '' then false  
+            when last_name is null or last_name = '' then false
+            else true 
+        end as has_complete_profile
+        
+    from source_data
+)
+
+select * from cleaned
+  );
+
+[0m16:53:06.562893 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_users"} */
+
+  
+  create view "demo_project"."main"."stg_users__dbt_tmp" as (
+    
+
+with source_data as (
+    select * from main.raw_users
+),
+
+cleaned as (
+    select
+        user_id,
+        username,
+        email,
+        first_name,
+        last_name,
+        created_at,
+        updated_at,
+        country,
+        city,
+        subscription_tier,
+        referrer,
+        is_active,
+        date_of_birth,
+        phone,
+        company,
+        job_title,
+        
+        -- Calculated fields
+        case 
+            when date_of_birth is not null 
+            then date_diff('year', date_of_birth, current_date)
+            else null 
+        end as age,
+        
+        case 
+            when subscription_tier in ('premium', 'enterprise') then true
+            else false 
+        end as is_paid_subscriber,
+        
+        date_diff('day', created_at, current_date) as days_since_signup,
+        
+        -- Data quality flags
+        case 
+            when email is null or email = '' then false
+            when first_name is null or first_name = '' then false  
+            when last_name is null or last_name = '' then false
+            else true 
+        end as has_complete_profile
+        
+    from source_data
+)
+
+select * from cleaned
+  );
+
+[0m16:53:06.565717 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:06.572019 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: ROLLBACK
+[0m16:53:06.623628 [debug] [Thread-1 (]: Failed to rollback 'model.sbdk_project.stg_users'
+[0m16:53:06.632881 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: Close
+[0m16:53:06.639248 [debug] [Thread-1 (]: Runtime Error in model stg_users (models/staging/stg_users.sql)
+  Catalog Error: Table with name raw_users does not exist!
+  Did you mean "pragma_database_list"?
+  
+  LINE 8:     select * from main.raw_users
+                            ^
+[0m16:53:06.639686 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '403134c5-af66-4024-abce-fd38784df87d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ab4cd0>]}
+[0m16:53:06.648733 [error] [Thread-1 (]: 3 of 5 ERROR creating sql view model main.stg_users ............................ [[31mERROR[0m in 0.09s]
+[0m16:53:06.649814 [debug] [Thread-1 (]: Finished running node model.sbdk_project.stg_users
+[0m16:53:06.650135 [debug] [Thread-4 (]: Marking all children of 'model.sbdk_project.stg_users' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_users (models/staging/stg_users.sql)
+  Catalog Error: Table with name raw_users does not exist!
+  Did you mean "pragma_database_list"?
+  
+  LINE 8:     select * from main.raw_users
+                            ^.
+[0m16:53:06.650616 [debug] [Thread-1 (]: Began running node model.sbdk_project.int_user_activity
+[0m16:53:06.651641 [info ] [Thread-1 (]: 4 of 5 SKIP relation main.int_user_activity .................................... [[33mSKIP[0m]
+[0m16:53:06.652110 [debug] [Thread-1 (]: Finished running node model.sbdk_project.int_user_activity
+[0m16:53:06.652534 [debug] [Thread-1 (]: Began running node model.sbdk_project.user_metrics
+[0m16:53:06.652805 [info ] [Thread-1 (]: 5 of 5 SKIP relation main.user_metrics ......................................... [[33mSKIP[0m]
+[0m16:53:06.653065 [debug] [Thread-1 (]: Finished running node model.sbdk_project.user_metrics
+[0m16:53:06.654090 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:53:06.654325 [debug] [MainThread]: On master: BEGIN
+[0m16:53:06.654482 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:53:06.655019 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:53:06.655277 [debug] [MainThread]: On master: COMMIT
+[0m16:53:06.655684 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:53:06.655877 [debug] [MainThread]: On master: COMMIT
+[0m16:53:06.657067 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:53:06.657683 [debug] [MainThread]: On master: Close
+[0m16:53:06.669161 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:53:06.671032 [debug] [MainThread]: Connection 'model.sbdk_project.stg_users' was properly closed.
+[0m16:53:06.671347 [info ] [MainThread]: 
+[0m16:53:06.671550 [info ] [MainThread]: Finished running 1 table model, 4 view models in 0 hours 0 minutes and 0.36 seconds (0.36s).
+[0m16:53:06.672099 [debug] [MainThread]: Command end result
+[0m16:53:06.688231 [debug] [MainThread]: Wrote artifact WritableManifest to dbt/target/manifest.json
+[0m16:53:06.689526 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt/target/semantic_manifest.json
+[0m16:53:06.694377 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt/target/run_results.json
+[0m16:53:06.694781 [info ] [MainThread]: 
+[0m16:53:06.695032 [info ] [MainThread]: [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[0m16:53:06.695212 [info ] [MainThread]: 
+[0m16:53:06.695427 [error] [MainThread]: [31mFailure in model stg_events (models/staging/stg_events.sql)[0m
+[0m16:53:06.695618 [error] [MainThread]:   Runtime Error in model stg_events (models/staging/stg_events.sql)
+  Catalog Error: Table with name raw_events does not exist!
+  Did you mean "pragma_database_list"?
+  
+  LINE 8:     select * from main.raw_events
+                            ^
+[0m16:53:06.695765 [info ] [MainThread]: 
+[0m16:53:06.695935 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/staging/stg_events.sql
+[0m16:53:06.696079 [info ] [MainThread]: 
+[0m16:53:06.696254 [error] [MainThread]: [31mFailure in model stg_orders (models/staging/stg_orders.sql)[0m
+[0m16:53:06.696429 [error] [MainThread]:   Runtime Error in model stg_orders (models/staging/stg_orders.sql)
+  Catalog Error: Table with name raw_orders does not exist!
+  Did you mean "pragma_database_list"?
+  
+  LINE 8:     select * from main.raw_orders
+                            ^
+[0m16:53:06.696568 [info ] [MainThread]: 
+[0m16:53:06.696730 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/staging/stg_orders.sql
+[0m16:53:06.696868 [info ] [MainThread]: 
+[0m16:53:06.697035 [error] [MainThread]: [31mFailure in model stg_users (models/staging/stg_users.sql)[0m
+[0m16:53:06.697205 [error] [MainThread]:   Runtime Error in model stg_users (models/staging/stg_users.sql)
+  Catalog Error: Table with name raw_users does not exist!
+  Did you mean "pragma_database_list"?
+  
+  LINE 8:     select * from main.raw_users
+                            ^
+[0m16:53:06.697341 [info ] [MainThread]: 
+[0m16:53:06.697515 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/staging/stg_users.sql
+[0m16:53:06.697652 [info ] [MainThread]: 
+[0m16:53:06.697811 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=3 SKIP=2 NO-OP=0 TOTAL=5
+[0m16:53:06.699933 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.7608917, "process_in_blocks": "0", "process_kernel_time": 0.353458, "process_mem_max_rss": "154107904", "process_out_blocks": "0", "process_user_time": 2.120771}
+[0m16:53:06.700259 [debug] [MainThread]: Command `dbt run` failed at 16:53:06.700204 after 1.76 seconds
+[0m16:53:06.700517 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ce14e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10068be70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104608050>]}
+[0m16:53:06.700725 [debug] [MainThread]: Flushing usage events
+[0m16:53:07.117439 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:53:11.272569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108399fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109313c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109313ed0>]}
+
+
+============================== 16:53:11.275830 | 88298806-1c47-403f-89f3-733daa3c8155 ==============================
+[0m16:53:11.275830 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:53:11.276326 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/mattstrautmann/.dbt', 'log_path': 'dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt test --project-dir dbt --profiles-dir /Users/mattstrautmann/.dbt', 'send_anonymous_usage_stats': 'True'}
+[0m16:53:11.431384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '88298806-1c47-403f-89f3-733daa3c8155', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108671ba0>]}
+[0m16:53:11.548741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '88298806-1c47-403f-89f3-733daa3c8155', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d16e00>]}
+[0m16:53:11.550757 [info ] [MainThread]: Registered adapter: duckdb=1.9.4
+[0m16:53:11.641802 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m16:53:11.729894 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:53:11.731363 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:53:11.736160 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- seeds
+[0m16:53:11.762646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '88298806-1c47-403f-89f3-733daa3c8155', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109416550>]}
+[0m16:53:11.817013 [debug] [MainThread]: Wrote artifact WritableManifest to dbt/target/manifest.json
+[0m16:53:11.818532 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt/target/semantic_manifest.json
+[0m16:53:11.914123 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '88298806-1c47-403f-89f3-733daa3c8155', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a38e210>]}
+[0m16:53:11.914575 [info ] [MainThread]: Found 5 models, 13 data tests, 3 sources, 429 macros
+[0m16:53:11.914799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '88298806-1c47-403f-89f3-733daa3c8155', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a3635b0>]}
+[0m16:53:11.916582 [info ] [MainThread]: 
+[0m16:53:11.916941 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:53:11.917135 [info ] [MainThread]: 
+[0m16:53:11.917463 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m16:53:11.920454 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_demo_project'
+[0m16:53:11.962491 [debug] [ThreadPool]: Using duckdb connection "list_demo_project"
+[0m16:53:11.962762 [debug] [ThreadPool]: On list_demo_project: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "list_demo_project"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"demo_project"'
+    
+  
+  
+[0m16:53:11.962934 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:53:11.970924 [debug] [ThreadPool]: SQL status: OK in 0.008 seconds
+[0m16:53:11.971794 [debug] [ThreadPool]: On list_demo_project: Close
+[0m16:53:11.972217 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_demo_project, now create_demo_project_main_dbt_test__audit)
+[0m16:53:11.972489 [debug] [ThreadPool]: Creating schema "database: "demo_project"
+schema: "main_dbt_test__audit"
+"
+[0m16:53:11.976372 [debug] [ThreadPool]: Using duckdb connection "create_demo_project_main_dbt_test__audit"
+[0m16:53:11.976604 [debug] [ThreadPool]: On create_demo_project_main_dbt_test__audit: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "create_demo_project_main_dbt_test__audit"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='demo_project'
+        and type='sqlite'
+    
+  
+[0m16:53:11.976772 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:53:11.977344 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m16:53:11.978089 [debug] [ThreadPool]: Using duckdb connection "create_demo_project_main_dbt_test__audit"
+[0m16:53:11.978258 [debug] [ThreadPool]: On create_demo_project_main_dbt_test__audit: BEGIN
+[0m16:53:11.978513 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:53:11.978692 [debug] [ThreadPool]: Using duckdb connection "create_demo_project_main_dbt_test__audit"
+[0m16:53:11.978853 [debug] [ThreadPool]: On create_demo_project_main_dbt_test__audit: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "create_demo_project_main_dbt_test__audit"} */
+
+    
+    
+        create schema if not exists "demo_project"."main_dbt_test__audit"
+    
+[0m16:53:11.979150 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:53:11.979706 [debug] [ThreadPool]: On create_demo_project_main_dbt_test__audit: COMMIT
+[0m16:53:11.979879 [debug] [ThreadPool]: Using duckdb connection "create_demo_project_main_dbt_test__audit"
+[0m16:53:11.980034 [debug] [ThreadPool]: On create_demo_project_main_dbt_test__audit: COMMIT
+[0m16:53:11.981055 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m16:53:11.981269 [debug] [ThreadPool]: On create_demo_project_main_dbt_test__audit: Close
+[0m16:53:11.982501 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_demo_project_main_dbt_test__audit, now list_demo_project_main)
+[0m16:53:11.985506 [debug] [ThreadPool]: Using duckdb connection "list_demo_project_main"
+[0m16:53:11.985777 [debug] [ThreadPool]: On list_demo_project_main: BEGIN
+[0m16:53:11.985949 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:53:11.986327 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:53:11.986476 [debug] [ThreadPool]: Using duckdb connection "list_demo_project_main"
+[0m16:53:11.986628 [debug] [ThreadPool]: On list_demo_project_main: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "list_demo_project_main"} */
+select
+      'demo_project' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'demo_project'
+  
+[0m16:53:11.993320 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m16:53:11.994070 [debug] [ThreadPool]: On list_demo_project_main: ROLLBACK
+[0m16:53:11.995035 [debug] [ThreadPool]: Failed to rollback 'list_demo_project_main'
+[0m16:53:11.995217 [debug] [ThreadPool]: On list_demo_project_main: Close
+[0m16:53:11.995501 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_demo_project_main, now list_demo_project_main_dbt_test__audit)
+[0m16:53:12.043025 [debug] [ThreadPool]: Using duckdb connection "list_demo_project_main_dbt_test__audit"
+[0m16:53:12.043298 [debug] [ThreadPool]: On list_demo_project_main_dbt_test__audit: BEGIN
+[0m16:53:12.043470 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:53:12.043874 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:53:12.044082 [debug] [ThreadPool]: Using duckdb connection "list_demo_project_main_dbt_test__audit"
+[0m16:53:12.044265 [debug] [ThreadPool]: On list_demo_project_main_dbt_test__audit: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "list_demo_project_main_dbt_test__audit"} */
+select
+      'demo_project' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_dbt_test__audit'
+    and lower(table_catalog) = 'demo_project'
+  
+[0m16:53:12.046143 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m16:53:12.046875 [debug] [ThreadPool]: On list_demo_project_main_dbt_test__audit: ROLLBACK
+[0m16:53:12.047239 [debug] [ThreadPool]: Failed to rollback 'list_demo_project_main_dbt_test__audit'
+[0m16:53:12.047403 [debug] [ThreadPool]: On list_demo_project_main_dbt_test__audit: Close
+[0m16:53:12.047757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '88298806-1c47-403f-89f3-733daa3c8155', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109edc1f0>]}
+[0m16:53:12.048035 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:53:12.048198 [debug] [MainThread]: On master: BEGIN
+[0m16:53:12.048345 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:53:12.048675 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:53:12.048875 [debug] [MainThread]: On master: COMMIT
+[0m16:53:12.049049 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:53:12.049207 [debug] [MainThread]: On master: COMMIT
+[0m16:53:12.049429 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:53:12.049586 [debug] [MainThread]: On master: Close
+[0m16:53:12.051092 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2
+[0m16:53:12.051322 [info ] [Thread-1 (]: 1 of 13 START test source_not_null_raw_events_event_id ......................... [RUN]
+[0m16:53:12.051578 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_demo_project_main_dbt_test__audit, now test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2)
+[0m16:53:12.051779 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2
+[0m16:53:12.061445 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2"
+[0m16:53:12.062052 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2
+[0m16:53:12.070966 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_event_id"
+[0m16:53:12.080367 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2"
+[0m16:53:12.080680 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2: BEGIN
+[0m16:53:12.080923 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.081375 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.081607 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2"
+[0m16:53:12.081812 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_event_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."events"
+where event_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.082938 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_event_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."events"
+where event_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.083161 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.083444 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2: ROLLBACK
+[0m16:53:12.088101 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2'
+[0m16:53:12.088354 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2: Close
+[0m16:53:12.090523 [debug] [Thread-1 (]: Runtime Error in test source_not_null_raw_events_event_id (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 21: from "demo_project"."raw"."events"
+                ^
+[0m16:53:12.090824 [error] [Thread-1 (]: 1 of 13 ERROR source_not_null_raw_events_event_id .............................. [[31mERROR[0m in 0.04s]
+[0m16:53:12.091139 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2
+[0m16:53:12.091350 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05
+[0m16:53:12.091611 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2' to be skipped because of status 'error'.  Reason: Runtime Error in test source_not_null_raw_events_event_id (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 21: from "demo_project"."raw"."events"
+                ^.
+[0m16:53:12.091832 [info ] [Thread-1 (]: 2 of 13 START test source_not_null_raw_events_timestamp ........................ [RUN]
+[0m16:53:12.092468 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_not_null_raw_events_event_id.1893a9eae2, now test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05)
+[0m16:53:12.092689 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05
+[0m16:53:12.094894 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05"
+[0m16:53:12.095304 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05
+[0m16:53:12.096406 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_timestamp"
+[0m16:53:12.096935 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05"
+[0m16:53:12.097126 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05: BEGIN
+[0m16:53:12.097299 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.097687 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.097888 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05"
+[0m16:53:12.098079 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_timestamp"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."events"
+where timestamp is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.098542 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_timestamp"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."events"
+where timestamp is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.098732 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.098968 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05: ROLLBACK
+[0m16:53:12.101159 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05'
+[0m16:53:12.101363 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05: Close
+[0m16:53:12.103412 [debug] [Thread-1 (]: Runtime Error in test source_not_null_raw_events_timestamp (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 21: from "demo_project"."raw"."events"
+                ^
+[0m16:53:12.103710 [error] [Thread-1 (]: 2 of 13 ERROR source_not_null_raw_events_timestamp ............................. [[31mERROR[0m in 0.01s]
+[0m16:53:12.104007 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05
+[0m16:53:12.104211 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1
+[0m16:53:12.104465 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05' to be skipped because of status 'error'.  Reason: Runtime Error in test source_not_null_raw_events_timestamp (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 21: from "demo_project"."raw"."events"
+                ^.
+[0m16:53:12.104680 [info ] [Thread-1 (]: 3 of 13 START test source_not_null_raw_events_user_id .......................... [RUN]
+[0m16:53:12.104971 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_not_null_raw_events_timestamp.0a96d78a05, now test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1)
+[0m16:53:12.105174 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1
+[0m16:53:12.107775 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1"
+[0m16:53:12.108179 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1
+[0m16:53:12.109317 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_user_id"
+[0m16:53:12.109887 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1"
+[0m16:53:12.110107 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1: BEGIN
+[0m16:53:12.110296 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.110682 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.110878 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1"
+[0m16:53:12.111075 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_user_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."events"
+where user_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.111548 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_user_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."events"
+where user_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.111741 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.111973 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1: ROLLBACK
+[0m16:53:12.114173 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1'
+[0m16:53:12.114370 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1: Close
+[0m16:53:12.116419 [debug] [Thread-1 (]: Runtime Error in test source_not_null_raw_events_user_id (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 21: from "demo_project"."raw"."events"
+                ^
+[0m16:53:12.116683 [error] [Thread-1 (]: 3 of 13 ERROR source_not_null_raw_events_user_id ............................... [[31mERROR[0m in 0.01s]
+[0m16:53:12.116968 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1
+[0m16:53:12.117168 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f
+[0m16:53:12.117422 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1' to be skipped because of status 'error'.  Reason: Runtime Error in test source_not_null_raw_events_user_id (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 21: from "demo_project"."raw"."events"
+                ^.
+[0m16:53:12.117630 [info ] [Thread-1 (]: 4 of 13 START test source_not_null_raw_orders_order_id ......................... [RUN]
+[0m16:53:12.117916 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_not_null_raw_events_user_id.7468b6e0b1, now test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f)
+[0m16:53:12.118127 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f
+[0m16:53:12.120589 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f"
+[0m16:53:12.120988 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f
+[0m16:53:12.122106 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_order_id"
+[0m16:53:12.122684 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f"
+[0m16:53:12.122904 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f: BEGIN
+[0m16:53:12.123088 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.123458 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.123635 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f"
+[0m16:53:12.123818 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_order_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."orders"
+where order_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.124262 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_order_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."orders"
+where order_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.124448 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.124670 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f: ROLLBACK
+[0m16:53:12.126809 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f'
+[0m16:53:12.126995 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f: Close
+[0m16:53:12.129034 [debug] [Thread-1 (]: Runtime Error in test source_not_null_raw_orders_order_id (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 21: from "demo_project"."raw"."orders"
+                ^
+[0m16:53:12.129286 [error] [Thread-1 (]: 4 of 13 ERROR source_not_null_raw_orders_order_id .............................. [[31mERROR[0m in 0.01s]
+[0m16:53:12.129561 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f
+[0m16:53:12.129762 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec
+[0m16:53:12.130150 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f' to be skipped because of status 'error'.  Reason: Runtime Error in test source_not_null_raw_orders_order_id (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 21: from "demo_project"."raw"."orders"
+                ^.
+[0m16:53:12.129945 [info ] [Thread-1 (]: 5 of 13 START test source_not_null_raw_orders_total_amount ..................... [RUN]
+[0m16:53:12.130500 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_not_null_raw_orders_order_id.03a065a98f, now test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec)
+[0m16:53:12.130698 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec
+[0m16:53:12.132885 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec"
+[0m16:53:12.133301 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec
+[0m16:53:12.134826 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_total_amount"
+[0m16:53:12.135429 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec"
+[0m16:53:12.135624 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec: BEGIN
+[0m16:53:12.135798 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.136160 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.136330 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec"
+[0m16:53:12.136507 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_total_amount"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."orders"
+where total_amount is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.136951 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_total_amount"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."orders"
+where total_amount is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.137137 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.137360 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec: ROLLBACK
+[0m16:53:12.139520 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec'
+[0m16:53:12.139706 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec: Close
+[0m16:53:12.141735 [debug] [Thread-1 (]: Runtime Error in test source_not_null_raw_orders_total_amount (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 21: from "demo_project"."raw"."orders"
+                ^
+[0m16:53:12.141986 [error] [Thread-1 (]: 5 of 13 ERROR source_not_null_raw_orders_total_amount .......................... [[31mERROR[0m in 0.01s]
+[0m16:53:12.142264 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec
+[0m16:53:12.142459 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd
+[0m16:53:12.142695 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec' to be skipped because of status 'error'.  Reason: Runtime Error in test source_not_null_raw_orders_total_amount (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 21: from "demo_project"."raw"."orders"
+                ^.
+[0m16:53:12.142898 [info ] [Thread-1 (]: 6 of 13 START test source_not_null_raw_orders_user_id .......................... [RUN]
+[0m16:53:12.143199 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_not_null_raw_orders_total_amount.36d4c28fec, now test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd)
+[0m16:53:12.143412 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd
+[0m16:53:12.146170 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd"
+[0m16:53:12.146683 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd
+[0m16:53:12.148247 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_user_id"
+[0m16:53:12.148830 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd"
+[0m16:53:12.149035 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd: BEGIN
+[0m16:53:12.149213 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.149617 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.149831 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd"
+[0m16:53:12.150030 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_user_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."orders"
+where user_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.150501 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_user_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."orders"
+where user_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.150694 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.150927 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd: ROLLBACK
+[0m16:53:12.153103 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd'
+[0m16:53:12.153330 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd: Close
+[0m16:53:12.156047 [debug] [Thread-1 (]: Runtime Error in test source_not_null_raw_orders_user_id (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 21: from "demo_project"."raw"."orders"
+                ^
+[0m16:53:12.156779 [error] [Thread-1 (]: 6 of 13 ERROR source_not_null_raw_orders_user_id ............................... [[31mERROR[0m in 0.01s]
+[0m16:53:12.157139 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd
+[0m16:53:12.157359 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5
+[0m16:53:12.157620 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd' to be skipped because of status 'error'.  Reason: Runtime Error in test source_not_null_raw_orders_user_id (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 21: from "demo_project"."raw"."orders"
+                ^.
+[0m16:53:12.157842 [info ] [Thread-1 (]: 7 of 13 START test source_not_null_raw_users_created_at ........................ [RUN]
+[0m16:53:12.158162 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_not_null_raw_orders_user_id.1c0db495dd, now test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5)
+[0m16:53:12.158360 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5
+[0m16:53:12.160551 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5"
+[0m16:53:12.160969 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5
+[0m16:53:12.162062 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_created_at"
+[0m16:53:12.162903 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5"
+[0m16:53:12.163101 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5: BEGIN
+[0m16:53:12.163280 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.163677 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.163868 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5"
+[0m16:53:12.164057 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_created_at"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."users"
+where created_at is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.164535 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_created_at"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."users"
+where created_at is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.164728 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.164955 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5: ROLLBACK
+[0m16:53:12.167146 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5'
+[0m16:53:12.167342 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5: Close
+[0m16:53:12.169383 [debug] [Thread-1 (]: Runtime Error in test source_not_null_raw_users_created_at (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 21: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.169642 [error] [Thread-1 (]: 7 of 13 ERROR source_not_null_raw_users_created_at ............................. [[31mERROR[0m in 0.01s]
+[0m16:53:12.169925 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5
+[0m16:53:12.170124 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5
+[0m16:53:12.170521 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5' to be skipped because of status 'error'.  Reason: Runtime Error in test source_not_null_raw_users_created_at (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 21: from "demo_project"."raw"."users"
+                ^.
+[0m16:53:12.170305 [info ] [Thread-1 (]: 8 of 13 START test source_not_null_raw_users_email ............................. [RUN]
+[0m16:53:12.170859 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_not_null_raw_users_created_at.9a9fce61f5, now test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5)
+[0m16:53:12.171039 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5
+[0m16:53:12.173334 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5"
+[0m16:53:12.173849 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5
+[0m16:53:12.175008 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_email"
+[0m16:53:12.175544 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5"
+[0m16:53:12.175732 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5: BEGIN
+[0m16:53:12.175901 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.176272 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.176467 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5"
+[0m16:53:12.176648 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_email"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."users"
+where email is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.177104 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_email"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."users"
+where email is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.177293 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.177523 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5: ROLLBACK
+[0m16:53:12.179688 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5'
+[0m16:53:12.179876 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5: Close
+[0m16:53:12.181954 [debug] [Thread-1 (]: Runtime Error in test source_not_null_raw_users_email (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 21: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.182217 [error] [Thread-1 (]: 8 of 13 ERROR source_not_null_raw_users_email .................................. [[31mERROR[0m in 0.01s]
+[0m16:53:12.182501 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5
+[0m16:53:12.182760 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c
+[0m16:53:12.183021 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5' to be skipped because of status 'error'.  Reason: Runtime Error in test source_not_null_raw_users_email (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 21: from "demo_project"."raw"."users"
+                ^.
+[0m16:53:12.183256 [info ] [Thread-1 (]: 9 of 13 START test source_not_null_raw_users_user_id ........................... [RUN]
+[0m16:53:12.183595 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_not_null_raw_users_email.a636a2f7e5, now test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c)
+[0m16:53:12.183792 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c
+[0m16:53:12.186453 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c"
+[0m16:53:12.190415 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c
+[0m16:53:12.191578 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_user_id"
+[0m16:53:12.192127 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c"
+[0m16:53:12.192321 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c: BEGIN
+[0m16:53:12.192497 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.192895 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.193098 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c"
+[0m16:53:12.193287 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_user_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."users"
+where user_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.193748 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_user_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+
+
+select *
+from "demo_project"."raw"."users"
+where user_id is null
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.193936 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.194162 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c: ROLLBACK
+[0m16:53:12.196316 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c'
+[0m16:53:12.196501 [debug] [Thread-1 (]: On test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c: Close
+[0m16:53:12.198551 [debug] [Thread-1 (]: Runtime Error in test source_not_null_raw_users_user_id (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 21: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.198822 [error] [Thread-1 (]: 9 of 13 ERROR source_not_null_raw_users_user_id ................................ [[31mERROR[0m in 0.02s]
+[0m16:53:12.199112 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c
+[0m16:53:12.199340 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_unique_raw_events_event_id.825f404073
+[0m16:53:12.199570 [info ] [Thread-1 (]: 10 of 13 START test source_unique_raw_events_event_id .......................... [RUN]
+[0m16:53:12.199842 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c' to be skipped because of status 'error'.  Reason: Runtime Error in test source_not_null_raw_users_user_id (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 21: from "demo_project"."raw"."users"
+                ^.
+[0m16:53:12.200075 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_not_null_raw_users_user_id.7b2e734e5c, now test.sbdk_project.source_unique_raw_events_event_id.825f404073)
+[0m16:53:12.200333 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_unique_raw_events_event_id.825f404073
+[0m16:53:12.204225 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_unique_raw_events_event_id.825f404073"
+[0m16:53:12.204678 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_unique_raw_events_event_id.825f404073
+[0m16:53:12.205830 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_unique_raw_events_event_id"
+[0m16:53:12.206372 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_unique_raw_events_event_id.825f404073"
+[0m16:53:12.206562 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_events_event_id.825f404073: BEGIN
+[0m16:53:12.206731 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.207096 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.207315 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_unique_raw_events_event_id.825f404073"
+[0m16:53:12.207543 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_events_event_id.825f404073: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_unique_raw_events_event_id.825f404073"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_unique_raw_events_event_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+select
+    event_id as unique_field,
+    count(*) as n_records
+
+from "demo_project"."raw"."events"
+where event_id is not null
+group by event_id
+having count(*) > 1
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.208251 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_unique_raw_events_event_id.825f404073"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_unique_raw_events_event_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+select
+    event_id as unique_field,
+    count(*) as n_records
+
+from "demo_project"."raw"."events"
+where event_id is not null
+group by event_id
+having count(*) > 1
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.208454 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.208690 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_events_event_id.825f404073: ROLLBACK
+[0m16:53:12.210859 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_unique_raw_events_event_id.825f404073'
+[0m16:53:12.211048 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_events_event_id.825f404073: Close
+[0m16:53:12.213101 [debug] [Thread-1 (]: Runtime Error in test source_unique_raw_events_event_id (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 22: from "demo_project"."raw"."events"
+                ^
+[0m16:53:12.213375 [error] [Thread-1 (]: 10 of 13 ERROR source_unique_raw_events_event_id ............................... [[31mERROR[0m in 0.01s]
+[0m16:53:12.213659 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_unique_raw_events_event_id.825f404073
+[0m16:53:12.213860 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f
+[0m16:53:12.214095 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_unique_raw_events_event_id.825f404073' to be skipped because of status 'error'.  Reason: Runtime Error in test source_unique_raw_events_event_id (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 22: from "demo_project"."raw"."events"
+                ^.
+[0m16:53:12.214308 [info ] [Thread-1 (]: 11 of 13 START test source_unique_raw_orders_order_id .......................... [RUN]
+[0m16:53:12.214632 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_unique_raw_events_event_id.825f404073, now test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f)
+[0m16:53:12.214818 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f
+[0m16:53:12.216967 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f"
+[0m16:53:12.217390 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f
+[0m16:53:12.218895 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_unique_raw_orders_order_id"
+[0m16:53:12.219439 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f"
+[0m16:53:12.219634 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f: BEGIN
+[0m16:53:12.219805 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.220205 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.220399 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f"
+[0m16:53:12.220587 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_unique_raw_orders_order_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+select
+    order_id as unique_field,
+    count(*) as n_records
+
+from "demo_project"."raw"."orders"
+where order_id is not null
+group by order_id
+having count(*) > 1
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.221073 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_unique_raw_orders_order_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+select
+    order_id as unique_field,
+    count(*) as n_records
+
+from "demo_project"."raw"."orders"
+where order_id is not null
+group by order_id
+having count(*) > 1
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.221265 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.221487 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f: ROLLBACK
+[0m16:53:12.223741 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f'
+[0m16:53:12.223936 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f: Close
+[0m16:53:12.226004 [debug] [Thread-1 (]: Runtime Error in test source_unique_raw_orders_order_id (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 22: from "demo_project"."raw"."orders"
+                ^
+[0m16:53:12.226270 [error] [Thread-1 (]: 11 of 13 ERROR source_unique_raw_orders_order_id ............................... [[31mERROR[0m in 0.01s]
+[0m16:53:12.226554 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f
+[0m16:53:12.226754 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_unique_raw_users_email.ab11a6771a
+[0m16:53:12.226987 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f' to be skipped because of status 'error'.  Reason: Runtime Error in test source_unique_raw_orders_order_id (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 22: from "demo_project"."raw"."orders"
+                ^.
+[0m16:53:12.227199 [info ] [Thread-1 (]: 12 of 13 START test source_unique_raw_users_email .............................. [RUN]
+[0m16:53:12.227498 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_unique_raw_orders_order_id.2e0765462f, now test.sbdk_project.source_unique_raw_users_email.ab11a6771a)
+[0m16:53:12.227691 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_unique_raw_users_email.ab11a6771a
+[0m16:53:12.229812 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_unique_raw_users_email.ab11a6771a"
+[0m16:53:12.230207 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_unique_raw_users_email.ab11a6771a
+[0m16:53:12.231624 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_unique_raw_users_email"
+[0m16:53:12.232187 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_unique_raw_users_email.ab11a6771a"
+[0m16:53:12.232381 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_users_email.ab11a6771a: BEGIN
+[0m16:53:12.232558 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.232965 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.233161 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_unique_raw_users_email.ab11a6771a"
+[0m16:53:12.233374 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_users_email.ab11a6771a: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_unique_raw_users_email.ab11a6771a"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_unique_raw_users_email"
+  
+    as (
+      
+    
+  
+    
+    
+
+select
+    email as unique_field,
+    count(*) as n_records
+
+from "demo_project"."raw"."users"
+where email is not null
+group by email
+having count(*) > 1
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.233932 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_unique_raw_users_email.ab11a6771a"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_unique_raw_users_email"
+  
+    as (
+      
+    
+  
+    
+    
+
+select
+    email as unique_field,
+    count(*) as n_records
+
+from "demo_project"."raw"."users"
+where email is not null
+group by email
+having count(*) > 1
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.234143 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.234390 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_users_email.ab11a6771a: ROLLBACK
+[0m16:53:12.236615 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_unique_raw_users_email.ab11a6771a'
+[0m16:53:12.236811 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_users_email.ab11a6771a: Close
+[0m16:53:12.238884 [debug] [Thread-1 (]: Runtime Error in test source_unique_raw_users_email (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 22: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.239353 [error] [Thread-1 (]: 12 of 13 ERROR source_unique_raw_users_email ................................... [[31mERROR[0m in 0.01s]
+[0m16:53:12.239690 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_unique_raw_users_email.ab11a6771a
+[0m16:53:12.239905 [debug] [Thread-1 (]: Began running node test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c
+[0m16:53:12.240095 [info ] [Thread-1 (]: 13 of 13 START test source_unique_raw_users_user_id ............................ [RUN]
+[0m16:53:12.240340 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.sbdk_project.source_unique_raw_users_email.ab11a6771a, now test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c)
+[0m16:53:12.240624 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_unique_raw_users_email.ab11a6771a' to be skipped because of status 'error'.  Reason: Runtime Error in test source_unique_raw_users_email (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 22: from "demo_project"."raw"."users"
+                ^.
+[0m16:53:12.240844 [debug] [Thread-1 (]: Began compiling node test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c
+[0m16:53:12.243635 [debug] [Thread-1 (]: Writing injected SQL for node "test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c"
+[0m16:53:12.244110 [debug] [Thread-1 (]: Began executing node test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c
+[0m16:53:12.245234 [debug] [Thread-1 (]: Applying CREATE to: "demo_project"."main_dbt_test__audit"."source_unique_raw_users_user_id"
+[0m16:53:12.245761 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c"
+[0m16:53:12.245948 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c: BEGIN
+[0m16:53:12.246117 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:53:12.246516 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:53:12.246710 [debug] [Thread-1 (]: Using duckdb connection "test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c"
+[0m16:53:12.246898 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_unique_raw_users_user_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+select
+    user_id as unique_field,
+    count(*) as n_records
+
+from "demo_project"."raw"."users"
+where user_id is not null
+group by user_id
+having count(*) > 1
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.247419 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c"} */
+
+        
+  
+    
+    
+
+    create  table
+      "demo_project"."main_dbt_test__audit"."source_unique_raw_users_user_id"
+  
+    as (
+      
+    
+  
+    
+    
+
+select
+    user_id as unique_field,
+    count(*) as n_records
+
+from "demo_project"."raw"."users"
+where user_id is not null
+group by user_id
+having count(*) > 1
+
+
+
+  
+  
+    );
+  
+  
+    
+[0m16:53:12.247616 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m16:53:12.247840 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c: ROLLBACK
+[0m16:53:12.250009 [debug] [Thread-1 (]: Failed to rollback 'test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c'
+[0m16:53:12.250207 [debug] [Thread-1 (]: On test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c: Close
+[0m16:53:12.252296 [debug] [Thread-1 (]: Runtime Error in test source_unique_raw_users_user_id (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 22: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.252555 [error] [Thread-1 (]: 13 of 13 ERROR source_unique_raw_users_user_id ................................. [[31mERROR[0m in 0.01s]
+[0m16:53:12.252841 [debug] [Thread-1 (]: Finished running node test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c
+[0m16:53:12.253114 [debug] [Thread-4 (]: Marking all children of 'test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c' to be skipped because of status 'error'.  Reason: Runtime Error in test source_unique_raw_users_user_id (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 22: from "demo_project"."raw"."users"
+                ^.
+[0m16:53:12.253780 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:53:12.253950 [debug] [MainThread]: On master: BEGIN
+[0m16:53:12.254095 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:53:12.254417 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:53:12.254566 [debug] [MainThread]: On master: COMMIT
+[0m16:53:12.254710 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:53:12.254850 [debug] [MainThread]: On master: COMMIT
+[0m16:53:12.255053 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:53:12.255199 [debug] [MainThread]: On master: Close
+[0m16:53:12.255386 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:53:12.255521 [debug] [MainThread]: Connection 'test.sbdk_project.source_unique_raw_users_user_id.1efe4afa3c' was properly closed.
+[0m16:53:12.255681 [info ] [MainThread]: 
+[0m16:53:12.255845 [info ] [MainThread]: Finished running 13 data tests in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[0m16:53:12.257017 [debug] [MainThread]: Command end result
+[0m16:53:12.272891 [debug] [MainThread]: Wrote artifact WritableManifest to dbt/target/manifest.json
+[0m16:53:12.274447 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt/target/semantic_manifest.json
+[0m16:53:12.279705 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt/target/run_results.json
+[0m16:53:12.279962 [info ] [MainThread]: 
+[0m16:53:12.280177 [info ] [MainThread]: [31mCompleted with 13 errors, 0 partial successes, and 0 warnings:[0m
+[0m16:53:12.280400 [info ] [MainThread]: 
+[0m16:53:12.280607 [error] [MainThread]: [31mFailure in test source_not_null_raw_events_event_id (models/_sources.yml)[0m
+[0m16:53:12.280797 [error] [MainThread]:   Runtime Error in test source_not_null_raw_events_event_id (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 21: from "demo_project"."raw"."events"
+                ^
+[0m16:53:12.280942 [info ] [MainThread]: 
+[0m16:53:12.281117 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_not_null_raw_events_event_id.sql
+[0m16:53:12.281258 [info ] [MainThread]: 
+[0m16:53:12.281437 [info ] [MainThread]:   See test failures:
+  -----------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_event_id"
+  -----------------------------------------------------------------------------------------
+[0m16:53:12.281587 [info ] [MainThread]: 
+[0m16:53:12.281762 [error] [MainThread]: [31mFailure in test source_not_null_raw_events_timestamp (models/_sources.yml)[0m
+[0m16:53:12.281938 [error] [MainThread]:   Runtime Error in test source_not_null_raw_events_timestamp (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 21: from "demo_project"."raw"."events"
+                ^
+[0m16:53:12.282078 [info ] [MainThread]: 
+[0m16:53:12.282244 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_not_null_raw_events_timestamp.sql
+[0m16:53:12.282376 [info ] [MainThread]: 
+[0m16:53:12.282541 [info ] [MainThread]:   See test failures:
+  ------------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_timestamp"
+  ------------------------------------------------------------------------------------------
+[0m16:53:12.282684 [info ] [MainThread]: 
+[0m16:53:12.282853 [error] [MainThread]: [31mFailure in test source_not_null_raw_events_user_id (models/_sources.yml)[0m
+[0m16:53:12.283027 [error] [MainThread]:   Runtime Error in test source_not_null_raw_events_user_id (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 21: from "demo_project"."raw"."events"
+                ^
+[0m16:53:12.283164 [info ] [MainThread]: 
+[0m16:53:12.283327 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_not_null_raw_events_user_id.sql
+[0m16:53:12.283461 [info ] [MainThread]: 
+[0m16:53:12.283625 [info ] [MainThread]:   See test failures:
+  ----------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_not_null_raw_events_user_id"
+  ----------------------------------------------------------------------------------------
+[0m16:53:12.283770 [info ] [MainThread]: 
+[0m16:53:12.283996 [error] [MainThread]: [31mFailure in test source_not_null_raw_orders_order_id (models/_sources.yml)[0m
+[0m16:53:12.284226 [error] [MainThread]:   Runtime Error in test source_not_null_raw_orders_order_id (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 21: from "demo_project"."raw"."orders"
+                ^
+[0m16:53:12.284384 [info ] [MainThread]: 
+[0m16:53:12.284559 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_not_null_raw_orders_order_id.sql
+[0m16:53:12.284700 [info ] [MainThread]: 
+[0m16:53:12.284868 [info ] [MainThread]:   See test failures:
+  -----------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_order_id"
+  -----------------------------------------------------------------------------------------
+[0m16:53:12.285017 [info ] [MainThread]: 
+[0m16:53:12.285194 [error] [MainThread]: [31mFailure in test source_not_null_raw_orders_total_amount (models/_sources.yml)[0m
+[0m16:53:12.285372 [error] [MainThread]:   Runtime Error in test source_not_null_raw_orders_total_amount (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 21: from "demo_project"."raw"."orders"
+                ^
+[0m16:53:12.285509 [info ] [MainThread]: 
+[0m16:53:12.285674 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_not_null_raw_orders_total_amount.sql
+[0m16:53:12.285809 [info ] [MainThread]: 
+[0m16:53:12.285975 [info ] [MainThread]:   See test failures:
+  ---------------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_total_amount"
+  ---------------------------------------------------------------------------------------------
+[0m16:53:12.286120 [info ] [MainThread]: 
+[0m16:53:12.286292 [error] [MainThread]: [31mFailure in test source_not_null_raw_orders_user_id (models/_sources.yml)[0m
+[0m16:53:12.286467 [error] [MainThread]:   Runtime Error in test source_not_null_raw_orders_user_id (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 21: from "demo_project"."raw"."orders"
+                ^
+[0m16:53:12.286603 [info ] [MainThread]: 
+[0m16:53:12.286769 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_not_null_raw_orders_user_id.sql
+[0m16:53:12.286901 [info ] [MainThread]: 
+[0m16:53:12.287066 [info ] [MainThread]:   See test failures:
+  ----------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_not_null_raw_orders_user_id"
+  ----------------------------------------------------------------------------------------
+[0m16:53:12.287210 [info ] [MainThread]: 
+[0m16:53:12.287379 [error] [MainThread]: [31mFailure in test source_not_null_raw_users_created_at (models/_sources.yml)[0m
+[0m16:53:12.287552 [error] [MainThread]:   Runtime Error in test source_not_null_raw_users_created_at (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 21: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.287689 [info ] [MainThread]: 
+[0m16:53:12.287850 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_not_null_raw_users_created_at.sql
+[0m16:53:12.287980 [info ] [MainThread]: 
+[0m16:53:12.288144 [info ] [MainThread]:   See test failures:
+  ------------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_created_at"
+  ------------------------------------------------------------------------------------------
+[0m16:53:12.288284 [info ] [MainThread]: 
+[0m16:53:12.288450 [error] [MainThread]: [31mFailure in test source_not_null_raw_users_email (models/_sources.yml)[0m
+[0m16:53:12.288620 [error] [MainThread]:   Runtime Error in test source_not_null_raw_users_email (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 21: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.288752 [info ] [MainThread]: 
+[0m16:53:12.288957 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_not_null_raw_users_email.sql
+[0m16:53:12.289148 [info ] [MainThread]: 
+[0m16:53:12.289875 [info ] [MainThread]:   See test failures:
+  -------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_email"
+  -------------------------------------------------------------------------------------
+[0m16:53:12.290246 [info ] [MainThread]: 
+[0m16:53:12.290499 [error] [MainThread]: [31mFailure in test source_not_null_raw_users_user_id (models/_sources.yml)[0m
+[0m16:53:12.290694 [error] [MainThread]:   Runtime Error in test source_not_null_raw_users_user_id (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 21: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.290842 [info ] [MainThread]: 
+[0m16:53:12.291018 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_not_null_raw_users_user_id.sql
+[0m16:53:12.291152 [info ] [MainThread]: 
+[0m16:53:12.291318 [info ] [MainThread]:   See test failures:
+  ---------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_not_null_raw_users_user_id"
+  ---------------------------------------------------------------------------------------
+[0m16:53:12.291458 [info ] [MainThread]: 
+[0m16:53:12.291625 [error] [MainThread]: [31mFailure in test source_unique_raw_events_event_id (models/_sources.yml)[0m
+[0m16:53:12.291796 [error] [MainThread]:   Runtime Error in test source_unique_raw_events_event_id (models/_sources.yml)
+  Catalog Error: Table with name events does not exist!
+  Did you mean "information_schema.referential_constraints"?
+  
+  LINE 22: from "demo_project"."raw"."events"
+                ^
+[0m16:53:12.291928 [info ] [MainThread]: 
+[0m16:53:12.292086 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_unique_raw_events_event_id.sql
+[0m16:53:12.292219 [info ] [MainThread]: 
+[0m16:53:12.292380 [info ] [MainThread]:   See test failures:
+  ---------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_unique_raw_events_event_id"
+  ---------------------------------------------------------------------------------------
+[0m16:53:12.292520 [info ] [MainThread]: 
+[0m16:53:12.292689 [error] [MainThread]: [31mFailure in test source_unique_raw_orders_order_id (models/_sources.yml)[0m
+[0m16:53:12.292865 [error] [MainThread]:   Runtime Error in test source_unique_raw_orders_order_id (models/_sources.yml)
+  Catalog Error: Table with name orders does not exist!
+  Did you mean "information_schema.character_sets"?
+  
+  LINE 22: from "demo_project"."raw"."orders"
+                ^
+[0m16:53:12.293003 [info ] [MainThread]: 
+[0m16:53:12.293223 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_unique_raw_orders_order_id.sql
+[0m16:53:12.293390 [info ] [MainThread]: 
+[0m16:53:12.293584 [info ] [MainThread]:   See test failures:
+  ---------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_unique_raw_orders_order_id"
+  ---------------------------------------------------------------------------------------
+[0m16:53:12.293740 [info ] [MainThread]: 
+[0m16:53:12.293923 [error] [MainThread]: [31mFailure in test source_unique_raw_users_email (models/_sources.yml)[0m
+[0m16:53:12.294108 [error] [MainThread]:   Runtime Error in test source_unique_raw_users_email (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 22: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.294250 [info ] [MainThread]: 
+[0m16:53:12.294421 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_unique_raw_users_email.sql
+[0m16:53:12.294558 [info ] [MainThread]: 
+[0m16:53:12.294766 [info ] [MainThread]:   See test failures:
+  -----------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_unique_raw_users_email"
+  -----------------------------------------------------------------------------------
+[0m16:53:12.294954 [info ] [MainThread]: 
+[0m16:53:12.295154 [error] [MainThread]: [31mFailure in test source_unique_raw_users_user_id (models/_sources.yml)[0m
+[0m16:53:12.295359 [error] [MainThread]:   Runtime Error in test source_unique_raw_users_user_id (models/_sources.yml)
+  Catalog Error: Table with name users does not exist!
+  Did you mean "main.sqlite_master"?
+  
+  LINE 22: from "demo_project"."raw"."users"
+                ^
+[0m16:53:12.295503 [info ] [MainThread]: 
+[0m16:53:12.295710 [info ] [MainThread]:   compiled code at target/compiled/sbdk_project/models/_sources.yml/source_unique_raw_users_user_id.sql
+[0m16:53:12.295868 [info ] [MainThread]: 
+[0m16:53:12.296058 [info ] [MainThread]:   See test failures:
+  -------------------------------------------------------------------------------------
+  select * from "demo_project"."main_dbt_test__audit"."source_unique_raw_users_user_id"
+  -------------------------------------------------------------------------------------
+[0m16:53:12.296237 [info ] [MainThread]: 
+[0m16:53:12.296405 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=13 SKIP=0 NO-OP=0 TOTAL=13
+[0m16:53:12.298272 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 1.0836838, "process_in_blocks": "0", "process_kernel_time": 0.299987, "process_mem_max_rss": "172654592", "process_out_blocks": "0", "process_user_time": 1.65129}
+[0m16:53:12.298553 [debug] [MainThread]: Command `dbt test` failed at 16:53:12.298484 after 1.08 seconds
+[0m16:53:12.298846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1099f3ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ed4aa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ed4520>]}
+[0m16:53:12.299102 [debug] [MainThread]: Flushing usage events
+[0m16:53:12.700251 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:56:49.937441 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107fadfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f27c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f27ed0>]}
+
+
+============================== 16:56:49.941162 | 8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d ==============================
+[0m16:56:49.941162 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:56:49.941544 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/mattstrautmann/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --project-dir dbt --profiles-dir /Users/mattstrautmann/.dbt', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:56:50.203526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108285ba0>]}
+[0m16:56:50.249547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10792ae00>]}
+[0m16:56:50.254030 [info ] [MainThread]: Registered adapter: duckdb=1.9.4
+[0m16:56:50.333900 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m16:56:50.395727 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m16:56:50.396052 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109508f50>]}
+[0m16:56:51.193414 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- seeds
+[0m16:56:51.200467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109489d60>]}
+[0m16:56:51.251358 [debug] [MainThread]: Wrote artifact WritableManifest to dbt/target/manifest.json
+[0m16:56:51.252846 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt/target/semantic_manifest.json
+[0m16:56:51.266246 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109897310>]}
+[0m16:56:51.266561 [info ] [MainThread]: Found 5 models, 13 data tests, 3 sources, 429 macros
+[0m16:56:51.266756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1096cb860>]}
+[0m16:56:51.267867 [info ] [MainThread]: 
+[0m16:56:51.268077 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:56:51.268233 [info ] [MainThread]: 
+[0m16:56:51.268505 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m16:56:51.271146 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dev'
+[0m16:56:51.310014 [debug] [ThreadPool]: Using duckdb connection "list_dev"
+[0m16:56:51.310466 [debug] [ThreadPool]: On list_dev: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "list_dev"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dev"'
+    
+  
+  
+[0m16:56:51.310850 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:56:51.386566 [debug] [ThreadPool]: SQL status: OK in 0.076 seconds
+[0m16:56:51.387921 [debug] [ThreadPool]: On list_dev: Close
+[0m16:56:51.388376 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now create_dev_main)
+[0m16:56:51.388675 [debug] [ThreadPool]: Creating schema "database: "dev"
+schema: "main"
+"
+[0m16:56:51.392317 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m16:56:51.392563 [debug] [ThreadPool]: On create_dev_main: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "create_dev_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dev'
+        and type='sqlite'
+    
+  
+[0m16:56:51.392852 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:56:51.393557 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m16:56:51.394628 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m16:56:51.394942 [debug] [ThreadPool]: On create_dev_main: BEGIN
+[0m16:56:51.395227 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:56:51.395404 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m16:56:51.395605 [debug] [ThreadPool]: On create_dev_main: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "create_dev_main"} */
+
+    
+    
+        create schema if not exists "dev"."main"
+    
+[0m16:56:51.396476 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m16:56:51.397159 [debug] [ThreadPool]: On create_dev_main: COMMIT
+[0m16:56:51.397456 [debug] [ThreadPool]: Using duckdb connection "create_dev_main"
+[0m16:56:51.397730 [debug] [ThreadPool]: On create_dev_main: COMMIT
+[0m16:56:51.398044 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:56:51.398224 [debug] [ThreadPool]: On create_dev_main: Close
+[0m16:56:51.434755 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dev_main, now list_dev_main_dbt_test__audit)
+[0m16:56:51.446301 [debug] [ThreadPool]: Using duckdb connection "list_dev_main_dbt_test__audit"
+[0m16:56:51.446595 [debug] [ThreadPool]: On list_dev_main_dbt_test__audit: BEGIN
+[0m16:56:51.446756 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:56:51.448068 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m16:56:51.448634 [debug] [ThreadPool]: Using duckdb connection "list_dev_main_dbt_test__audit"
+[0m16:56:51.449104 [debug] [ThreadPool]: On list_dev_main_dbt_test__audit: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "list_dev_main_dbt_test__audit"} */
+select
+      'dev' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_dbt_test__audit'
+    and lower(table_catalog) = 'dev'
+  
+[0m16:56:51.463418 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m16:56:51.465366 [debug] [ThreadPool]: On list_dev_main_dbt_test__audit: ROLLBACK
+[0m16:56:51.466472 [debug] [ThreadPool]: Failed to rollback 'list_dev_main_dbt_test__audit'
+[0m16:56:51.466665 [debug] [ThreadPool]: On list_dev_main_dbt_test__audit: Close
+[0m16:56:51.467164 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev_main_dbt_test__audit, now list_dev_main)
+[0m16:56:51.468464 [debug] [ThreadPool]: Using duckdb connection "list_dev_main"
+[0m16:56:51.468733 [debug] [ThreadPool]: On list_dev_main: BEGIN
+[0m16:56:51.468892 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:56:51.469249 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:56:51.475348 [debug] [ThreadPool]: Using duckdb connection "list_dev_main"
+[0m16:56:51.475605 [debug] [ThreadPool]: On list_dev_main: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "connection_name": "list_dev_main"} */
+select
+      'dev' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dev'
+  
+[0m16:56:51.477903 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m16:56:51.480126 [debug] [ThreadPool]: On list_dev_main: ROLLBACK
+[0m16:56:51.480600 [debug] [ThreadPool]: Failed to rollback 'list_dev_main'
+[0m16:56:51.480774 [debug] [ThreadPool]: On list_dev_main: Close
+[0m16:56:51.481410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b38950>]}
+[0m16:56:51.481820 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:56:51.481995 [debug] [MainThread]: On master: BEGIN
+[0m16:56:51.482147 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:56:51.482489 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:56:51.482661 [debug] [MainThread]: On master: COMMIT
+[0m16:56:51.482806 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:56:51.482945 [debug] [MainThread]: On master: COMMIT
+[0m16:56:51.483166 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:56:51.483316 [debug] [MainThread]: On master: Close
+[0m16:56:51.486666 [debug] [Thread-1 (]: Began running node model.sbdk_project.stg_events
+[0m16:56:51.486985 [info ] [Thread-1 (]: 1 of 5 START sql view model main.stg_events .................................... [RUN]
+[0m16:56:51.487250 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dev_main, now model.sbdk_project.stg_events)
+[0m16:56:51.487448 [debug] [Thread-1 (]: Began compiling node model.sbdk_project.stg_events
+[0m16:56:51.491840 [debug] [Thread-1 (]: Writing injected SQL for node "model.sbdk_project.stg_events"
+[0m16:56:51.492732 [debug] [Thread-1 (]: Began executing node model.sbdk_project.stg_events
+[0m16:56:51.511254 [debug] [Thread-1 (]: Writing runtime sql for node "model.sbdk_project.stg_events"
+[0m16:56:51.516638 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_events"
+[0m16:56:51.517195 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: BEGIN
+[0m16:56:51.517512 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:56:51.521652 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m16:56:51.521886 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_events"
+[0m16:56:51.522119 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_events"} */
+
+  
+  create view "dev"."main"."stg_events__dbt_tmp" as (
+    
+
+with source_data as (
+    select * from main.raw_events
+),
+
+cleaned as (
+    select
+        event_id,
+        user_id,
+        session_id,
+        event_type,
+        timestamp,
+        utm_source,
+        utm_medium,
+        utm_campaign,
+        page_url,
+        referrer_url,
+        user_agent,
+        ip_address,
+        country,
+        device_type,
+        browser,
+        os,
+        screen_resolution,
+        is_mobile,
+        duration_seconds,
+        revenue,
+        
+        -- Calculated fields
+        date(timestamp) as event_date,
+        extract(hour from timestamp) as event_hour,
+        extract(dow from timestamp) as day_of_week,
+        
+        case 
+            when event_type in ('signup', 'purchase') then true
+            else false 
+        end as is_conversion_event,
+        
+        case 
+            when utm_source in ('google', 'bing') then 'search'
+            when utm_source in ('facebook', 'instagram', 'twitter', 'linkedin') then 'social'
+            when utm_source = 'email' then 'email'
+            when utm_source = 'direct' then 'direct'
+            else 'other'
+        end as traffic_category,
+        
+        -- Session indicators
+        case 
+            when session_id is not null then true
+            else false 
+        end as has_session_tracking,
+        
+        -- Revenue events
+        case 
+            when revenue > 0 then true
+            else false 
+        end as is_revenue_event
+        
+    from source_data
+    where timestamp is not null
+      and user_id is not null
+      and event_type is not null
+)
+
+select * from cleaned
+  );
+
+[0m16:56:51.523017 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:56:51.526965 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_events"
+[0m16:56:51.527210 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_events"} */
+alter view "dev"."main"."stg_events__dbt_tmp" rename to "stg_events"
+[0m16:56:51.528523 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:56:51.534306 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: COMMIT
+[0m16:56:51.534575 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_events"
+[0m16:56:51.534756 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: COMMIT
+[0m16:56:51.538521 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m16:56:51.541576 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_events"
+[0m16:56:51.541801 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_events"} */
+
+      drop view if exists "dev"."main"."stg_events__dbt_backup" cascade
+    
+[0m16:56:51.542470 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.543789 [debug] [Thread-1 (]: On model.sbdk_project.stg_events: Close
+[0m16:56:51.544875 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109d30050>]}
+[0m16:56:51.545264 [info ] [Thread-1 (]: 1 of 5 OK created sql view model main.stg_events ............................... [[32mOK[0m in 0.06s]
+[0m16:56:51.545587 [debug] [Thread-1 (]: Finished running node model.sbdk_project.stg_events
+[0m16:56:51.545803 [debug] [Thread-1 (]: Began running node model.sbdk_project.stg_orders
+[0m16:56:51.546102 [info ] [Thread-1 (]: 2 of 5 START sql view model main.stg_orders .................................... [RUN]
+[0m16:56:51.546349 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sbdk_project.stg_events, now model.sbdk_project.stg_orders)
+[0m16:56:51.546546 [debug] [Thread-1 (]: Began compiling node model.sbdk_project.stg_orders
+[0m16:56:51.547999 [debug] [Thread-1 (]: Writing injected SQL for node "model.sbdk_project.stg_orders"
+[0m16:56:51.548420 [debug] [Thread-1 (]: Began executing node model.sbdk_project.stg_orders
+[0m16:56:51.550380 [debug] [Thread-1 (]: Writing runtime sql for node "model.sbdk_project.stg_orders"
+[0m16:56:51.550745 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_orders"
+[0m16:56:51.550932 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: BEGIN
+[0m16:56:51.551101 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:56:51.551485 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.551687 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_orders"
+[0m16:56:51.551934 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_orders"} */
+
+  
+  create view "dev"."main"."stg_orders__dbt_tmp" as (
+    
+
+with source_data as (
+    select * from main.raw_orders
+),
+
+cleaned as (
+    select
+        order_id,
+        user_id,
+        order_number,
+        created_at,
+        completed_at,
+        status,
+        product_category,
+        product_sku,
+        quantity,
+        unit_price,
+        subtotal,
+        discount_amount,
+        discount_code,
+        tax_amount,
+        total_amount,
+        currency,
+        payment_method,
+        payment_processor,
+        billing_country,
+        billing_state,
+        billing_city,
+        billing_postal_code,
+        is_recurring,
+        subscription_period,
+        utm_source,
+        utm_campaign,
+        referral_code,
+        customer_notes,
+        shipping_required,
+        shipping_cost,
+        estimated_delivery,
+        
+        -- Calculated fields
+        date(created_at) as order_date,
+        extract(hour from created_at) as order_hour,
+        extract(dow from created_at) as day_of_week,
+        extract(month from created_at) as order_month,
+        extract(year from created_at) as order_year,
+        
+        case 
+            when completed_at is not null 
+            then date_diff('hour', created_at, completed_at)
+            else null 
+        end as hours_to_completion,
+        
+        case 
+            when discount_amount > 0 then true
+            else false 
+        end as has_discount,
+        
+        case 
+            when discount_amount > 0 
+            then round(discount_amount / subtotal * 100, 2)
+            else 0 
+        end as discount_percentage,
+        
+        case 
+            when status = 'completed' then true
+            else false 
+        end as is_completed,
+        
+        case 
+            when status in ('cancelled', 'refunded') then true
+            else false 
+        end as is_failed,
+        
+        case 
+            when total_amount >= 100 then 'high_value'
+            when total_amount >= 50 then 'medium_value'
+            else 'low_value'
+        end as order_value_tier,
+        
+        -- Payment categorization
+        case 
+            when payment_method in ('credit_card', 'stripe') then 'card'
+            when payment_method in ('paypal', 'bank_transfer') then 'alternative'
+            when payment_method = 'crypto' then 'crypto'
+            else 'other'
+        end as payment_category
+        
+    from source_data
+    where created_at is not null
+      and user_id is not null
+      and total_amount > 0
+)
+
+select * from cleaned
+  );
+
+[0m16:56:51.553028 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:56:51.554495 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_orders"
+[0m16:56:51.554682 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_orders"} */
+alter view "dev"."main"."stg_orders__dbt_tmp" rename to "stg_orders"
+[0m16:56:51.555009 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.555760 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: COMMIT
+[0m16:56:51.555951 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_orders"
+[0m16:56:51.556126 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: COMMIT
+[0m16:56:51.556613 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.557884 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_orders"
+[0m16:56:51.558068 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_orders"} */
+
+      drop view if exists "dev"."main"."stg_orders__dbt_backup" cascade
+    
+[0m16:56:51.558339 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.558993 [debug] [Thread-1 (]: On model.sbdk_project.stg_orders: Close
+[0m16:56:51.559288 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109d21e50>]}
+[0m16:56:51.559612 [info ] [Thread-1 (]: 2 of 5 OK created sql view model main.stg_orders ............................... [[32mOK[0m in 0.01s]
+[0m16:56:51.559887 [debug] [Thread-1 (]: Finished running node model.sbdk_project.stg_orders
+[0m16:56:51.560083 [debug] [Thread-1 (]: Began running node model.sbdk_project.stg_users
+[0m16:56:51.560355 [info ] [Thread-1 (]: 3 of 5 START sql view model main.stg_users ..................................... [RUN]
+[0m16:56:51.560581 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sbdk_project.stg_orders, now model.sbdk_project.stg_users)
+[0m16:56:51.560766 [debug] [Thread-1 (]: Began compiling node model.sbdk_project.stg_users
+[0m16:56:51.562327 [debug] [Thread-1 (]: Writing injected SQL for node "model.sbdk_project.stg_users"
+[0m16:56:51.562727 [debug] [Thread-1 (]: Began executing node model.sbdk_project.stg_users
+[0m16:56:51.564313 [debug] [Thread-1 (]: Writing runtime sql for node "model.sbdk_project.stg_users"
+[0m16:56:51.564667 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_users"
+[0m16:56:51.564968 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: BEGIN
+[0m16:56:51.565150 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:56:51.565497 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.565670 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_users"
+[0m16:56:51.565873 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_users"} */
+
+  
+  create view "dev"."main"."stg_users__dbt_tmp" as (
+    
+
+with source_data as (
+    select * from "dev"."main"."raw_users"
+),
+
+cleaned as (
+    select
+        user_id,
+        username,
+        email,
+        first_name,
+        last_name,
+        created_at,
+        updated_at,
+        country,
+        city,
+        subscription_tier,
+        referrer,
+        is_active,
+        date_of_birth,
+        phone,
+        company,
+        job_title,
+        
+        -- Calculated fields
+        case 
+            when date_of_birth is not null 
+            then date_diff('year', date_of_birth, current_date)
+            else null 
+        end as age,
+        
+        case 
+            when subscription_tier in ('premium', 'enterprise') then true
+            else false 
+        end as is_paid_subscriber,
+        
+        date_diff('day', created_at, current_date) as days_since_signup,
+        
+        -- Data quality flags
+        case 
+            when email is null or email = '' then false
+            when first_name is null or first_name = '' then false  
+            when last_name is null or last_name = '' then false
+            else true 
+        end as has_complete_profile
+        
+    from source_data
+)
+
+select * from cleaned
+  );
+
+[0m16:56:51.568860 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m16:56:51.572732 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_users"
+[0m16:56:51.572990 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_users"} */
+alter view "dev"."main"."stg_users__dbt_tmp" rename to "stg_users"
+[0m16:56:51.573407 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.574168 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: COMMIT
+[0m16:56:51.574359 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_users"
+[0m16:56:51.574535 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: COMMIT
+[0m16:56:51.574965 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.576032 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.stg_users"
+[0m16:56:51.576220 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.stg_users"} */
+
+      drop view if exists "dev"."main"."stg_users__dbt_backup" cascade
+    
+[0m16:56:51.576501 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.577169 [debug] [Thread-1 (]: On model.sbdk_project.stg_users: Close
+[0m16:56:51.577459 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109bfad50>]}
+[0m16:56:51.577784 [info ] [Thread-1 (]: 3 of 5 OK created sql view model main.stg_users ................................ [[32mOK[0m in 0.02s]
+[0m16:56:51.578065 [debug] [Thread-1 (]: Finished running node model.sbdk_project.stg_users
+[0m16:56:51.578463 [debug] [Thread-1 (]: Began running node model.sbdk_project.int_user_activity
+[0m16:56:51.578757 [info ] [Thread-1 (]: 4 of 5 START sql view model main.int_user_activity ............................. [RUN]
+[0m16:56:51.579000 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sbdk_project.stg_users, now model.sbdk_project.int_user_activity)
+[0m16:56:51.579190 [debug] [Thread-1 (]: Began compiling node model.sbdk_project.int_user_activity
+[0m16:56:51.581256 [debug] [Thread-1 (]: Writing injected SQL for node "model.sbdk_project.int_user_activity"
+[0m16:56:51.581832 [debug] [Thread-1 (]: Began executing node model.sbdk_project.int_user_activity
+[0m16:56:51.583963 [debug] [Thread-1 (]: Writing runtime sql for node "model.sbdk_project.int_user_activity"
+[0m16:56:51.584719 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.int_user_activity"
+[0m16:56:51.584950 [debug] [Thread-1 (]: On model.sbdk_project.int_user_activity: BEGIN
+[0m16:56:51.585136 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:56:51.585571 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.585782 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.int_user_activity"
+[0m16:56:51.586114 [debug] [Thread-1 (]: On model.sbdk_project.int_user_activity: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.int_user_activity"} */
+
+  
+  create view "dev"."main"."int_user_activity__dbt_tmp" as (
+    
+
+with users as (
+    select * from "dev"."main"."stg_users"
+),
+
+events as (
+    select * from "dev"."main"."stg_events"
+),
+
+orders as (
+    select * from "dev"."main"."stg_orders"
+),
+
+user_events as (
+    select
+        user_id,
+        count(*) as total_events,
+        count(*) filter (where event_type = 'page_view') as pageviews,
+        count(*) filter (where event_type = 'click') as clicks,
+        count(*) filter (where event_type = 'signup') as signups,
+        count(*) filter (where event_type = 'login') as logins,
+        count(*) filter (where event_type = 'purchase') as purchase_events,
+        count(*) filter (where is_conversion_event = true) as conversion_events,
+        count(*) filter (where is_revenue_event = true) as revenue_events,
+        coalesce(sum(revenue), 0) as total_event_revenue,
+        coalesce(sum(duration_seconds), 0) as total_time_on_site,
+        count(distinct session_id) filter (where session_id is not null) as unique_sessions,
+        count(distinct event_date) as active_days,
+        min(timestamp) as first_event_at,
+        max(timestamp) as last_event_at,
+        count(distinct traffic_category) as traffic_sources_used
+    from events
+    group by user_id
+),
+
+user_orders as (
+    select
+        user_id,
+        count(*) as total_orders,
+        count(*) filter (where is_completed = true) as completed_orders,
+        count(*) filter (where is_failed = true) as failed_orders,
+        count(*) filter (where is_recurring = true) as recurring_orders,
+        coalesce(sum(total_amount) filter (where is_completed = true), 0) as total_order_revenue,
+        coalesce(avg(total_amount) filter (where is_completed = true), 0) as avg_order_value,
+        coalesce(sum(discount_amount), 0) as total_discounts_used,
+        count(distinct product_category) as product_categories_purchased,
+        min(created_at) as first_order_at,
+        max(created_at) as last_order_at,
+        count(distinct payment_method) as payment_methods_used
+    from orders
+    group by user_id
+),
+
+combined as (
+    select
+        u.user_id,
+        u.username,
+        u.email,
+        u.first_name,
+        u.last_name,
+        u.created_at as user_created_at,
+        u.country,
+        u.city,
+        u.subscription_tier,
+        u.referrer,
+        u.is_active,
+        u.age,
+        u.is_paid_subscriber,
+        u.days_since_signup,
+        u.has_complete_profile,
+        
+        -- Event metrics
+        coalesce(e.total_events, 0) as total_events,
+        coalesce(e.pageviews, 0) as pageviews,
+        coalesce(e.clicks, 0) as clicks,
+        coalesce(e.signups, 0) as signups,
+        coalesce(e.logins, 0) as logins,
+        coalesce(e.purchase_events, 0) as purchase_events,
+        coalesce(e.conversion_events, 0) as conversion_events,
+        coalesce(e.revenue_events, 0) as revenue_events,
+        coalesce(e.total_event_revenue, 0) as total_event_revenue,
+        coalesce(e.total_time_on_site, 0) as total_time_on_site,
+        coalesce(e.unique_sessions, 0) as unique_sessions,
+        coalesce(e.active_days, 0) as active_days,
+        e.first_event_at,
+        e.last_event_at,
+        coalesce(e.traffic_sources_used, 0) as traffic_sources_used,
+        
+        -- Order metrics
+        coalesce(o.total_orders, 0) as total_orders,
+        coalesce(o.completed_orders, 0) as completed_orders,
+        coalesce(o.failed_orders, 0) as failed_orders,
+        coalesce(o.recurring_orders, 0) as recurring_orders,
+        coalesce(o.total_order_revenue, 0) as total_order_revenue,
+        coalesce(o.avg_order_value, 0) as avg_order_value,
+        coalesce(o.total_discounts_used, 0) as total_discounts_used,
+        coalesce(o.product_categories_purchased, 0) as product_categories_purchased,
+        o.first_order_at,
+        o.last_order_at,
+        coalesce(o.payment_methods_used, 0) as payment_methods_used,
+        
+        -- Calculated metrics
+        case 
+            when e.pageviews > 0 and o.completed_orders > 0 
+            then round(o.completed_orders::float / e.pageviews * 100, 2)
+            else 0 
+        end as purchase_conversion_rate,
+        
+        case 
+            when e.total_events > 0 
+            then round(e.conversion_events::float / e.total_events * 100, 2)
+            else 0 
+        end as event_conversion_rate,
+        
+        case 
+            when e.unique_sessions > 0 
+            then round(e.total_events::float / e.unique_sessions, 2)
+            else 0 
+        end as events_per_session,
+        
+        case 
+            when u.days_since_signup > 0 and e.active_days > 0
+            then round(e.active_days::float / u.days_since_signup * 100, 2)
+            else 0 
+        end as activity_frequency_percentage,
+        
+        -- Total combined revenue
+        coalesce(e.total_event_revenue, 0) + coalesce(o.total_order_revenue, 0) as total_revenue,
+        
+        -- User activity classification
+        case 
+            when o.completed_orders > 0 then 'customer'
+            when e.signups > 0 then 'signed_up'
+            when e.total_events > 10 then 'engaged_visitor'
+            when e.total_events > 0 then 'visitor'
+            else 'inactive'
+        end as user_type
+        
+    from users u
+    left join user_events e on u.user_id = e.user_id
+    left join user_orders o on u.user_id = o.user_id
+)
+
+select * from combined
+  );
+
+[0m16:56:51.590316 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m16:56:51.592190 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.int_user_activity"
+[0m16:56:51.592414 [debug] [Thread-1 (]: On model.sbdk_project.int_user_activity: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.int_user_activity"} */
+alter view "dev"."main"."int_user_activity__dbt_tmp" rename to "int_user_activity"
+[0m16:56:51.592867 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.593819 [debug] [Thread-1 (]: On model.sbdk_project.int_user_activity: COMMIT
+[0m16:56:51.594058 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.int_user_activity"
+[0m16:56:51.594513 [debug] [Thread-1 (]: On model.sbdk_project.int_user_activity: COMMIT
+[0m16:56:51.595428 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:56:51.596983 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.int_user_activity"
+[0m16:56:51.597188 [debug] [Thread-1 (]: On model.sbdk_project.int_user_activity: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.int_user_activity"} */
+
+      drop view if exists "dev"."main"."int_user_activity__dbt_backup" cascade
+    
+[0m16:56:51.597561 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.598697 [debug] [Thread-1 (]: On model.sbdk_project.int_user_activity: Close
+[0m16:56:51.599122 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109932270>]}
+[0m16:56:51.599550 [info ] [Thread-1 (]: 4 of 5 OK created sql view model main.int_user_activity ........................ [[32mOK[0m in 0.02s]
+[0m16:56:51.599928 [debug] [Thread-1 (]: Finished running node model.sbdk_project.int_user_activity
+[0m16:56:51.600456 [debug] [Thread-1 (]: Began running node model.sbdk_project.user_metrics
+[0m16:56:51.600806 [info ] [Thread-1 (]: 5 of 5 START sql table model main.user_metrics ................................. [RUN]
+[0m16:56:51.601153 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sbdk_project.int_user_activity, now model.sbdk_project.user_metrics)
+[0m16:56:51.601345 [debug] [Thread-1 (]: Began compiling node model.sbdk_project.user_metrics
+[0m16:56:51.603285 [debug] [Thread-1 (]: Writing injected SQL for node "model.sbdk_project.user_metrics"
+[0m16:56:51.603873 [debug] [Thread-1 (]: Began executing node model.sbdk_project.user_metrics
+[0m16:56:51.615870 [debug] [Thread-1 (]: Writing runtime sql for node "model.sbdk_project.user_metrics"
+[0m16:56:51.617218 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.user_metrics"
+[0m16:56:51.617433 [debug] [Thread-1 (]: On model.sbdk_project.user_metrics: BEGIN
+[0m16:56:51.617614 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:56:51.618012 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.618223 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.user_metrics"
+[0m16:56:51.618525 [debug] [Thread-1 (]: On model.sbdk_project.user_metrics: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.user_metrics"} */
+
+  
+    
+    
+
+    create  table
+      "dev"."main"."user_metrics__dbt_tmp"
+  
+    as (
+      
+
+with user_activity as (
+    select * from "dev"."main"."int_user_activity"
+),
+
+final as (
+    select
+        user_id,
+        username,
+        email,
+        first_name,
+        last_name,
+        user_created_at,
+        country,
+        city,
+        subscription_tier,
+        referrer,
+        is_active,
+        age,
+        is_paid_subscriber,
+        days_since_signup,
+        has_complete_profile,
+        
+        -- Engagement metrics
+        total_events,
+        pageviews,
+        clicks,
+        logins,
+        unique_sessions,
+        active_days,
+        traffic_sources_used,
+        events_per_session,
+        activity_frequency_percentage,
+        total_time_on_site,
+        
+        -- Conversion metrics
+        signups,
+        purchase_events,
+        conversion_events,
+        purchase_conversion_rate,
+        event_conversion_rate,
+        
+        -- Revenue metrics
+        total_orders,
+        completed_orders,
+        failed_orders,
+        recurring_orders,
+        total_order_revenue,
+        total_event_revenue,
+        total_revenue,
+        avg_order_value,
+        total_discounts_used,
+        product_categories_purchased,
+        payment_methods_used,
+        
+        -- Timing metrics
+        first_event_at,
+        last_event_at,
+        first_order_at,
+        last_order_at,
+        
+        -- User classification
+        user_type,
+        
+        -- Customer lifetime value estimate
+        case 
+            when recurring_orders > 0 and days_since_signup > 0
+            then round(total_revenue * (365.0 / days_since_signup) * 2, 2)  -- Rough 2-year CLV estimate
+            else total_revenue 
+        end as estimated_clv,
+        
+        -- Engagement score (0-100)
+        least(100, 
+            (case when active_days > 0 then least(25, active_days) else 0 end) +
+            (case when unique_sessions > 0 then least(25, unique_sessions) else 0 end) +
+            (case when total_events > 0 then least(25, least(25, total_events / 10)) else 0 end) +
+            (case when completed_orders > 0 then 25 else 0 end)
+        ) as engagement_score,
+        
+        -- Risk classification
+        case 
+            when last_event_at < current_date - interval '90 days' and total_orders > 0 then 'churn_risk'
+            when last_event_at < current_date - interval '30 days' and user_type = 'customer' then 'at_risk'
+            when activity_frequency_percentage < 10 and days_since_signup > 30 then 'low_engagement'
+            when user_type = 'customer' and recurring_orders = 0 then 'one_time_buyer'
+            when user_type = 'customer' and recurring_orders > 0 then 'loyal_customer'
+            when user_type = 'engaged_visitor' then 'potential_customer'
+            else 'standard'
+        end as risk_category,
+        
+        -- Value tier
+        case 
+            when total_revenue >= 1000 then 'high_value'
+            when total_revenue >= 500 then 'medium_value'
+            when total_revenue >= 100 then 'low_value'
+            when total_revenue > 0 then 'minimal_value'
+            else 'no_value'
+        end as value_tier,
+        
+        -- Recency, Frequency, Monetary (RFM) components
+        case 
+            when last_order_at >= current_date - interval '30 days' then 5
+            when last_order_at >= current_date - interval '60 days' then 4
+            when last_order_at >= current_date - interval '90 days' then 3
+            when last_order_at >= current_date - interval '180 days' then 2
+            when last_order_at is not null then 1
+            else 0
+        end as recency_score,
+        
+        case 
+            when completed_orders >= 10 then 5
+            when completed_orders >= 5 then 4
+            when completed_orders >= 3 then 3
+            when completed_orders >= 2 then 2
+            when completed_orders >= 1 then 1
+            else 0
+        end as frequency_score,
+        
+        case 
+            when total_revenue >= 1000 then 5
+            when total_revenue >= 500 then 4
+            when total_revenue >= 200 then 3
+            when total_revenue >= 50 then 2
+            when total_revenue > 0 then 1
+            else 0
+        end as monetary_score,
+        
+        -- Data freshness
+        current_timestamp as updated_at
+        
+    from user_activity
+)
+
+select * from final
+    );
+  
+  
+[0m16:56:51.694610 [debug] [Thread-1 (]: SQL status: OK in 0.076 seconds
+[0m16:56:51.696588 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.user_metrics"
+[0m16:56:51.696810 [debug] [Thread-1 (]: On model.sbdk_project.user_metrics: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.user_metrics"} */
+alter table "dev"."main"."user_metrics__dbt_tmp" rename to "user_metrics"
+[0m16:56:51.697372 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.700528 [debug] [Thread-1 (]: On model.sbdk_project.user_metrics: COMMIT
+[0m16:56:51.700812 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.user_metrics"
+[0m16:56:51.701003 [debug] [Thread-1 (]: On model.sbdk_project.user_metrics: COMMIT
+[0m16:56:51.707413 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m16:56:51.708798 [debug] [Thread-1 (]: Using duckdb connection "model.sbdk_project.user_metrics"
+[0m16:56:51.709014 [debug] [Thread-1 (]: On model.sbdk_project.user_metrics: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sbdk_project", "target_name": "dev", "node_id": "model.sbdk_project.user_metrics"} */
+
+      drop table if exists "dev"."main"."user_metrics__dbt_backup" cascade
+    
+[0m16:56:51.709413 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:56:51.710173 [debug] [Thread-1 (]: On model.sbdk_project.user_metrics: Close
+[0m16:56:51.710502 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8a6d0ab1-9a5b-449c-9469-3d9a45ebb12d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109cdebd0>]}
+[0m16:56:51.710851 [info ] [Thread-1 (]: 5 of 5 OK created sql table model main.user_metrics ............................ [[32mOK[0m in 0.11s]
+[0m16:56:51.711140 [debug] [Thread-1 (]: Finished running node model.sbdk_project.user_metrics
+[0m16:56:51.711803 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:56:51.711992 [debug] [MainThread]: On master: BEGIN
+[0m16:56:51.712166 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:56:51.712451 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:56:51.712603 [debug] [MainThread]: On master: COMMIT
+[0m16:56:51.712749 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:56:51.712890 [debug] [MainThread]: On master: COMMIT
+[0m16:56:51.713129 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:56:51.713335 [debug] [MainThread]: On master: Close
+[0m16:56:51.713667 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:56:51.713931 [debug] [MainThread]: Connection 'model.sbdk_project.user_metrics' was properly closed.
+[0m16:56:51.714198 [info ] [MainThread]: 
+[0m16:56:51.714458 [info ] [MainThread]: Finished running 1 table model, 4 view models in 0 hours 0 minutes and 0.45 seconds (0.45s).
+[0m16:56:51.715343 [debug] [MainThread]: Command end result
+[0m16:56:51.744342 [debug] [MainThread]: Wrote artifact WritableManifest to dbt/target/manifest.json
+[0m16:56:51.746853 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt/target/semantic_manifest.json
+[0m16:56:51.752331 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt/target/run_results.json
+[0m16:56:51.752618 [info ] [MainThread]: 
+[0m16:56:51.752875 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:56:51.753086 [info ] [MainThread]: 
+[0m16:56:51.753411 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m16:56:51.758130 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.8829713, "process_in_blocks": "0", "process_kernel_time": 0.351329, "process_mem_max_rss": "197165056", "process_out_blocks": "0", "process_user_time": 2.294536}
+[0m16:56:51.758574 [debug] [MainThread]: Command `dbt run` succeeded at 16:56:51.758518 after 1.88 seconds
+[0m16:56:51.759313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10692b350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10952a6f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109cdef30>]}
+[0m16:56:51.759765 [debug] [MainThread]: Flushing usage events
+[0m16:56:52.129908 [debug] [MainThread]: An error was encountered while trying to flush usage events
