@@ -1,0 +1,32 @@
+# Include template files
+recursive-include sbdk/templates *
+recursive-include sbdk/templates/pipelines *
+recursive-include sbdk/templates/dbt *
+recursive-include sbdk/templates/fastapi_server *
+
+# Include configuration files
+include sbdk/templates/*.json
+include sbdk/templates/*.yml
+include sbdk/templates/*.yaml
+include sbdk/templates/*.sql
+include sbdk/templates/*.txt
+
+# Include documentation
+include README.md
+include LICENSE
+include CHANGELOG.md
+
+# Include configuration files
+include pyproject.toml
+include MANIFEST.in
+
+# Exclude development and cache files
+exclude .gitignore
+exclude .env*
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store
+recursive-exclude * *.egg-info
+recursive-exclude tests *
+recursive-exclude docs *
+recursive-exclude demo_project *

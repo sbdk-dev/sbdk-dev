@@ -1,0 +1,2 @@
+[console_scripts]
+sbdk = sbdk.cli.main:app

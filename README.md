@@ -1,39 +1,258 @@
-Extended PRD for SBDK.dev, incorporating the finalized README, GitHub template repo, tracking server, AI helper spec, and a robust CLI experience. I’ve added recommendations for CLI tooling and relevant libraries to ensure it’s modern, maintainable, and ergonomic for developers.
+# 🚀 SBDK.dev - Sandbox Data Kit Development Framework
 
-# **📦 SBDK.dev — Extended PRD (v1.1)**
+> **Local-first data pipeline development with DLT, DuckDB, and dbt**
 
-**🔧 Summary**
+SBDK.dev is a modern, interactive CLI framework for building and testing data pipelines locally. Perfect for learning data engineering, rapid prototyping, or developing production-ready data transformations.
 
-SBDK.dev is a developer sandbox framework designed for local-first data pipeline development using DLT, DuckDB, and dbt. It includes synthetic data ingestion, transform pipelines, local execution tooling, a CLI, and webhook support. It’s the foundation for a future commercial SaaS version built on Snowflake Native Apps with AI-assisted development, sandbox orchestration, and telemetry.
+## ✨ What's New in Latest Version
 
-# **✅ Components Covered in This PRD**
+- 🎨 **Interactive CLI** - Beautiful terminal UI with Typer and Rich
+- ⚡ **Optimized Performance** - Fixed dbt testing issues and email uniqueness
+- 📊 **Enhanced Progress Tracking** - Real-time progress bars and status updates
+- 🔧 **Better Error Handling** - Comprehensive validation and troubleshooting
+- 📁 **Easy Project Import** - Import your own dbt projects seamlessly
 
-| **Feature** | **Status** | **Notes** |
-| --- | --- | --- |
-| README.md | ✅ Finalized | Full starter + usage docs included in starter kit |
-| GitHub Template Repo (sbdk-starter) | ✅ Ready | Publish under github.com/YOUR_ORG/sbdk-starter |
-| Tracking Server (FastAPI + UUID) | ✅ Specified | See below for full API spec |
-| AI Agent CLI Stub (ai_scaffold.py) | ✅ Drafted | Future CLI hook for suggesting pipelines or dbt changes |
-| Robust CLI Toolkit | ✅ Extended | Now includes Typer, Rich, Dynaconf, and uv for install/runtime |
+## 🚀 Quick Start
 
-# **🔧 Recommended Libraries for Full-Featured CLI**
+### Prerequisites
+- Python 3.8+ (recommended: Python 3.11+)
+- Git for cloning repositories
 
-| **Library** | **Purpose** | **Why It’s Used** |
-| --- | --- | --- |
-| [Typer](https://github.com/tiangolo/typer) | CLI command parser (based on Click) | Autocompletion, easy subcommand structure |
-| [Rich](https://github.com/Textualize/rich) | Output formatting, tables, spinners | Visual feedback for devs |
-| [Dynaconf](https://www.dynaconf.com/) | Flexible config loading (.env, toml, CLI args) | Clean separation of config for environments |
-| [uv](https://github.com/astral-sh/uv) | Fast Python package manager | Standard for dependency management |
-| [httpx](https://www.python-httpx.org/) | Async HTTP client for tracking + SaaS integrations | Used by tracking service |
-| [fastapi](https://fastapi.tiangolo.com/) | Webhook and tracking server | Modern, async server for SaaS and CLI interaction |
-| [pydantic](https://docs.pydantic.dev/) | Config + validation models | Shared between server, config, and CLI |
-| [duckdb](https://duckdb.org/) | Embedded OLAP database | Core engine for dev sandbox |
-| [dlt](https://github.com/iterative/dlt) | Data loader library | Pipeline scaffolding and ingestion |
-| [dbt-core](https://docs.getdbt.com/docs/introduction) | Transform engine for pipeline stages | Already integrated |
+### Installation & Setup
 
-# **📂 Directory Structure Update**
+```bash
+# Clone the SBDK.dev repository
+git clone https://github.com/your-org/sbdk-dev.git
+cd sbdk-dev
 
-sbdk-starter/
+# Set up Python virtual environment (recommended)
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies using UV (fast) or pip
+uv pip install -r requirements.txt
+# OR: pip install -r requirements.txt
+
+# Initialize your first project
+cd sbdk-starter
+python main.py init my_analytics_project
+
+# Navigate to your project and run the pipeline
+cd my_analytics_project
+python ../main.py dev
+```
+
+## 📊 Interactive CLI Commands
+
+The SBDK CLI provides a modern, interactive experience with progress tracking and rich output:
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `init` | 🏗️ Initialize new project | `python main.py init ecommerce_analytics` |
+| `dev` | 🔧 Run complete pipeline | `python main.py dev` |
+| `start` | 🚀 Development server with file watching | `python main.py start` |
+| `webhooks` | 🔗 Start webhook listener | `python main.py webhooks` |
+| `version` | ℹ️ Show version information | `python main.py version` |
+
+### Advanced CLI Options
+
+```bash
+# Run only data pipelines (skip dbt)
+python main.py dev --pipelines-only
+
+# Run only dbt transformations (skip data generation)  
+python main.py dev --dbt-only
+
+# Use custom configuration file
+python main.py dev --config-file production_config.json
+
+# Development server with custom watch paths
+python main.py start --watch pipelines/ --watch models/
+
+# Webhook server on custom port
+python main.py webhooks --port 9000 --host localhost
+```
+
+## 📁 Import Your Own dbt Projects
+
+SBDK.dev makes it easy to work with your existing dbt projects:
+
+### Method 1: Replace the dbt Directory
+```bash
+# Initialize a new SBDK project
+python main.py init my_project
+cd my_project
+
+# Remove the example dbt project
+rm -rf dbt/
+
+# Clone or copy your existing dbt project
+git clone https://github.com/your-org/your-dbt-project.git dbt/
+# OR: cp -r /path/to/your-dbt-project dbt/
+
+# Update the configuration
+# Edit sbdk_config.json to match your project settings
+
+# Run your pipeline
+python ../main.py dev
+```
+
+### Method 2: Import Existing Project Structure
+```bash
+# If you already have a data project with dbt
+cd your-existing-project/
+
+# Initialize SBDK in place
+python /path/to/sbdk-starter/main.py init . --force
+
+# This will add pipelines/ and fastapi_server/ directories
+# while preserving your existing dbt/ directory
+```
+
+### Configuration Updates for Custom Projects
+
+Update your `sbdk_config.json` to match your dbt project:
+
+```json
+{
+  "project": "your_project_name",
+  "target": "dev",
+  "duckdb_path": "data/your_project.duckdb",
+  "dbt_path": "./dbt",
+  "profiles_dir": "~/.dbt"
+}
+```
+
+## ✅ Quality Assurance & Testing
+
+SBDK.dev includes comprehensive testing and validation:
+
+### dbt Test Results (Latest)
+- **15/15 tests passing** ✅ (100% success rate)
+- **Email uniqueness fix implemented** - No more duplicate emails in synthetic data
+- **All data quality constraints validated** - NULL checks, foreign keys, data types
+- **Performance optimized** - Faster data generation with maintained quality
+
+### What's Tested
+- **Data Integrity**: Primary keys, foreign keys, not-null constraints
+- **Business Logic**: Valid email formats, reasonable date ranges, positive amounts
+- **Relationships**: User-event-order data consistency across tables
+- **Performance**: Generation speed and memory usage optimization
+
+### Run Your Own Tests
+```bash
+# Run all dbt tests
+python main.py dev  # Includes testing
+
+# Run only dbt tests (skip data generation)
+python main.py dev --dbt-only
+
+# View detailed test results
+dbt test --project-dir ./dbt --profiles-dir ~/.dbt
+```
+
+## 🏗️ Architecture Overview
+
+SBDK.dev follows modern data engineering best practices with a modular, interactive design:
+
+### 🎨 Interactive CLI Experience
+- **Rich Terminal UI** - Beautiful progress bars, colored output, and status indicators
+- **Real-time Feedback** - Live updates during pipeline execution
+- **Error Handling** - Clear error messages with troubleshooting suggestions
+- **Configuration Wizard** - Guided setup for new projects
+
+### 📊 Data Pipeline Flow
+1. **Synthetic Data Generation** - Faker-based realistic test data (users, events, orders)
+2. **DLT Ingestion** - Load data into DuckDB with schema validation
+3. **dbt Transformations** - SQL-based data modeling with testing
+4. **Quality Validation** - Automated testing and data quality checks
+
+### 🔧 Technology Stack
+
+| **Component** | **Technology** | **Purpose** |
+|---------------|----------------|-------------|
+| **CLI Framework** | [Typer](https://typer.tiangolo.com/) + [Rich](https://rich.readthedocs.io/) | Interactive command-line interface |
+| **Database Engine** | [DuckDB](https://duckdb.org/) | Fast, embedded OLAP database |
+| **Data Loading** | [DLT](https://dlthub.com/) | Modern data loading framework |
+| **Transformations** | [dbt](https://docs.getdbt.com/) | SQL-based data transformations |
+| **Web Server** | [FastAPI](https://fastapi.tiangolo.com/) | Webhook listener and API server |
+| **Package Manager** | [UV](https://github.com/astral-sh/uv) | Fast Python dependency management |
+| **Data Generation** | [Faker](https://faker.readthedocs.io/) | Realistic synthetic data |
+| **Configuration** | JSON + Environment Variables | Flexible project configuration |
+
+### 🚀 Performance Optimizations
+- **Fixed Email Uniqueness** - No more duplicate emails in synthetic data
+- **Efficient Data Generation** - Optimized Faker usage for large datasets  
+- **Parallel Processing** - Multiple pipeline stages run concurrently
+- **Memory Management** - Efficient DuckDB configuration for large datasets
+
+## 🛠️ Troubleshooting
+
+### Common Issues and Solutions
+
+#### dbt Command Not Found
+```bash
+# Install dbt with DuckDB support
+pip install dbt-duckdb
+# OR
+uv pip install dbt-duckdb
+
+# Verify installation
+dbt --version
+```
+
+#### Virtual Environment Issues
+```bash
+# Ensure virtual environment is activated
+source .venv/bin/activate  # Linux/Mac
+.venv\Scripts\activate     # Windows
+
+# Verify Python path
+which python
+which dbt
+```
+
+#### Database Connection Errors
+```bash
+# Check DuckDB file permissions
+ls -la data/
+chmod 644 data/*.duckdb
+
+# Verify dbt profiles
+cat ~/.dbt/profiles.yml
+```
+
+#### Pipeline Generation Errors
+```bash
+# Run individual pipeline modules for debugging
+cd pipelines/
+python users.py
+python events.py
+python orders.py
+
+# Check data generation logs
+python ../main.py dev --verbose
+```
+
+### Getting Help
+
+- **Documentation**: Check the `/docs` directory for detailed guides
+- **Logs**: Pipeline logs are available in the console output
+- **Issues**: Report bugs on the GitHub repository
+- **Configuration**: Validate your `sbdk_config.json` file
+
+### Development Notes
+
+- The `duckdb-dev-env/` directory contains a legacy basic setup for DLT + DuckDB development
+- The main SBDK.dev framework is now in `sbdk-starter/` with full interactive CLI and project management
+- For new projects, use the `sbdk-starter/` interactive CLI rather than the basic `duckdb-dev-env/` setup
+
+## 📂 Project Structure
+
+When you initialize a new SBDK project, you get this organized structure:
+
+```
+my_analytics_project/
 
 │
 

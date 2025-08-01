@@ -1,0 +1,19 @@
+{
+  "project": "sbdk_project",
+  "target": "dev",
+  "duckdb_path": "data/{project}.duckdb",
+  "pipelines_path": "./pipelines",
+  "dbt_path": "./dbt",
+  "profiles_dir": "~/.dbt",
+  "features": {
+    "email_uniqueness_fix": true,
+    "enhanced_error_handling": true,
+    "virtual_env_detection": true,
+    "comprehensive_testing": true
+  },
+  "testing": {
+    "email_uniqueness_tests": true,
+    "performance_benchmarks": true,
+    "cross_environment_validation": true
+  }
+}
