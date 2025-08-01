@@ -586,16 +586,15 @@ Includes:
 **LICENSE**
 
 Use Polyform Noncommercial 1.0.0 text, included in full.
-
-# **🛠️ How to Use Locally (venv-based)**
+# **🛠️ How to Use Locally (venv-based, UV)**
 
 python3 -m venv .venv
 
 source .venv/bin/activate
 
-pip install --upgrade pip
+uv pip install --upgrade pip
 
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 
 python main.py init my_project
 
@@ -603,8 +602,7 @@ cd my_project
 
 python ../main.py dev
 
-Optionally start webhook listener:
-
+# Optionally start webhook listener:
 python ../main.py webhooks
 
-This is a fully functional scaffolding kit that you can clone or generate. It’s minimal but complete: CLI scaffold, example pipelines, dbt models, webhook listener, and local dev flow using venv.
+This is a fully functional scaffolding kit that you can clone or generate. It’s minimal but complete: CLI scaffold, example pipelines, dbt models, webhook listener, and local dev flow using venv and uv.
