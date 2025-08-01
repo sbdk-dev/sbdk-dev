@@ -2,6 +2,7 @@
 Development mode commands
 """
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -74,11 +75,12 @@ def cli_dev(
             progress.update(dbt_task, description="Running dbt models...")
             try:
                 dbt_dir = Path(config["dbt_path"])
+                profiles_dir = os.path.expanduser(config["profiles_dir"])
                 subprocess.run([
                     "dbt", "run", 
                     "--project-dir", str(dbt_dir),
-                    "--profiles-dir", config["profiles_dir"]
-                ], check=True, capture_output=True)
+                    "--profiles-dir", profiles_dir
+                ], check=True, capture_output=True, text=True)
                 progress.advance(dbt_task)
                 
                 # dbt test
@@ -86,14 +88,18 @@ def cli_dev(
                 subprocess.run([
                     "dbt", "test",
                     "--project-dir", str(dbt_dir), 
-                    "--profiles-dir", config["profiles_dir"]
-                ], check=True, capture_output=True)
+                    "--profiles-dir", profiles_dir
+                ], check=True, capture_output=True, text=True)
                 progress.advance(dbt_task)
                 
                 progress.update(dbt_task, description="✅ dbt transformations complete")
                 
             except subprocess.CalledProcessError as e:
                 console.print(f"[red]dbt command failed: {e}[/red]")
+                if e.stdout:
+                    console.print(f"[yellow]STDOUT:[/yellow] {e.stdout}")
+                if e.stderr:
+                    console.print(f"[yellow]STDERR:[/yellow] {e.stderr}")
                 raise typer.Exit(1)
     
     console.print(Panel(
