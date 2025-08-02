@@ -89,14 +89,16 @@ class TestDistribution:
         
         # Essential files that should be present
         essential_files = [
-            "main.py",
-            "requirements.txt",
-            "README.md",
-            "cli/__init__.py",
-            "cli/init.py", 
-            "cli/dev.py",
-            "cli/start.py",
-            "cli/webhooks.py"
+            "pyproject.toml",
+            "LICENSE",
+            "sbdk/__init__.py",
+            "sbdk/cli/__init__.py",
+            "sbdk/cli/main.py",
+            "sbdk/cli/commands/__init__.py",
+            "sbdk/cli/commands/init.py",
+            "sbdk/cli/commands/dev.py",
+            "sbdk/cli/commands/start.py",
+            "sbdk/cli/commands/webhooks.py"
         ]
         
         for file_path in essential_files:
@@ -108,7 +110,7 @@ class TestDistribution:
         base_path = Path(__file__).parent.parent
         
         # Template directories that should be copied
-        template_dirs = ["pipelines", "dbt", "fastapi_server"]
+        template_dirs = ["sbdk/templates/pipelines", "sbdk/templates/dbt", "sbdk/templates/fastapi_server"]
         
         for dir_name in template_dirs:
             dir_path = base_path / dir_name
@@ -120,8 +122,8 @@ class TestDistribution:
             assert len(contents) > 0, f"Template directory is empty: {dir_name}"
     
     def test_executable_permissions(self):
-        """Test that main.py is executable"""
-        main_py = Path(__file__).parent.parent / "main.py"
+        """Test that main CLI is executable"""
+        main_py = Path(__file__).parent.parent / "sbdk" / "cli" / "main.py"
         
         # Check it starts with shebang
         with open(main_py) as f:
@@ -190,7 +192,7 @@ class TestUserInstallationExperience:
             ]
             
             dirs_to_copy = [
-                "cli", "pipelines", "dbt", "fastapi_server"
+                "sbdk", "cli", "pipelines", "dbt", "fastapi_server"
             ]
             
             # Copy files
@@ -303,7 +305,7 @@ class TestCrossplatformCompatibility:
     
     def test_path_handling(self):
         """Test that path handling works across platforms"""
-        from cli.init import cli_init
+        from sbdk.cli.commands.init import cli_init
         
         # Test path creation with different separators
         test_paths = [
@@ -322,7 +324,7 @@ class TestCrossplatformCompatibility:
                 # Should not crash on different path formats
                 try:
                     from typer.testing import CliRunner
-                    from main import app
+                    from sbdk.cli.main import app
                     runner = CliRunner()
                     result = runner.invoke(app, ["init", clean_name, "--force"])
                     # Basic success test
@@ -336,7 +338,7 @@ class TestCrossplatformCompatibility:
             os.chdir(temp_dir)
             
             from typer.testing import CliRunner
-            from main import app
+            from sbdk.cli.main import app
             runner = CliRunner()
             
             result = runner.invoke(app, ["init", "line_test"])
@@ -359,7 +361,7 @@ class TestCrossplatformCompatibility:
             os.chdir(temp_dir)
             
             from typer.testing import CliRunner  
-            from main import app
+            from sbdk.cli.main import app
             runner = CliRunner()
             
             result = runner.invoke(app, ["init", "perm_test"])

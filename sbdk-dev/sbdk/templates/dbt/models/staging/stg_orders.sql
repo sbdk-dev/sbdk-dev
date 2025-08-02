@@ -5,7 +5,7 @@
 }}
 
 with source_data as (
-    select * from main.raw_orders
+    select * from {{ source('raw', 'raw_orders') }}
 ),
 
 cleaned as (

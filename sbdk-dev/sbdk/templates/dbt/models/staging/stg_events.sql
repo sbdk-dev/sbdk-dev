@@ -5,7 +5,7 @@
 }}
 
 with source_data as (
-    select * from main.raw_events
+    select * from {{ source('raw', 'raw_events') }}
 ),
 
 cleaned as (

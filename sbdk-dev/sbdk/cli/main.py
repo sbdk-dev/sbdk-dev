@@ -7,17 +7,19 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.text import Text
 
-from sbdk.cli.commands.init import cli_init
 from sbdk.cli.commands.dev import cli_dev
+from sbdk.cli.commands.init import cli_init
 from sbdk.cli.commands.start import cli_start
 from sbdk.cli.commands.webhooks import cli_webhooks
+from sbdk.cli.debug import cli_debug
 
 console = Console()
 app = typer.Typer(
     name="sbdk",
     help="🚀 SBDK.dev - Local-first data pipeline sandbox",
-    rich_markup_mode="rich"
+    rich_markup_mode="rich",
 )
+
 
 @app.callback()
 def main():
@@ -26,21 +28,28 @@ def main():
     """
     pass
 
+
 # Register CLI commands
 app.command("init", help="🏗️  Initialize a new SBDK project")(cli_init)
 app.command("dev", help="🔧 Run development pipeline (pipelines + dbt)")(cli_dev)
-app.command("start", help="🚀 Start development server with file watching")(cli_start)
+app.command("start", help="🚀 Start clean development server with file watching")(cli_start)
 app.command("webhooks", help="🔗 Start webhook listener server")(cli_webhooks)
+app.command("debug", help="🔍 Debug SBDK configuration and environment")(cli_debug)
+
 
 @app.command("version")
 def version():
     """Show SBDK.dev version"""
     from sbdk import __version__
-    console.print(Panel(
-        Text(f"SBDK.dev v{__version__}", style="bold green"),
-        title="Version",
-        style="green"
-    ))
+
+    console.print(
+        Panel(
+            Text(f"SBDK.dev v{__version__}", style="bold green"),
+            title="Version",
+            style="green",
+        )
+    )
+
 
 if __name__ == "__main__":
     app()

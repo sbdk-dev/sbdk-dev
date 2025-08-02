@@ -15,7 +15,7 @@ import signal
 
 # Import CLI modules
 from sbdk.cli.main import app
-from sbdk.cli.commands.start import cli_start
+from sbdk.cli.commands.start import cli_start, PipelineHandler
 from sbdk.cli.commands.webhooks import cli_webhooks
 from typer.testing import CliRunner
 
@@ -48,7 +48,7 @@ class TestInteractiveWorkflows:
             assert "webhooks" in result.stdout
             
             # Step 4: User tries dev command
-            with patch('cli.dev.run_pipeline_module'), \
+            with patch('sbdk.cli.commands.dev.run_pipeline_module'), \
                  patch('subprocess.run'):
                 result = runner.invoke(app, ["dev", "--pipelines-only"])
                 assert result.exit_code == 0
@@ -87,7 +87,7 @@ class TestInteractiveWorkflows:
             
             # Now dev should work (with mocking)
             os.chdir("recovery_test")
-            with patch('cli.dev.run_pipeline_module'), \
+            with patch('sbdk.cli.commands.dev.run_pipeline_module'), \
                  patch('subprocess.run'):
                 result = runner.invoke(app, ["dev", "--pipelines-only"])
                 assert result.exit_code == 0
@@ -107,14 +107,14 @@ class TestRealTimeInteraction:
                 self.is_directory = is_directory
         
         # Test Python file triggers rebuild
-        with patch('cli.start.cli_dev') as mock_dev:
+        with patch('sbdk.cli.commands.start.cli_dev') as mock_dev:
             event = MockEvent("pipelines/users.py")
             handler.on_modified(event)
             mock_dev.assert_called_once()
         
         # Test non-relevant file doesn't trigger
         handler.last_triggered = 0  # Reset debounce
-        with patch('cli.start.cli_dev') as mock_dev:
+        with patch('sbdk.cli.commands.start.cli_dev') as mock_dev:
             event = MockEvent("README.txt")
             handler.on_modified(event)
             mock_dev.assert_not_called()
@@ -135,8 +135,8 @@ class TestRealTimeInteraction:
             # But we can test the setup validation
             
             # Mock the observer and test setup
-            with patch('cli.start.Observer') as mock_observer, \
-                 patch('cli.start.cli_dev'):
+            with patch('watchdog.observers.Observer') as mock_observer, \
+                 patch('sbdk.cli.commands.start.cli_dev'):
                 
                 mock_observer_instance = MagicMock()
                 mock_observer.return_value = mock_observer_instance
@@ -282,8 +282,8 @@ class TestLongRunningOperations:
             
             # Test that start command handles interruption
             with patch('time.sleep', side_effect=KeyboardInterrupt), \
-                 patch('cli.start.Observer'), \
-                 patch('cli.start.cli_dev'):
+                 patch('watchdog.observers.Observer'), \
+                 patch('sbdk.cli.commands.start.cli_dev'):
                 
                 try:
                     result = runner.invoke(app, ["start", "--no-initial-run"])
@@ -313,13 +313,13 @@ class TestRealWorldScenarios:
             assert Path("dbt/models").exists()
             
             # Runs initial data pipeline
-            with patch('cli.dev.run_pipeline_module'), \
+            with patch('sbdk.cli.commands.dev.run_pipeline_module'), \
                  patch('subprocess.run'):
                 result = runner.invoke(app, ["dev"])
                 assert result.exit_code == 0
             
             # Starts development server for iterative work
-            with patch('cli.start.Observer'), \
+            with patch('watchdog.observers.Observer'), \
                  patch('time.sleep', side_effect=KeyboardInterrupt):
                 try:
                     result = runner.invoke(app, ["start"])
@@ -344,7 +344,7 @@ class TestRealWorldScenarios:
                 assert config["project"] == "team_project"
             
             # Runs existing pipelines
-            with patch('cli.dev.run_pipeline_module'), \
+            with patch('sbdk.cli.commands.dev.run_pipeline_module'), \
                  patch('subprocess.run'):
                 result = runner.invoke(app, ["dev", "--pipelines-only"])
                 assert result.exit_code == 0
@@ -390,7 +390,7 @@ class TestRealWorldScenarios:
                 ])
             
             # Test that pipeline can run
-            with patch('cli.dev.run_pipeline_module'), \
+            with patch('sbdk.cli.commands.dev.run_pipeline_module'), \
                  patch('subprocess.run'):
                 result = runner.invoke(app, ["dev"])
                 assert result.exit_code == 0

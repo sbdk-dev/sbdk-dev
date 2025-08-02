@@ -16,9 +16,9 @@ from sbdk.core.project import SBDKProject
 
 __all__ = [
     "__version__",
-    "__author__", 
+    "__author__",
     "__email__",
     "__description__",
     "SBDKConfig",
-    "SBDKProject"
+    "SBDKProject",
 ]

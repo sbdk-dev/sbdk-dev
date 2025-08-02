@@ -5,7 +5,7 @@
 1. **Install the package in development mode:**
    ```bash
    cd sbdk-unified
-   pip install -e .
+   uv pip install -e .
    ```
 
 2. **Verify CLI installation:**

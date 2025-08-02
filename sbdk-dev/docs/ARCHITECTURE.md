@@ -234,9 +234,17 @@ graph TB
 ## Deployment Architecture
 
 ### Local Deployment
-- **Development**: Direct Python execution with UV
-- **Testing**: Automated test suite with pytest
-- **Distribution**: pip-installable package
+- **Development**: Direct Python execution with uv
+- **Testing**: Automated test suite with pytest via uv
+- **Distribution**: uv-managed package with modern Python tooling
+
+### CI/CD Pipeline with uv
+- **Installation**: `uv sync --group dev` for dependencies
+- **Linting**: `uv run ruff check sbdk/` for code quality
+- **Formatting**: `uv run black --check sbdk/` for code consistency
+- **Testing**: `uv run pytest tests/ --cov=sbdk` for test execution
+- **Build**: `uv build` for package distribution
+- **Performance**: 10-100x faster than traditional pip-based workflows
 
 ### Cloud Deployment (Future)
 - **Snowflake Native App**: Commercial SaaS version
@@ -264,7 +272,7 @@ graph TB
 |-------|------------|---------|
 | CLI | Typer + Rich | Command-line interface |
 | Config | Dynaconf | Configuration management |
-| Package | UV | Python package management |
+| Package | uv | Modern Python package management (10-100x faster) |
 | Ingestion | DLT | Data loading and pipelines |
 | Storage | DuckDB | Embedded OLAP database |
 | Transform | dbt Core | SQL transformations |

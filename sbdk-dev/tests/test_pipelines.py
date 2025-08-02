@@ -6,6 +6,23 @@ import duckdb
 import os
 from pathlib import Path
 
+
+def safe_getcwd():
+    """Get current working directory safely"""
+    try:
+        return os.getcwd()
+    except FileNotFoundError:
+        return None
+
+
+def safe_chdir(path):
+    """Change directory safely"""
+    if path:
+        try:
+            os.chdir(path)
+        except (FileNotFoundError, OSError):
+            pass
+
 # Test fixtures
 @pytest.fixture
 def test_db_path():
@@ -21,7 +38,7 @@ def cleanup_test_db(test_db_path):
 
 def test_users_pipeline():
     """Test users pipeline generates valid data"""
-    from pipelines.users import generate_users_data
+    from sbdk.templates.pipelines.users import generate_users_data
     
     # Generate small sample
     users = generate_users_data(100)
@@ -39,7 +56,7 @@ def test_users_pipeline():
 
 def test_events_pipeline():
     """Test events pipeline generates valid data"""
-    from pipelines.events import generate_events_data
+    from sbdk.templates.pipelines.events import generate_events_data
     
     # Generate small sample
     events = generate_events_data(500, max_user_id=100)
@@ -60,7 +77,7 @@ def test_events_pipeline():
 
 def test_orders_pipeline():
     """Test orders pipeline generates valid data"""
-    from pipelines.orders import generate_orders_data
+    from sbdk.templates.pipelines.orders import generate_orders_data
     
     # Generate small sample
     orders = generate_orders_data(200, max_user_id=100)
@@ -82,39 +99,44 @@ def test_orders_pipeline():
 def test_database_creation(test_db_path):
     """Test that DuckDB database can be created and queried"""
     import pandas as pd
+    import tempfile
     
-    # Create sample data
-    sample_data = [
-        {"id": 1, "name": "test1", "value": 100},
-        {"id": 2, "name": "test2", "value": 200}
-    ]
-    
-    df = pd.DataFrame(sample_data)
-    
-    # Create database and table
-    con = duckdb.connect(test_db_path)
-    con.execute("CREATE TABLE test_table AS SELECT * FROM df")
-    
-    # Query data
-    result = con.execute("SELECT COUNT(*) FROM test_table").fetchone()
-    assert result[0] == 2
-    
-    # Query specific values
-    result = con.execute("SELECT SUM(value) FROM test_table").fetchone()
-    assert result[0] == 300
-    
-    con.close()
+    with tempfile.TemporaryDirectory() as temp_dir:
+        os.chdir(temp_dir)
+        
+        # Create sample data
+        sample_data = [
+            {"id": 1, "name": "test1", "value": 100},
+            {"id": 2, "name": "test2", "value": 200}
+        ]
+        
+        df = pd.DataFrame(sample_data)
+        
+        # Create database and table with absolute path
+        db_path = os.path.join(temp_dir, test_db_path)
+        con = duckdb.connect(db_path)
+        con.execute("CREATE TABLE test_table AS SELECT * FROM df")
+        
+        # Query data
+        result = con.execute("SELECT COUNT(*) FROM test_table").fetchone()
+        assert result[0] == 2
+        
+        # Query specific values
+        result = con.execute("SELECT SUM(value) FROM test_table").fetchone()
+        assert result[0] == 300
+        
+        con.close()
 
 def test_pipeline_integration():
     """Test full pipeline integration with DuckDB"""
-    from pipelines import users, events, orders
+    from sbdk.templates.pipelines import users, events, orders
     import tempfile
     import os
     
     # Create temporary directory
     with tempfile.TemporaryDirectory() as temp_dir:
         # Change to temp directory
-        original_cwd = os.getcwd()
+        original_cwd = safe_getcwd()
         os.chdir(temp_dir)
         
         # Create data directory
@@ -129,12 +151,12 @@ def test_pipeline_integration():
             assert hasattr(orders, 'run')
             
         finally:
-            os.chdir(original_cwd)
+            safe_chdir(original_cwd)
 
 def test_cli_commands():
     """Test CLI command functions"""
-    from cli.init import cli_init
-    from cli.dev import load_config
+    from sbdk.cli.commands.init import cli_init
+    from sbdk.cli.commands.dev import load_config
     import tempfile
     import json
     

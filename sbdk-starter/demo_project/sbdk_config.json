@@ -1,8 +1,0 @@
-{
-  "project": "demo_project",
-  "target": "dev",
-  "duckdb_path": "data/demo_project.duckdb",
-  "pipelines_path": "./pipelines",
-  "dbt_path": "./dbt",
-  "profiles_dir": "~/.dbt"
-}
