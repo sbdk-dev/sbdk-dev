@@ -15,7 +15,7 @@ import signal
 
 # Import CLI modules
 from sbdk.cli.main import app
-from sbdk.cli.commands.start import cli_start, PipelineHandler
+from sbdk.cli.commands.run import cli_run, PipelineFileHandler
 from sbdk.cli.commands.webhooks import cli_webhooks
 from typer.testing import CliRunner
 
@@ -98,7 +98,7 @@ class TestRealTimeInteraction:
     
     def test_file_watcher_simulation(self):
         """Test file watching functionality"""
-        handler = PipelineHandler(debounce_seconds=0.1)  # Short debounce for testing
+        handler = PipelineFileHandler({"project": "test", "duckdb_path": "test.db"}, visual=False)  # Updated for new class
         
         # Simulate file change events
         class MockEvent:
@@ -107,14 +107,14 @@ class TestRealTimeInteraction:
                 self.is_directory = is_directory
         
         # Test Python file triggers rebuild
-        with patch('sbdk.cli.commands.start.cli_dev') as mock_dev:
+        with patch('sbdk.cli.commands.run.execute_pipeline') as mock_run:
             event = MockEvent("pipelines/users.py")
             handler.on_modified(event)
             mock_dev.assert_called_once()
         
         # Test non-relevant file doesn't trigger
         handler.last_triggered = 0  # Reset debounce
-        with patch('sbdk.cli.commands.start.cli_dev') as mock_dev:
+        with patch('sbdk.cli.commands.run.execute_pipeline') as mock_run:
             event = MockEvent("README.txt")
             handler.on_modified(event)
             mock_dev.assert_not_called()
@@ -136,7 +136,7 @@ class TestRealTimeInteraction:
             
             # Mock the observer and test setup
             with patch('watchdog.observers.Observer') as mock_observer, \
-                 patch('sbdk.cli.commands.start.cli_dev'):
+                 patch('sbdk.cli.commands.run.execute_pipeline'):
                 
                 mock_observer_instance = MagicMock()
                 mock_observer.return_value = mock_observer_instance
@@ -283,7 +283,7 @@ class TestLongRunningOperations:
             # Test that start command handles interruption
             with patch('time.sleep', side_effect=KeyboardInterrupt), \
                  patch('watchdog.observers.Observer'), \
-                 patch('sbdk.cli.commands.start.cli_dev'):
+                 patch('sbdk.cli.commands.run.execute_pipeline'):
                 
                 try:
                     result = runner.invoke(app, ["start", "--no-initial-run"])

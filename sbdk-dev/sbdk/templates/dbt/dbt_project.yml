@@ -1,9 +1,9 @@
-name: 'sbdk_project'
+name: '{project_name}'
 version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'sbdk_project'
+profile: '{project_name}'
 
 # These configurations specify where dbt should look for different types of files.
 model-paths: ["models"]

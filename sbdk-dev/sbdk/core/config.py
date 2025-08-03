@@ -85,3 +85,8 @@ class SBDKConfig(BaseModel):
         validation_results["duckdb_parent"] = duckdb_path.parent.exists()
 
         return validation_results
+
+
+def load_config(config_path: str = "sbdk_config.json") -> SBDKConfig:
+    """Load SBDK configuration from file"""
+    return SBDKConfig.load_from_file(config_path)

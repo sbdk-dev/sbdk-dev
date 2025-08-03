@@ -44,10 +44,22 @@ graph TB
         TYPER[Typer CLI]
         INIT[sbdk init]
         DEV[sbdk dev]
+        VISUAL[sbdk visual]
         WEBHOOKS[sbdk webhooks]
         TYPER --> INIT
         TYPER --> DEV
+        TYPER --> VISUAL
         TYPER --> WEBHOOKS
+    end
+    
+    subgraph "Visual CLI Layer"
+        VR[Visual Renderer]
+        COMPONENTS[React-like Components]
+        DASHBOARD[Interactive Dashboard]
+        PROGRESS[Real-time Progress]
+        VR --> COMPONENTS
+        COMPONENTS --> DASHBOARD
+        COMPONENTS --> PROGRESS
     end
     
     subgraph "API Layer"
@@ -106,11 +118,12 @@ graph TB
 - **Testing**: Built-in data quality tests
 - **Documentation**: Auto-generated model documentation
 
-### 5. Interactive CLI Interface (Typer + Rich)
+### 5. Interactive CLI Interface (Typer + Rich + Visual CLI)
 - **Modern Command Structure**:
   - `python main.py init <project>`: Initialize new project with guided setup
   - `python main.py dev`: Run full pipeline with real-time progress tracking
   - `python main.py start`: Development server with file watching and auto-reload
+  - `python main.py visual`: Modern visual CLI interface with React-like components
   - `python main.py webhooks`: FastAPI webhook server with GitHub integration
   - `python main.py version`: Display version and system information
 - **Rich Terminal UI**: 
@@ -118,11 +131,20 @@ graph TB
   - Progress bars for long-running operations
   - Spinner animations during processing
   - Formatted panels for status and results
+- **Visual CLI Interface (NEW)**:
+  - Double-buffered rendering for flicker-free updates
+  - React-like component architecture (Header, Footer, Progress, Spinner, Box)
+  - In-place text updates without scrolling or appending
+  - Interactive dashboards with real-time metrics
+  - 30-60 FPS smooth animations
+  - Keyboard-driven navigation
+  - Cross-platform terminal compatibility
 - **Advanced Options**:
   - `--pipelines-only`: Run only data generation, skip dbt
   - `--dbt-only`: Run only dbt transformations, skip data generation  
   - `--config-file`: Use custom configuration file
   - `--verbose`: Enable detailed logging output
+  - `--fps`: Configure visual CLI frame rate (30-60)
 - **Error Handling**: Clear error messages with suggested solutions
 - **Configuration**: JSON-based config with environment variable overrides
 
@@ -271,6 +293,8 @@ graph TB
 | Layer | Technology | Purpose |
 |-------|------------|---------|
 | CLI | Typer + Rich | Command-line interface |
+| Visual CLI | Custom Components | Modern terminal UI with React-like architecture |
+| Renderer | Double-buffered | Flicker-free visual updates |
 | Config | Dynaconf | Configuration management |
 | Package | uv | Modern Python package management (10-100x faster) |
 | Ingestion | DLT | Data loading and pipelines |

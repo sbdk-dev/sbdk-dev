@@ -31,15 +31,15 @@ def test_cli_imports():
     """Test that CLI modules import correctly"""
     from sbdk.cli.main import main
     from sbdk.cli.commands.init import cli_init
-    from sbdk.cli.commands.dev import cli_dev
-    from sbdk.cli.commands.start import cli_start
+    from sbdk.cli.commands.run import cli_run
+    # cli_start functionality moved to cli_run --watch
     from sbdk.cli.commands.webhooks import cli_webhooks
     
     # Just test that imports work
     assert callable(main)
     assert callable(cli_init)
-    assert callable(cli_dev)
-    assert callable(cli_start)
+    assert callable(cli_run)
+    # cli_start functionality moved to cli_run --watch
     assert callable(cli_webhooks)
 
 

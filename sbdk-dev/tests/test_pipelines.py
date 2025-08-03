@@ -156,7 +156,7 @@ def test_pipeline_integration():
 def test_cli_commands():
     """Test CLI command functions"""
     from sbdk.cli.commands.init import cli_init
-    from sbdk.cli.commands.dev import load_config
+    from sbdk.cli.commands.run import load_config
     import tempfile
     import json
     

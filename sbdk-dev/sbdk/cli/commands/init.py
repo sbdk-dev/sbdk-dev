@@ -67,7 +67,8 @@ def cli_init(
             with open(dbt_project_path) as f:
                 content = f.read()
 
-            # Replace hardcoded project name with actual project name
+            # Replace template placeholders with actual project name
+            content = content.replace("{project_name}", project_name)
             content = content.replace("sbdk_project", project_name)
 
             with open(dbt_project_path, "w") as f:
@@ -97,13 +98,14 @@ def cli_init(
         dbt_profiles_dir = Path.home() / ".dbt"
         dbt_profiles_dir.mkdir(exist_ok=True)
 
+        # Use project-specific profile name to avoid conflicts
         profiles_content = f"""
 {project_name}:
   target: dev
   outputs:
     dev:
       type: duckdb
-      path: {project_path.absolute()}/data/{project_name}.duckdb
+      path: ../data/{project_name}.duckdb
       schema: main
 """
 
@@ -121,10 +123,10 @@ def cli_init(
             f"[green]✅ Successfully initialized SBDK project: {project_name}[/green]\n\n"
             f"[cyan]Next steps:[/cyan]\n"
             f"1. cd {project_name}\n"
-            f"2. python -m venv .venv\n"
-            f"3. source .venv/bin/activate  # On Windows: .venv\\Scripts\\activate\n"
-            f"4. uv add sbdk-dev\n"
-            f"5. sbdk dev\n",
+            f"2. uv run sbdk run                          # Execute pipeline\n"
+            f"3. uv run sbdk run --visual                 # Run with visual interface\n"
+            f"4. uv run sbdk run --watch                  # Development mode with file watching\n\n"
+            f"[yellow]✨ Ready to go! No virtual environment setup needed with uv.[/yellow]",
             title="🎉 Project Created",
             style="green",
         )

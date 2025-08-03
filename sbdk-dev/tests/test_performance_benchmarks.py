@@ -16,7 +16,7 @@ import pandas as pd
 from typer.testing import CliRunner
 
 from sbdk.cli.main import app
-from sbdk.cli.commands.dev import load_config
+from sbdk.cli.commands.run import load_config
 from sbdk.templates.pipelines.users import generate_users_data
 from sbdk.templates.pipelines.events import generate_events_data
 from sbdk.templates.pipelines.orders import generate_orders_data

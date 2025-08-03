@@ -1,4 +1,3 @@
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -70,6 +69,9 @@ instance/
 # Sphinx documentation
 docs/_build/
 
+# Ruff
+.ruff_cache/
+
 # PyBuilder
 target/
 
@@ -104,6 +106,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+test-env/
 
 # Spyder project settings
 .spyderproject
@@ -143,27 +146,37 @@ Desktop.ini
 *.duckdb
 *.duckdb.wal
 
-# Project specific
+# SBDK Project specific
 data/
 logs/
 temp/
 tmp/
 .cache/
 
-# Claude Flow generated files
-.claude/settings.local.json
-.mcp.json
+# Example/test projects (when generated)
+my_analytics_project/
+*/my_analytics_project/
+**/my_analytics_project/
+
+# Claude Code and AI assistant files
+CLAUDE.md
+.claude/
+*.claude
+errors.md
+.errors.md
+prompts.md
+.prompts.md
+
+# Claude Flow and coordination files
+claude-flow/
+.claude-flow/
 claude-flow.config.json
+.mcp.json
 .swarm/
 .hive-mind/
-memory/claude-flow-data.json
-memory/sessions/*
-!memory/sessions/README.md
-memory/agents/*
-!memory/agents/README.md
-coordination/memory_bank/*
-coordination/subtasks/*
-coordination/orchestration/*
+hive-mind/
+memory/
+coordination/
 *.db
 *.db-journal
 *.db-wal
@@ -174,10 +187,5 @@ claude-flow
 claude-flow.bat
 claude-flow.ps1
 hive-mind-prompt-*.txt
-*.claude-flow/*
-*.swarm/*
-coordination/
-memory/
-claude*
-prompts.md
-errors.md
+*.claude-flow/
+*.swarm/

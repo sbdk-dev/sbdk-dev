@@ -13,7 +13,7 @@ from unittest.mock import patch, MagicMock
 import duckdb
 
 # Import CLI modules
-from sbdk.cli.commands.dev import cli_dev, load_config
+from sbdk.cli.commands.run import cli_run, load_config
 from sbdk.cli.commands.init import cli_init
 from typer.testing import CliRunner
 from sbdk.cli.main import app

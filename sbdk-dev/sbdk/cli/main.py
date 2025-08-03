@@ -7,9 +7,8 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.text import Text
 
-from sbdk.cli.commands.dev import cli_dev
 from sbdk.cli.commands.init import cli_init
-from sbdk.cli.commands.start import cli_start
+from sbdk.cli.commands.run import cli_run
 from sbdk.cli.commands.webhooks import cli_webhooks
 from sbdk.cli.debug import cli_debug
 
@@ -30,9 +29,8 @@ def main():
 
 
 # Register CLI commands
-app.command("init", help="🏗️  Initialize a new SBDK project")(cli_init)
-app.command("dev", help="🔧 Run development pipeline (pipelines + dbt)")(cli_dev)
-app.command("start", help="🚀 Start clean development server with file watching")(cli_start)
+app.command("init", help="🏗️ Initialize a new SBDK project")(cli_init)
+app.command("run", help="🚀 Execute data pipeline")(cli_run)
 app.command("webhooks", help="🔗 Start webhook listener server")(cli_webhooks)
 app.command("debug", help="🔍 Debug SBDK configuration and environment")(cli_debug)
 

@@ -17,8 +17,8 @@ from typer.testing import CliRunner
 # Import CLI modules
 from sbdk.cli.main import app
 from sbdk.cli.commands.init import cli_init
-from sbdk.cli.commands.dev import cli_dev, load_config, run_pipeline_module
-from sbdk.cli.commands.start import cli_start, PipelineHandler
+from sbdk.cli.commands.run import cli_run, load_config, run_pipeline_module
+from sbdk.cli.commands.run import PipelineFileHandler
 from sbdk.cli.commands.webhooks import cli_webhooks
 
 runner = CliRunner()
@@ -185,12 +185,12 @@ class TestCLIStart:
         mock_event.src_path = "test.py"
         
         # First call should trigger
-        with patch('sbdk.cli.commands.start.cli_dev') as mock_dev:
+        with patch('sbdk.cli.commands.run.execute_pipeline') as mock_run:
             handler.on_modified(mock_event)
             mock_dev.assert_called_once()
         
         # Immediate second call should be debounced
-        with patch('sbdk.cli.commands.start.cli_dev') as mock_dev:
+        with patch('sbdk.cli.commands.run.execute_pipeline') as mock_run:
             handler.on_modified(mock_event)
             mock_dev.assert_not_called()
     
@@ -203,7 +203,7 @@ class TestCLIStart:
         mock_event.is_directory = False
         mock_event.src_path = "test.py"
         
-        with patch('sbdk.cli.commands.start.cli_dev') as mock_dev:
+        with patch('sbdk.cli.commands.run.execute_pipeline') as mock_run:
             handler.on_modified(mock_event)
             mock_dev.assert_called_once()
         
@@ -211,7 +211,7 @@ class TestCLIStart:
         mock_event.src_path = "test.txt"
         handler.last_triggered = 0  # Reset debounce
         
-        with patch('sbdk.cli.commands.start.cli_dev') as mock_dev:
+        with patch('sbdk.cli.commands.run.execute_pipeline') as mock_run:
             handler.on_modified(mock_event)
             mock_dev.assert_not_called()
 
@@ -387,12 +387,12 @@ class TestPackaging:
     
     def test_cli_modules_structure(self):
         """Test CLI module structure is correct"""
-        from sbdk.cli.commands import init, dev, start, webhooks
+        from sbdk.cli.commands import init, run, webhooks
         
         # Check that modules have expected functions
         assert hasattr(init, 'cli_init')
-        assert hasattr(dev, 'cli_dev')
-        assert hasattr(start, 'cli_start')
+        assert hasattr(run, 'cli_run')
+        # start functionality moved to run --watch
         assert hasattr(webhooks, 'cli_webhooks')
 
 

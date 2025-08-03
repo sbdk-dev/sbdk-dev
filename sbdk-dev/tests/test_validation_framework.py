@@ -17,7 +17,7 @@ import pandas as pd
 from typer.testing import CliRunner
 
 from sbdk.cli.main import app
-from sbdk.cli.commands.dev import load_config
+from sbdk.cli.commands.run import load_config
 
 
 class ValidationResult:

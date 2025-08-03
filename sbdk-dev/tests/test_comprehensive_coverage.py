@@ -16,8 +16,8 @@ from typer.testing import CliRunner
 # Import all CLI modules for comprehensive testing
 from sbdk.cli.main import app
 from sbdk.cli.commands.init import cli_init
-from sbdk.cli.commands.dev import cli_dev, load_config, run_pipeline_module
-from sbdk.cli.commands.start import cli_start
+from sbdk.cli.commands.run import cli_run, load_config, run_pipeline_module
+# cli_start functionality moved to cli_run --watch
 from sbdk.cli.commands.webhooks import cli_webhooks
 from sbdk.cli import dbt_utils, debug
 # Import core modules if they exist
