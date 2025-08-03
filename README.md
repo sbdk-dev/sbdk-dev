@@ -433,8 +433,6 @@ pip install dist/sbdk_dev-1.0.1-py3-none-any.whl
 ## 🔮 What's Next?
 
 ### 🛣️ Roadmap 2025
-- **Q1 2025**: Cloud deployment adapters (AWS, GCP, Azure)
-- **Q2 2025**: Real-time streaming pipelines with Apache Kafka
 - **Q3 2025**: Visual pipeline builder with drag-and-drop interface
 - **Q4 2025**: ML/AI model integration with automated training
 
