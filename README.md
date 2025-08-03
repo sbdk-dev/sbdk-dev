@@ -479,7 +479,7 @@ cd my_awesome_pipeline && sbdk run --visual
 
 ### 🚀 **The future of data pipelines is local-first** 🚀
 
-**[⭐ Star on GitHub](https://github.com/sbdk-dev/sbdk-dev)** • **[📖 Documentation](https://docs.sbdk.dev)** • **[🐦 Follow Updates](https://twitter.com/sbdk_dev)** • **[💬 Join Discord](https://discord.gg/sbdk-dev)**
+**[⭐ Star on GitHub](https://github.com/sbdk-dev/sbdk-dev)** • **[📖 Documentation (Coming Soon)](https://docs.sbdk.dev)**
 
 *Built with ❤️ and ☕ by developers who believe data tools should be delightful*
 
@@ -487,4 +487,4 @@ cd my_awesome_pipeline && sbdk run --visual
 
 ---
 
-*SBDK.dev v1.0.1 - Production-ready with 95.3% test coverage and zero compromises*
+*SBDK.dev v1.0.1 - Production-ready with zero compromises*
