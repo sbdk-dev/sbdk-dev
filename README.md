@@ -46,7 +46,7 @@ sbdk init my_pipeline && cd my_pipeline && sbdk run --visual
 ### Option 1: Install from PyPI (Recommended)
 ```bash
 # Lightning-fast installation with uv (11x faster than pip)
-pip install sbdk-dev
+uv pip install sbdk-dev
 
 # Create your first data pipeline
 sbdk init my_analytics_project
