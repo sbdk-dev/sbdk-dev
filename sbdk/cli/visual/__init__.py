@@ -5,19 +5,19 @@ A modern, interactive CLI framework with React-like components for terminal UIs.
 Provides smooth in-place updates, rich visual elements, and responsive layouts.
 """
 
-from .renderer import VisualRenderer
-from .components import Header, Footer, ProgressBar, Spinner, Box, ContentArea
 from .app import VisualApp
+from .components import Box, ContentArea, Footer, Header, ProgressBar, Spinner
+from .renderer import VisualRenderer
 
 __all__ = [
-    'VisualRenderer',
-    'Header', 
-    'Footer',
-    'ProgressBar',
-    'Spinner', 
-    'Box',
-    'ContentArea',
-    'VisualApp'
+    "VisualRenderer",
+    "Header",
+    "Footer",
+    "ProgressBar",
+    "Spinner",
+    "Box",
+    "ContentArea",
+    "VisualApp",
 ]
 
-__version__ = '1.0.0'
+__version__ = "1.0.1"

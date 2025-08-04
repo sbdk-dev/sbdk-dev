@@ -8,7 +8,6 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-from typing import Optional
 
 import typer
 from rich.console import Console
@@ -56,25 +55,30 @@ def run_pipeline_module(module_name: str):
 
 
 def run_visual_interface(config: dict):
-    """Start the visual CLI interface"""
+    """Start the interactive CLI interface"""
     try:
-        from sbdk.cli.visual_cli_robust import VisualCLI
-        
-        console.print("[cyan]Starting visual interface...[/cyan]")
-        cli = VisualCLI(".")
-        cli.start()
-        
-    except ImportError:
-        console.print("[yellow]Visual interface not available. Running in CLI mode.[/yellow]")
-        console.print("[dim]Install visual dependencies: uv sync --group visual[/dim]")
+        from sbdk.cli.interactive import start_interactive
+
+        console.print("[cyan]Starting interactive interface...[/cyan]")
+        start_interactive(".")
+
+    except ImportError as e:
+        console.print(
+            f"[yellow]Interactive interface not available: {e}[/yellow]"
+        )
+        console.print("[dim]Falling back to single run mode[/dim]")
+        execute_pipeline(config)
     except Exception as e:
-        console.print(f"[red]Visual interface failed: {e}[/red]")
-        console.print("[yellow]Falling back to CLI mode.[/yellow]")
+        console.print(f"[red]Interactive interface failed: {e}[/red]")
+        console.print("[yellow]Falling back to single run mode[/yellow]")
+        execute_pipeline(config)
 
 
-def execute_pipeline(config: dict, pipelines_only: bool = False, dbt_only: bool = False):
+def execute_pipeline(
+    config: dict, pipelines_only: bool = False, dbt_only: bool = False
+):
     """Execute the data pipeline"""
-    
+
     with Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
@@ -161,41 +165,47 @@ def execute_pipeline(config: dict, pipelines_only: bool = False, dbt_only: bool 
 
 class PipelineFileHandler(FileSystemEventHandler):
     """Handler for file system events during development"""
-    
-    def __init__(self, config: dict, visual: bool = False):
-        self.config = config
+
+    def __init__(
+        self, config: dict = None, visual: bool = False, debounce_seconds: float = 2.0
+    ):
+        self.config = config or {}
         self.visual = visual
         self.last_run = 0
-        self.debounce_seconds = 2
-        
+        self.last_triggered = 0  # For backward compatibility with tests
+        self.debounce_seconds = debounce_seconds
+
     def on_modified(self, event):
         if event.is_directory:
             return
-            
+
         # Only react to pipeline and dbt files
-        if not (event.src_path.endswith(('.py', '.sql', '.yml', '.yaml'))):
+        if not (event.src_path.endswith((".py", ".sql", ".yml", ".yaml"))):
             return
-            
+
         # Debounce rapid file changes
         current_time = time.time()
         if current_time - self.last_run < self.debounce_seconds:
             return
-            
+
         self.last_run = current_time
-        
+        self.last_triggered = current_time  # For backward compatibility
+
         console.print(f"\n[yellow]File changed: {event.src_path}[/yellow]")
         console.print("[cyan]Re-running pipeline...[/cyan]")
-        
+
         try:
             execute_pipeline(self.config)
         except Exception as e:
             console.print(f"[red]Pipeline execution failed: {e}[/red]")
 
 
+# Alias for backward compatibility with tests
+PipelineHandler = PipelineFileHandler
+
+
 def cli_run(
-    visual: bool = typer.Option(
-        False, "--visual", help="Run with visual interface"
-    ),
+    visual: bool = typer.Option(False, "--visual", help="Run with visual interface"),
     watch: bool = typer.Option(
         False, "--watch", help="Watch for file changes and auto-rerun"
     ),
@@ -242,26 +252,26 @@ def cli_run(
         # Set up file watcher
         event_handler = PipelineFileHandler(config, visual)
         observer = Observer()
-        
+
         # Watch pipelines directory
         pipelines_path = config.get("pipelines_path", "./pipelines")
         if Path(pipelines_path).exists():
             observer.schedule(event_handler, pipelines_path, recursive=True)
-            
+
         # Watch dbt directory
         dbt_path = config.get("dbt_path", "./dbt")
         if Path(dbt_path).exists():
             observer.schedule(event_handler, dbt_path, recursive=True)
 
         observer.start()
-        
+
         try:
             while True:
                 time.sleep(1)
         except KeyboardInterrupt:
             observer.stop()
             console.print("\n[yellow]Stopped development server[/yellow]")
-        
+
         observer.join()
     else:
         # Single run
@@ -273,5 +283,5 @@ def cli_run(
                     style="cyan",
                 )
             )
-        
+
         execute_pipeline(config, pipelines_only, dbt_only)

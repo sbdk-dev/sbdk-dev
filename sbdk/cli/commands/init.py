@@ -93,19 +93,19 @@ def cli_init(
         progress.add_task("Setting up data directory...", total=None)
         (project_path / "data").mkdir(exist_ok=True)
 
-        # Create dbt profiles directory
+        # Create dbt profiles directory and configure local database
         progress.add_task("Configuring dbt profiles...", total=None)
         dbt_profiles_dir = Path.home() / ".dbt"
         dbt_profiles_dir.mkdir(exist_ok=True)
 
-        # Use project-specific profile name to avoid conflicts
+        # Use project-specific profile name with local database path
         profiles_content = f"""
 {project_name}:
   target: dev
   outputs:
     dev:
       type: duckdb
-      path: ../data/{project_name}.duckdb
+      path: data/{project_name}.duckdb
       schema: main
 """
 

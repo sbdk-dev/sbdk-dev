@@ -19,7 +19,7 @@ from pydantic import BaseModel
 app = FastAPI(
     title="SBDK.dev Webhook Server",
     description="Webhook listener and tracking server for SBDK projects",
-    version="1.0.0",
+    version="1.0.1",
 )
 
 
@@ -54,7 +54,7 @@ async def root():
     return {
         "service": "SBDK.dev Webhook Server",
         "status": "running",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "timestamp": datetime.utcnow().isoformat(),
     }
 
@@ -263,8 +263,9 @@ async def http_exception_handler(request: Request, exc: HTTPException):
 
 
 if __name__ == "__main__":
-    import uvicorn
     import os
+
+    import uvicorn
 
     port = int(os.getenv("SBDK_WEBHOOK_PORT", "8000"))
     host = os.getenv("SBDK_WEBHOOK_HOST", "0.0.0.0")

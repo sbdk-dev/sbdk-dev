@@ -21,11 +21,11 @@ def load_config() -> dict:
 def generate_users_data(num_users: int = None) -> list:
     """Generate synthetic user data"""
     import os
-    
+
     # Use environment variable with fallback default
     if num_users is None:
         num_users = int(os.getenv("SBDK_NUM_USERS", "10000"))
-    
+
     users = []
 
     for i in range(1, num_users + 1):
@@ -84,6 +84,9 @@ def run():
 
     # Connect to DuckDB
     con = duckdb.connect(str(db_path))
+
+    # Register DataFrame with DuckDB
+    con.register('df', df)
 
     # Create raw users table
     con.execute("DROP TABLE IF EXISTS raw_users")

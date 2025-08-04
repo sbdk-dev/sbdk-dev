@@ -1,5 +1,5 @@
 name: '{project_name}'
-version: '1.0.0'
+version: '1.0.1'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.

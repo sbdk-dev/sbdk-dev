@@ -180,6 +180,9 @@ def run():
     # Connect to DuckDB
     con = duckdb.connect(str(db_path))
 
+    # Register DataFrame with DuckDB
+    con.register('df', df)
+
     # Create raw orders table
     con.execute("DROP TABLE IF EXISTS raw_orders")
     con.execute("CREATE TABLE raw_orders AS SELECT * FROM df")

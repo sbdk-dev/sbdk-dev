@@ -23,13 +23,13 @@ def load_config() -> dict:
 def generate_events_data(num_events: int = None, max_user_id: int = None) -> list:
     """Generate synthetic event tracking data"""
     import os
-    
+
     # Use environment variables with fallback defaults
     if num_events is None:
         num_events = int(os.getenv("SBDK_NUM_EVENTS", "50000"))
     if max_user_id is None:
         max_user_id = int(os.getenv("SBDK_NUM_USERS", "10000"))
-    
+
     events = []
 
     # Define event types with weights (more realistic distribution)
@@ -137,6 +137,9 @@ def run():
 
     # Connect to DuckDB
     con = duckdb.connect(str(db_path))
+
+    # Register DataFrame with DuckDB
+    con.register('df', df)
 
     # Create raw events table
     con.execute("DROP TABLE IF EXISTS raw_events")
