@@ -1,5 +1,6 @@
 # 🚀 SBDK.dev - Sandbox Development Kit for Data Pipelines
 
+[![GitHub stars](https://img.shields.io/github/stars/sbdk-dev/sbdk-dev?style=social)](https://github.com/sbdk-dev/sbdk-dev/stargazers)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI Version](https://img.shields.io/badge/PyPI-1.0.1-blue.svg)](https://pypi.org/project/sbdk-dev/)
 [![Test Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](#-testing)
@@ -7,6 +8,9 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![dbt](https://img.shields.io/badge/dbt-1.7+-orange.svg)](https://www.getdbt.com/)
 [![DuckDB](https://img.shields.io/badge/DuckDB-0.9+-yellow.svg)](https://duckdb.org/)
+[![Built with AI](https://img.shields.io/badge/Built%20with-AI-purple.svg)](https://www.anthropic.com/)
+[![Claude Code](https://img.shields.io/badge/Claude-Code-blueviolet.svg)](https://www.anthropic.com/claude)
+[![Claude Flow](https://img.shields.io/badge/Claude-Flow-indigo.svg)](https://github.com/ruvnet/claude-flow)
 
 **⚡ 11x Faster Installation | 🏠 100% Local | 📦 Out-of-the-Box Ready | 🎯 Intelligent Guided UI**
 
