@@ -89,23 +89,7 @@ jobs:
       
       - name: Build binary with PyInstaller
         run: |
-          uv run pyinstaller \
-            --onefile \
-            --name sbdk \
-            --add-data "sbdk/templates:sbdk/templates" \
-            --add-data "README.md:." \
-            --hidden-import typer \
-            --hidden-import rich \
-            --hidden-import duckdb \
-            --hidden-import pandas \
-            --hidden-import faker \
-            --hidden-import dlt \
-            --hidden-import dbt.core \
-            --hidden-import dbt.adapters.duckdb \
-            --hidden-import fastapi \
-            --hidden-import uvicorn \
-            --hidden-import watchdog \
-            sbdk/cli/main.py
+          uv run pyinstaller --onefile --name sbdk --add-data "sbdk/templates:sbdk/templates" --add-data "README.md:." --hidden-import typer --hidden-import rich --hidden-import duckdb --hidden-import pandas --hidden-import faker --hidden-import dlt --hidden-import dbt.core --hidden-import dbt.adapters.duckdb --hidden-import fastapi --hidden-import uvicorn --hidden-import watchdog sbdk/cli/main.py
       
       - name: Test binary
         run: |
