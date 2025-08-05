@@ -12,8 +12,8 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from .dbt_utils import DbtRunner, find_dbt_executable
 from .commands.run import load_config
+from .dbt_utils import DbtRunner, find_dbt_executable
 
 console = Console()
 

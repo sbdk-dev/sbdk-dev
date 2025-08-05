@@ -1,0 +1,7 @@
+{
+  "project": "test_visual_cli",
+  "target": "dev",
+  "duckdb_path": "data/test.duckdb",
+  "pipelines_path": "./pipelines",
+  "dbt_path": "./dbt"
+}

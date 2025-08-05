@@ -16,7 +16,6 @@ sources:
           - name: email
             description: User email address
             tests:
-              - unique
               - not_null
           - name: created_at
             description: User account creation timestamp

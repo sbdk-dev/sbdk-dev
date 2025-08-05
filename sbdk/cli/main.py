@@ -7,6 +7,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.text import Text
 
+from sbdk.cli.commands.dev import cli_dev
 from sbdk.cli.commands.init import cli_init
 from sbdk.cli.commands.run import cli_run
 from sbdk.cli.commands.webhooks import cli_webhooks
@@ -31,8 +32,16 @@ def main():
 # Register CLI commands
 app.command("init", help="🏗️ Initialize a new SBDK project")(cli_init)
 app.command("run", help="🚀 Execute data pipeline")(cli_run)
+app.add_typer(cli_dev, name="dev", help="🔧 Execute pipeline in development mode")
 app.command("webhooks", help="🔗 Start webhook listener server")(cli_webhooks)
 app.command("debug", help="🔍 Debug SBDK configuration and environment")(cli_debug)
+
+
+@app.command("interactive")
+def interactive():
+    """🎯 Start interactive CLI interface"""
+    from sbdk.cli.interactive import start_interactive
+    start_interactive(".")
 
 
 @app.command("version")

@@ -1,265 +1,268 @@
 # 🚀 SBDK Demo Project
 
-## 🌟 Experience the Modern Visual CLI
+## 🌟 Experience the Intelligent Interactive Interface
 
-This demo project showcases SBDK.dev's capabilities, including the **new Visual CLI interface** that provides a modern, React-like terminal experience with in-place updates and smooth animations.
+This demo project showcases SBDK.dev's capabilities, including the **intelligent interactive interface** that provides guided flows, smart first-run detection, and out-of-the-box data pipeline experience.
 
-## 🎨 Quick Start with Visual CLI
+## 🎯 Quick Start with Intelligent Interface
 
 ### Try the Interactive Demo
 ```bash
-# Experience the Visual CLI features first
-uv run sbdk visual demo
+# Experience the intelligent guided interface
+uv run sbdk run --visual
 
 # Features demonstrated:
-# ✓ In-place text updates (no scrolling/appending)
-# ✓ Professional headers with live timestamps
-# ✓ Smooth progress bars and animations
-# ✓ Interactive keyboard controls
+# ✓ Smart first-run detection with welcome flow
+# ✓ Guided setup for demo vs custom projects
+# ✓ Real-time progress tracking
+# ✓ Context-aware suggestions
 ```
 
-### Launch the Main Interface
+### Launch the Interactive Interface
 ```bash
-# Start the modern visual interface
-uv run sbdk visual start
+# Start the intelligent interactive interface
+uv run sbdk interactive
 
-# Interactive dashboard with real-time metrics
-uv run sbdk visual dashboard --watch
+# Run with guided visual interface
+uv run sbdk run --visual
 
-# Visual pipeline execution
-uv run sbdk visual pipeline
+# Development mode with file watching
+uv run sbdk run --watch
 
-# DBT operations with progress tracking
-uv run sbdk visual dbt
+# System diagnostics and health check
+uv run sbdk debug
 ```
 
 ## 📁 Project Structure
 
 ```
 demo_project/
-├── 📊 data/                    # Database files (optimized names)
-│   ├── starter-database.duckdb         # Clean starting point
-│   ├── development-database.duckdb     # Development work
-│   ├── sample-data-database.duckdb     # Pre-populated examples
-│   └── backups/                        # Backup copies
+├── 📊 data/                    # Local DuckDB database (self-contained)
+│   └── demo_project.duckdb    # Complete analytics database
 ├── 🔄 pipelines/               # DLT data pipelines
-│   ├── users.py               # User data generation
-│   ├── events.py              # Event tracking data
-│   └── orders.py              # E-commerce orders
+│   ├── users.py               # 10K+ users with unique emails
+│   ├── events.py              # 50K+ realistic behavioral events
+│   └── orders.py              # 20K+ e-commerce orders
 ├── 📈 dbt/                     # dbt transformations
 │   └── models/
-│       ├── staging/           # Clean and standardize
-│       ├── intermediate/      # Business logic
-│       └── marts/            # Final analytical models
+│       ├── staging/           # Clean and standardize raw data
+│       ├── intermediate/      # Business logic and joins
+│       └── marts/            # Final analytics tables
 ├── 🌐 fastapi_server/          # Optional webhook server
-├── ⚙️  sbdk_config.json        # Project configuration
+├── ⚙️  sbdk_config.json        # Local-first configuration
 ├── 📋 USAGE_GUIDE.md          # Detailed usage instructions
 └── 📋 OPTIMIZE_DATABASES.md   # Database optimization guide
 ```
 
-## 🎯 What's Different: Visual CLI vs Traditional
+## 🎯 What's Different: Intelligent Interface vs Traditional
 
 ### Traditional CLI Experience
 ```bash
 # Traditional text-based output
-uv run sbdk dev
-# [2025-01-01 10:00:00] Starting pipelines...
-# [2025-01-01 10:00:05] Running users pipeline...
-# [2025-01-01 10:00:10] Running events pipeline...
-# [2025-01-01 10:00:15] Running orders pipeline...
-# [2025-01-01 10:00:20] Starting dbt...
+uv run sbdk run
+# Starting pipelines...
+# Running users pipeline...
+# Running events pipeline...
+# Running orders pipeline...
+# Starting dbt...
 # ... (scrolling text output)
 ```
 
-### Visual CLI Experience
+### Intelligent Interactive Experience
 ```bash
-# Modern visual interface with components
-uv run sbdk visual start
+# Guided interface with smart detection
+uv run sbdk run --visual
 ```
 
+**First-Run Welcome Flow:**
 ```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ 🎨 SBDK Analytics Platform                    [Processing]        14:30:25   │
-└──────────────────────────────────────────────────────────────────────────────┘
+🎉 Welcome to SBDK.dev!
 
-┌───────────────────[ Pipeline Progress ]─────────────────────┐
-│ Users Pipeline:   [████████████████████████████████████] 100%│
-│ Events Pipeline:  [██████████████████░░░░░░░░░░░░░░░░░░] 65% │
-│ Orders Pipeline:  [████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 30% │
-└─────────────────────────────────────────────────────────────┘
+This appears to be your first time running this project.
+Let me help you get started!
 
-⠋ Processing events data...
+What would you like to do?
+[1] Run demo with sample data (Recommended for first-time users)
+    • Generates 10K users, 50K events, 20K orders
+    • Creates analytics dashboard with dbt
+    • Perfect for learning and exploration
 
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ Press 'q' to quit, 'r' to refresh                          Visual CLI Active │
-└──────────────────────────────────────────────────────────────────────────────┘
+[2] Set up custom project (For experienced users)
+    • Guide you through creating your own pipelines
+    • Help configure your data sources
+    • Customize dbt models for your use case
+
+[3] Learn more about SBDK
+    • View project information and capabilities
+    • Understand the architecture
+    • See what files are included
+
+Choose an option (1-3):
 ```
 
 ## 🚀 Getting Started Options
 
-### Option 1: Visual CLI Experience (Recommended)
+### Option 1: Intelligent Interactive Experience (Recommended)
 ```bash
-# Modern interface with real-time monitoring
-uv run sbdk visual start
+# Guided interface with smart first-run detection
+uv run sbdk run --visual
 
-# Interactive dashboard
-uv run sbdk visual dashboard --watch
+# Full interactive CLI mode
+uv run sbdk interactive
 
-# Visual pipeline execution
-uv run sbdk visual pipeline
+# Execute complete pipeline
+uv run sbdk run
 ```
 
-### Option 2: Traditional CLI
+### Option 2: Development Mode
 ```bash
-# Classic command-line interface
-uv run sbdk dev
+# Development mode with file watching
+uv run sbdk run --watch
 
 # Individual components
-uv run sbdk start
-cd dbt && dbt run && dbt test
+uv run sbdk run --pipelines-only
+uv run sbdk run --dbt-only
 ```
 
-## 🎮 Visual CLI Features
+## 🎮 Interactive Interface Features
 
-### 🎨 **Modern Interface Components**
-- **Headers**: Live status, timestamps, project context
-- **Progress Bars**: Smooth animations, multiple styles
-- **Spinners**: Loading indicators with various animations
-- **Panels**: Information display with Unicode borders
-- **Footers**: Help text and keyboard shortcuts
+### 🎯 **Smart Detection**
+- **First-Run Detection**: Automatically detects new projects
+- **Welcome Flow**: Guided setup for different user levels
+- **Context Awareness**: Provides relevant suggestions
+- **Progress Tracking**: Real-time pipeline execution feedback
 
-### ⚡ **Performance Benefits**
-- **Double-Buffered Rendering**: Zero screen flicker
-- **In-Place Updates**: Text updates in same position
-- **30-60 FPS**: Smooth animations and transitions
-- **Minimal CPU**: Optimized for terminal efficiency
+### ⚡ **Out-of-Box Benefits**
+- **Zero Configuration**: Works immediately after init
+- **Local-First**: Everything contained within project
+- **Self-Contained**: No external dependencies or path mismatches
+- **TDD-Hardened**: Comprehensive test coverage ensures reliability
 
 ### 🎯 **Interactive Features**
-- **Keyboard Navigation**: Intuitive controls
-- **Real-Time Metrics**: Live project monitoring
-- **Error Visualization**: Clear error display
-- **Progress Tracking**: Visual feedback for operations
+- **Menu Navigation**: Clean, intuitive interface
+- **Project Monitoring**: Real-time status and metrics
+- **Database Access**: Direct DuckDB shell integration
+- **System Diagnostics**: Built-in health checks
 
 ## 📋 Available Commands
 
-### Visual CLI Commands
+### Interactive Commands
 ```bash
-uv run sbdk visual start       # Main interface
-uv run sbdk visual demo        # Feature demonstration
-uv run sbdk visual dashboard   # Project monitoring
-uv run sbdk visual dbt         # DBT with progress
-uv run sbdk visual pipeline    # Pipeline execution
+uv run sbdk interactive         # Full interactive CLI mode
+uv run sbdk run --visual       # Guided visual interface
+uv run sbdk run                # Execute complete pipeline
+uv run sbdk run --watch        # Development mode with hot reload
+uv run sbdk debug              # System diagnostics
 ```
 
-### Traditional Commands
+### Pipeline Commands
 ```bash
-uv run sbdk dev               # Complete pipeline
-uv run sbdk start             # Development server
-uv run sbdk webhooks          # Webhook listener
-uv run sbdk debug             # System diagnostics
+uv run sbdk run --pipelines-only  # Data generation only
+uv run sbdk run --dbt-only        # Transformations only
+uv run sbdk run --quiet           # Suppress non-essential output
 ```
 
-## 🎨 Customization
-
-### Visual CLI Configuration
-Edit `sbdk_config.json` to customize the interface:
-
-```json
-{
-  "visual_cli": {
-    "enabled": true,
-    "fps": 30,
-    "theme": "default",
-    "features": {
-      "animations": true,
-      "unicode": "auto",
-      "colors": "auto"
-    }
-  }
-}
-```
-
-### Performance Tuning
+### Utility Commands
 ```bash
-# High refresh rate for powerful systems
-uv run sbdk visual start --fps 60
-
-# Battery saving mode
-uv run sbdk visual start --fps 15
+uv run sbdk version            # Version and system info
+uv run sbdk webhooks           # Start webhook server
 ```
+
+## 🎨 Interactive Menu Options
+
+When running `sbdk interactive`, you get:
+
+1. **Run full pipeline (DLT + dbt)** - Complete data processing
+2. **Run pipelines only** - Generate synthetic data
+3. **Run dbt only** - Execute transformations
+4. **Watch mode** - Auto-reload on file changes
+5. **View database** - Direct DuckDB shell access
+6. **Project information** - Detailed project status
+7. **Quit** - Exit interface
 
 ## 🎯 Use Cases
 
 ### 🔍 **Learning and Exploration**
 ```bash
-# Start with the demo to understand features
-uv run sbdk visual demo
+# Start with intelligent guidance
+uv run sbdk run --visual
 
-# Explore with the main interface
-uv run sbdk visual start
-
-# Monitor your project in real-time
-uv run sbdk visual dashboard --watch
+# Choose option 1: Run demo with sample data
+# System automatically generates realistic data and runs analytics
 ```
 
 ### 🛠️ **Development Workflow**
 ```bash
-# Visual pipeline development
-uv run sbdk visual pipeline
+# Interactive development mode
+uv run sbdk interactive
 
-# DBT model development with progress
-uv run sbdk visual dbt
-
-# Real-time project monitoring
-uv run sbdk visual dashboard --watch
+# Use menu option 4: Watch mode for rapid iteration
+# Files automatically reload when changed
 ```
 
-### 📊 **Production Monitoring**
+### 📊 **Data Analysis**
 ```bash
-# Dashboard for production monitoring
-uv run sbdk visual dashboard
+# Generate data and run transformations
+uv run sbdk run
 
-# Visual validation of data pipelines
-uv run sbdk visual pipeline --production
-
-# DBT deployment with visual feedback
-uv run sbdk visual dbt --target prod
+# Access database directly
+uv run sbdk interactive
+# Then choose option 5: View database
 ```
 
 ## 🆘 Help and Documentation
 
 ### Quick Help
-- **In Visual CLI**: Press `h` or `?` for help
-- **Quit Interface**: Press `q` or `Ctrl+C`
-- **Refresh Data**: Press `r`
+- **In Interactive Mode**: Built-in help and guidance
+- **System Status**: `uv run sbdk debug`
+- **Configuration**: Check `sbdk_config.json`
 
 ### Documentation
 - **[USAGE_GUIDE.md](USAGE_GUIDE.md)**: Detailed usage instructions
 - **[OPTIMIZE_DATABASES.md](OPTIMIZE_DATABASES.md)**: Database optimization
-- **[Visual CLI Guide](../../docs/VISUAL_CLI_GUIDE.md)**: Complete Visual CLI documentation
+- **[Configuration Guide](../../docs/CONFIGURATION.md)**: Complete configuration reference
+- **[API Reference](../../docs/API_REFERENCE.md)**: Full API documentation
 
 ### Troubleshooting
 ```bash
-# Test Visual CLI compatibility
-uv run sbdk visual demo
-
-# Check system status
+# Test system compatibility
 uv run sbdk debug
 
+# Check project health
+uv run sbdk interactive
+# Then check project information (option 6)
+
 # Validate configuration
-uv run sbdk debug --show-config
+cat sbdk_config.json
 ```
 
 ## 🎉 Next Steps
 
-1. **Try the Visual CLI demo**: `uv run sbdk visual demo`
-2. **Explore the main interface**: `uv run sbdk visual start`
-3. **Monitor your project**: `uv run sbdk visual dashboard --watch`
+1. **Try the intelligent interface**: `uv run sbdk run --visual`
+2. **Explore interactive mode**: `uv run sbdk interactive`
+3. **Access the database**: Use DuckDB shell option in interactive mode
 4. **Read the detailed guides**: Check out the documentation files
-5. **Customize your experience**: Edit `sbdk_config.json`
+5. **Customize your experience**: Edit pipelines and dbt models
+
+## 📊 What You Get
+
+### Generated Data
+- **10,000+ Users**: Unique emails, realistic demographics
+- **50,000+ Events**: Behavioral tracking data
+- **20,000+ Orders**: E-commerce transaction data
+
+### Analytics Tables
+- **Staging Models**: Clean, standardized data
+- **Intermediate Models**: Business logic and joins
+- **Mart Models**: Final analytics-ready tables
+
+### Database Features
+- **Local DuckDB**: Lightning-fast local analytics
+- **Self-Contained**: Everything within project directory
+- **Query Ready**: Immediate access for analysis
 
 ---
 
-**🚀 Welcome to the future of data pipeline development with SBDK's Visual CLI!**
+**🚀 Welcome to the future of data pipeline development with SBDK's intelligent interface!**
 
-The Visual CLI transforms the traditional terminal experience into a modern, interactive interface that makes data pipeline development both powerful and enjoyable.
+The intelligent interactive interface transforms data pipeline development into a guided, intuitive experience that works perfectly out-of-the-box for users of all skill levels.
