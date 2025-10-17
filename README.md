@@ -14,7 +14,7 @@
 
 **⚡ 11x Faster Installation | 🏠 100% Local | 📦 Out-of-the-Box Ready | 🎯 Intelligent Guided UI**
 
-> *"SBDK.dev is a developer sandbox framework designed for local-first data pipeline development using DLT, DuckDB, and dbt. It includes synthetic data ingestion, transform pipelines, local execution tooling, a CLI, and webhook support. It's the foundation for a future commercial SaaS version built on Snowflake Native Apps with AI-assisted development, sandbox orchestration, and telemetry."*
+> *"SBDK.dev is a developer sandbox framework designed for local-first data pipeline development using DLT, DuckDB, and dbt. It includes synthetic data ingestion, transform pipelines, local execution tooling, a CLI, and webhook support.*
 
 ---
 
