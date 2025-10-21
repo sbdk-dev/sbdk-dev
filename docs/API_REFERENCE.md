@@ -5,6 +5,36 @@ SBDK.dev provides both CLI and Python API interfaces for data pipeline developme
 
 ## CLI API Reference
 
+### Global Options (Available on All Commands)
+
+These options are available on all SBDK commands for consistent behavior:
+
+```bash
+--verbose, -v          # Enable detailed debug output with logging
+--quiet, -q            # Suppress non-essential output (errors only)
+--dry-run              # Preview mode without executing changes
+--format, -f FORMAT    # Output format: text|json|yaml|table|minimal
+--project-dir, -p DIR  # Specify custom project directory
+```
+
+**Examples:**
+```bash
+# Verbose logging for troubleshooting
+sbdk run --verbose
+
+# JSON output for automation
+sbdk version --format json
+
+# Preview without execution
+sbdk run --dry-run --verbose
+
+# Minimal output for shell scripts
+sbdk version --format minimal
+
+# Quiet mode for CI/CD pipelines
+sbdk run --quiet
+```
+
 ### Core Commands
 
 #### `sbdk init`
@@ -175,14 +205,171 @@ sbdk webhooks [OPTIONS]
 ---
 
 #### `sbdk version`
-Display version and system information.
+Display version and system information with multi-format output support.
 
 ```bash
 sbdk version [OPTIONS]
 ```
 
 **Options:**
+- `--verbose, -v`: Show detailed system information (Python version, platform, paths)
+- `--format, -f FORMAT`: Output format (text, json, minimal)
 - `--help`: Show help message
+
+**Examples:**
+```bash
+# Basic version info
+sbdk version
+
+# Detailed system information
+sbdk version --verbose
+
+# JSON format for automation
+sbdk version --format json
+
+# Minimal output (version number only)
+sbdk version --format minimal
+```
+
+**Output Formats:**
+
+*Text (default):*
+```
+SBDK.dev version 1.1.0
+```
+
+*JSON:*
+```json
+{
+  "version": "1.1.0",
+  "python_version": "3.11.5",
+  "platform": "darwin",
+  "executable": "/path/to/python"
+}
+```
+
+*Minimal:*
+```
+1.1.0
+```
+
+---
+
+#### `sbdk query`
+Query the project's DuckDB database with built-in SQL interface.
+
+```bash
+sbdk query [SQL] [OPTIONS]
+```
+
+**Arguments:**
+- `SQL`: SQL query to execute (optional)
+
+**Options:**
+- `--interactive, -i`: Start interactive SQL mode
+- `--config TEXT`: Path to config file (default: "sbdk_config.json")
+- `--help`: Show help message
+
+**Examples:**
+```bash
+# Show all tables with row counts
+sbdk query
+
+# Execute SQL query
+sbdk query "SELECT * FROM stg_users LIMIT 10"
+
+# Count rows in a table
+sbdk query "SELECT COUNT(*) FROM stg_orders"
+
+# Interactive mode
+sbdk query --interactive
+```
+
+**Interactive Mode Commands:**
+- `tables` - Show all tables
+- `exit`, `quit`, or `q` - Exit interactive mode
+- Any SQL query - Execute and display results
+
+**Output:**
+- Rich formatted tables with syntax highlighting
+- Row counts and execution feedback
+- Limits output to 100 rows for large result sets
+
+**Alternative: query.py Helper**
+
+Every SBDK project includes a `query.py` helper script with additional features:
+
+```bash
+# Show all tables
+python query.py
+
+# Run SQL query
+python query.py "SELECT * FROM users LIMIT 5"
+
+# Interactive mode
+python query.py --interactive
+
+# Execute from file
+python query.py --file queries.sql
+
+# Specify database manually
+python query.py --db path/to/database.duckdb
+```
+
+**DuckDB CLI Installation (Optional - Best Experience):**
+
+For the best interactive experience with syntax highlighting and autocomplete, install the standalone DuckDB CLI:
+
+```bash
+# macOS
+brew install duckdb
+
+# Linux (Debian/Ubuntu)
+wget https://github.com/duckdb/duckdb/releases/latest/download/duckdb_cli-linux-amd64.zip
+unzip duckdb_cli-linux-amd64.zip
+sudo mv duckdb /usr/local/bin/
+
+# Windows
+# Download from https://duckdb.org/docs/installation/
+
+# Then use
+duckdb data/my_project.duckdb
+```
+
+---
+
+#### `sbdk completion`
+Generate shell completion scripts for bash, zsh, fish, or powershell.
+
+```bash
+sbdk completion SHELL
+```
+
+**Arguments:**
+- `SHELL`: Shell type (bash, zsh, fish, powershell)
+
+**Examples:**
+```bash
+# Bash completion
+sbdk completion bash > ~/.local/share/bash-completion/completions/sbdk
+source ~/.bashrc
+
+# Zsh completion
+sbdk completion zsh > ~/.zsh/completions/_sbdk
+autoload -U compinit && compinit
+
+# Fish completion
+sbdk completion fish > ~/.config/fish/completions/sbdk.fish
+
+# PowerShell completion
+sbdk completion powershell > sbdk.ps1
+```
+
+**Features:**
+- Command name completion
+- Option completion with descriptions
+- Argument completion where applicable
+- Works with all global options
 
 **Output:**
 ```

@@ -169,9 +169,16 @@ class TestCLIDev:
             with open("sbdk_config.json", "w") as f:
                 json.dump(config, f)
 
+            # Create pipelines directory with pipeline files
+            os.makedirs("pipelines", exist_ok=True)
+            for pipeline in ["users", "events", "orders"]:
+                with open(f"pipelines/{pipeline}.py", "w") as f:
+                    f.write("# Test pipeline")
+
             # Mock pipeline modules
             with patch("sbdk.cli.commands.dev.run_pipeline_module") as mock_pipeline:
-                result = runner.invoke(app, ["dev", "--pipelines-only"])
+                # dev is a subcommand group, so need "dev dev" to invoke the dev command
+                result = runner.invoke(app, ["dev", "dev", "--pipelines-only"])
 
                 # Should call pipeline modules but not dbt
                 assert mock_pipeline.call_count == 3  # users, events, orders
