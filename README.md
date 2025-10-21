@@ -801,11 +801,11 @@ cd my_awesome_pipeline && sbdk run --visual
 
 ### 📦 Package Information
 
-**Language**: Python (PyPI) • **Not available on npm** (this is a Python package, not JavaScript)
+**Language**: Python 3.9+ • **Package Manager**: pip / uv • **Registry**: PyPI
 
-**Official Package Registries:**
+**Official Distribution Channels:**
 - 🐍 [PyPI (Python Package Index)](https://pypi.org/project/sbdk-dev/) - Install with `pip` or `uv`
-- 🐙 [GitHub Releases](https://github.com/sbdk-dev/sbdk-dev/releases) - Standalone binaries for all platforms
+- 🐙 [GitHub Releases](https://github.com/sbdk-dev/sbdk-dev/releases) - Standalone binaries for Windows, macOS, Linux
 
 *Built with ❤️ and ☕ by developers who believe data tools should be delightful*
 
