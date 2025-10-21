@@ -61,6 +61,11 @@ def cli_init(
             if src_dir.exists():
                 shutil.copytree(src_dir, dst_dir, dirs_exist_ok=True)
 
+        # Copy query.py helper script
+        query_script = templates_root / "query.py"
+        if query_script.exists():
+            shutil.copy2(query_script, project_path / "query.py")
+
         # Update dbt_project.yml with the correct project name
         dbt_project_path = project_path / "dbt" / "dbt_project.yml"
         if dbt_project_path.exists():
@@ -124,8 +129,12 @@ def cli_init(
             f"[cyan]Next steps:[/cyan]\n"
             f"1. cd {project_name}\n"
             f"2. uv run sbdk run                          # Execute pipeline\n"
-            f"3. uv run sbdk run --visual                 # Run with visual interface\n"
-            f"4. uv run sbdk run --watch                  # Development mode with file watching\n\n"
+            f"3. python query.py                          # Query your data\n"
+            f"4. uv run sbdk run --visual                 # Run with visual interface\n\n"
+            f"[cyan]Query your data:[/cyan]\n"
+            f"• python query.py                           # Show all tables\n"
+            f'• python query.py "SELECT * FROM users"     # Run SQL query\n'
+            f"• python query.py --interactive             # Interactive mode\n\n"
             f"[yellow]✨ Ready to go! No virtual environment setup needed with uv.[/yellow]",
             title="🎉 Project Created",
             style="green",

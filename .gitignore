@@ -280,6 +280,9 @@ logs/
 *.db
 *.sqlite
 *.sqlite3
+*.duckdb
+*.duckdb.wal
+*.duckdb-journal
 
 # Archive files
 *.zip

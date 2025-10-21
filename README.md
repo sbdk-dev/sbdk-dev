@@ -2,7 +2,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/sbdk-dev/sbdk-dev?style=social)](https://github.com/sbdk-dev/sbdk-dev/stargazers)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![PyPI Version](https://img.shields.io/badge/PyPI-1.0.1-blue.svg)](https://pypi.org/project/sbdk-dev/)
+[![PyPI Version](https://img.shields.io/badge/PyPI-1.1.0-blue.svg)](https://pypi.org/project/sbdk-dev/)
 [![Test Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](#-testing)
 [![uv Compatible](https://img.shields.io/badge/uv-compatible-green.svg)](https://github.com/astral-sh/uv)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -84,8 +84,35 @@ uv run sbdk run --visual
 ## 🏗️ What You Get Out of the Box
 
 ### 📊 Complete End-to-End Pipeline
+
 ```
-Raw Data → 🔄 DLT Pipelines → 🦆 DuckDB → 📈 dbt Models → 📋 Analytics
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         Data Flow Pipeline                               │
+└─────────────────────────────────────────────────────────────────────────┘
+
+Step 1: Generate         Step 2: Load           Step 3: Transform
+┌──────────────┐        ┌──────────────┐        ┌──────────────┐
+│ Faker + DLT  │        │   DuckDB     │        │  dbt Models  │
+│              │        │              │        │              │
+│ • Users      │───────▶│ Raw Tables:  │───────▶│ Staging:     │
+│ • Events     │        │ • raw_users  │        │ • stg_users  │
+│ • Orders     │        │ • raw_events │        │ • stg_events │
+│              │        │ • raw_orders │        │              │
+│ 10K+ users   │        │              │        │ Marts:       │
+│ 50K+ events  │        │ Embedded     │        │ • dim_users  │
+│ 20K+ orders  │        │ Analytics DB │        │ • fact_orders│
+└──────────────┘        └──────────────┘        └──────────────┘
+                                                        │
+Step 4: Query                                           ▼
+┌──────────────┐                              ┌──────────────┐
+│  SQL Queries │◀─────────────────────────────│  Analytics   │
+│              │                              │   Ready!     │
+│ • Aggregates │                              │              │
+│ • Reports    │                              │ Query with:  │
+│ • Analysis   │                              │ • DuckDB CLI │
+└──────────────┘                              │ • Python     │
+                                              │ • Any SQL    │
+                                              └──────────────┘
 ```
 
 ### 🎯 Generated Project Structure
@@ -136,6 +163,145 @@ sbdk run --watch
 
 ---
 
+## 📐 Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        SBDK.dev v1.1.0                          │
+│                  Professional CLI Architecture                   │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                ┌─────────────┴─────────────┐
+                │    CLI Entry Point        │
+                │   (Global Options)        │
+                │  --verbose --quiet        │
+                │  --dry-run --format       │
+                └─────────────┬─────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+    ┌───▼───┐            ┌───▼───┐            ┌───▼───┐
+    │ init  │            │  run  │            │version│
+    │       │            │       │            │       │
+    └───┬───┘            └───┬───┘            └───┬───┘
+        │                    │                    │
+        ▼                    ▼                    ▼
+┌───────────────────────────────────────────────────────────┐
+│                  Base Command Layer                        │
+│  • Context Management  • Error Handling  • Validation     │
+│  • Output Formatting   • Logging        • Dry-run         │
+└───────────────────────────────────────────────────────────┘
+        │                    │                    │
+        ▼                    ▼                    ▼
+┌─────────────┐    ┌─────────────────┐    ┌─────────────┐
+│  Project    │    │  DLT Pipelines  │    │   System    │
+│  Setup      │───▶│       +         │◀───│   Info      │
+│             │    │  dbt Transform  │    │             │
+└─────────────┘    └────────┬────────┘    └─────────────┘
+                            │
+                            ▼
+                    ┌───────────────┐
+                    │    DuckDB     │
+                    │   (Local DB)  │
+                    └───────────────┘
+```
+
+## ✨ Professional CLI Architecture (v1.1.0)
+
+### 🎯 Spec-Kit Inspired Design
+SBDK v1.1.0 introduces a professional-grade CLI architecture with patterns inspired by industry-leading tools:
+
+**Phase 1: Core Architecture**
+- 🔧 **Exception Hierarchy**: Structured error handling with actionable suggestions
+- 📦 **Context Management**: Centralized state with intelligent resource lifecycle
+- ✅ **Pydantic Validation**: Type-safe configuration with comprehensive validation
+- 🎨 **Multi-Format Output**: text, JSON, YAML, table, minimal formats
+
+**Phase 2: CLI Enhancements**
+- 🏗️ **Base Command Architecture**: Abstract classes for consistent command behavior
+- 🌍 **Global Options**: --verbose, --quiet, --dry-run, --format, --project-dir
+- 🔧 **Shell Completion**: Support for bash, zsh, fish, powershell
+- 📊 **Enhanced Logging**: Persistent logs to `.sbdk/logs/` with rotation
+
+### 💡 Intelligent Error Handling
+
+```
+┌────────────────────────────────────────────────────────────┐
+│             Error Handling Flow (Phase 1)                  │
+└────────────────────────────────────────────────────────────┘
+
+User Command
+     │
+     ▼
+┌─────────────────┐
+│  Validation     │
+│  • Pydantic     │──── Fail ───▶ ValidationError
+│  • Schema Check │               ↓
+└────────┬────────┘          ❌ Clear message
+         │ Pass              💡 Actionable suggestion
+         ▼                   📋 Details (if --verbose)
+┌─────────────────┐               Exit Code: 4
+│   Execution     │
+│  • Run Command  │──── Fail ───▶ PipelineError
+│  • Process Data │               ↓
+└────────┬────────┘          ❌ What went wrong
+         │ Success           💡 How to fix
+         ▼                   📋 Stack trace (if --verbose)
+┌─────────────────┐               Exit Code: 3
+│ Output Format   │
+│  • text         │
+│  • json         │
+│  • yaml         │
+│  • table        │
+│  • minimal      │
+└─────────────────┘
+
+Exit Codes:
+  0 = Success
+  1 = User Error
+  2 = System Error
+  3 = Pipeline Error
+  4 = Validation Error
+  5 = Network Error
+```
+
+**Examples:**
+```bash
+# Actionable error messages with suggestions
+$ sbdk run
+❌ Error: Not in an SBDK project directory
+💡 Suggestion: Run 'sbdk init <project_name>' to create a new project
+
+# Structured output for automation
+$ sbdk version --format json
+{
+  "version": "1.1.0",
+  "python_version": "3.11.5",
+  "platform": "darwin"
+}
+
+# Minimal output for shell scripts
+$ sbdk version --format minimal
+1.1.0
+```
+
+### 🔍 Enhanced Developer Experience
+```bash
+# Preview changes without execution
+sbdk run --dry-run --verbose
+
+# Detailed logging for troubleshooting
+sbdk run --verbose              # Logs to .sbdk/logs/sbdk_YYYYMMDD_HHMMSS.log
+
+# Automation-friendly output
+sbdk debug --format json > status.json
+
+# Quiet mode for CI/CD pipelines
+sbdk run --quiet                # Errors only, perfect for automation
+```
+
+---
+
 ## 🚀 Sandbox Development Features
 
 ### 🏢 Sandbox Environment Features
@@ -161,6 +327,53 @@ sbdk run --visual           # Watch pipeline execution in real-time
 # ✅ DuckDB for fast local analytics
 # ✅ Perfect for experimentation and learning
 ```
+
+### 🔍 Query Your Data
+
+SBDK provides multiple ways to query your local DuckDB database:
+
+#### Option 1: Built-in query.py Helper (No Installation Required)
+```bash
+# Every SBDK project includes a query.py helper
+python query.py                           # Show all tables
+python query.py "SELECT * FROM users"     # Run SQL query
+python query.py --interactive             # Interactive mode
+```
+
+#### Option 2: CLI Query Command
+```bash
+# Use the sbdk query command
+sbdk query                                # Show all tables
+sbdk query "SELECT COUNT(*) FROM users"   # Run SQL query
+sbdk query --interactive                  # Interactive mode
+```
+
+#### Option 3: DuckDB CLI (Optional - Best Experience)
+```bash
+# Install DuckDB CLI for full features
+# macOS
+brew install duckdb
+
+# Linux (Debian/Ubuntu)
+wget https://github.com/duckdb/duckdb/releases/latest/download/duckdb_cli-linux-amd64.zip
+unzip duckdb_cli-linux-amd64.zip
+sudo mv duckdb /usr/local/bin/
+
+# Windows
+# Download from https://duckdb.org/docs/installation/
+
+# Then use the CLI
+duckdb data/my_project.duckdb
+```
+
+**Why Install DuckDB CLI?**
+- 🎨 Syntax highlighting and autocomplete
+- 📊 Better table formatting
+- 🔄 Command history
+- 📝 .sql file execution
+- ⚡ Native performance
+
+**Note:** SBDK includes the Python `duckdb` package by default, so you can always use `python query.py` or `sbdk query` without any additional installation. The standalone DuckDB CLI is optional but provides the best interactive experience.
 
 ### 🔧 Advanced Configuration & Scaling
 ```json
@@ -207,6 +420,15 @@ sbdk run --visual           # Watch pipeline execution in real-time
 
 ## 🛠️ Complete Command Reference
 
+### Global Options (Available on All Commands)
+```bash
+--verbose, -v                # 🔍 Detailed debug output with logging
+--quiet, -q                  # 🔇 Suppress non-essential output (errors only)
+--dry-run                    # 👁️ Preview mode without executing changes
+--format, -f                 # 📋 Output format: text|json|yaml|table|minimal
+--project-dir, -p            # 📂 Specify custom project directory
+```
+
 ### Core Workflow Commands
 ```bash
 sbdk init <project_name>     # 🏗️ Initialize new project with guided setup
@@ -217,12 +439,42 @@ sbdk run --pipelines-only    # 🔄 Data generation only
 sbdk run --dbt-only          # 📈 Transformations only
 ```
 
+### Data Query Commands
+```bash
+# Query your DuckDB database
+sbdk query                           # 📊 Show all tables with row counts
+sbdk query "SELECT * FROM users"     # 🔍 Execute SQL query
+sbdk query --interactive             # 💻 Interactive SQL mode
+
+# Alternative: Use included query.py helper
+python query.py                      # Show tables (no installation required)
+python query.py "SELECT ..."         # Run query
+python query.py --interactive        # Interactive mode
+```
+
+### Professional CLI Features
+```bash
+# Multi-format output for automation
+sbdk version --format json           # JSON output for scripts
+sbdk version --format minimal        # Version number only
+sbdk version --verbose               # Detailed system information
+
+# Shell completion support
+sbdk completion bash > ~/.local/share/bash-completion/completions/sbdk
+sbdk completion zsh > ~/.zsh/completions/_sbdk
+
+# Advanced workflow control
+sbdk run --dry-run --verbose        # Preview with detailed logging
+sbdk init my_project --quiet        # Silent initialization
+```
+
 ### Advanced Operations
 ```bash
 sbdk debug                   # 🔍 System diagnostics & health check
-sbdk webhooks                # 🔗 Start webhook listener server  
+sbdk webhooks                # 🔗 Start webhook listener server
 sbdk interactive             # 🎯 Full interactive CLI mode
 sbdk version                 # ℹ️ Version and environment info
+sbdk completion <shell>      # 🔧 Generate shell completion scripts
 ```
 
 ### Development & Testing
@@ -546,4 +798,4 @@ cd my_awesome_pipeline && sbdk run --visual
 
 ---
 
-*SBDK.dev v1.0.1 - Production-ready with zero compromises*
+*SBDK.dev v1.1.0 - Professional CLI with enhanced developer experience*

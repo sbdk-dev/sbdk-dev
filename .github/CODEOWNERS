@@ -1,0 +1,11 @@
+# CODEOWNERS file for sbdk-dev
+# Learn about CODEOWNERS: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owner - all files require review from @matt-strautmann
+* @matt-strautmann
+
+# Specific areas
+/.github/ @matt-strautmann
+/docs/ @matt-strautmann
+/sbdk/ @matt-strautmann
+/tests/ @matt-strautmann

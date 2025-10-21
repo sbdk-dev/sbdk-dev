@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sbdk-dev"
-version = "1.0.1"
-description = "🚀 SBDK.dev - Local-first data pipeline sandbox toolkit"
+version = "1.1.2"
+description = "🚀 Local-first data pipeline sandbox: DuckDB + dbt + DLT with interactive SQL query - Zero setup, instant analytics"
 readme = "README.md"
-license = "MIT"
+license = {text = "MIT"}
 authors = [
     {name = "SBDK.dev Team", email = "hello@sbdk.dev"}
 ]
@@ -15,31 +15,60 @@ maintainers = [
     {name = "SBDK.dev Team", email = "hello@sbdk.dev"}
 ]
 keywords = [
-    "data-pipeline", 
-    "duckdb", 
-    "dbt", 
-    "dlt", 
-    "etl", 
-    "local-first", 
-    "development-tools",
+    "data-pipeline",
+    "duckdb",
+    "dbt",
+    "dlt",
+    "etl",
+    "elt",
+    "local-first",
+    "data-engineering",
     "analytics",
-    "data-engineering"
+    "sql",
+    "query",
+    "cli",
+    "sandbox",
+    "development",
+    "data-science",
+    "olap",
+    "data-warehouse",
+    "pipeline",
+    "transformation",
+    "database"
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",
+    "Framework :: Pydantic",
+    "Framework :: Pydantic :: 2",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "Intended Audience :: System Administrators",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
     "Operating System :: OS Independent",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: SQL",
     "Topic :: Database",
+    "Topic :: Database :: Database Engines/Servers",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
     "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Scientific/Engineering",
     "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Utilities",
     "Typing :: Typed"
 ]
 requires-python = ">=3.9"
@@ -59,6 +88,8 @@ dependencies = [
     "watchdog>=3.0.0",
     "dlt[duckdb]>=0.4.0",
     "psutil>=5.9.0",
+    "pyyaml>=6.0.0",
+    "deepdiff>=8.6.1",  # Security: Fix CVE-2025-58367
 ]
 
 [project.optional-dependencies]

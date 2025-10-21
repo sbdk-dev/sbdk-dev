@@ -20,7 +20,7 @@ console = Console()
 
 # Create the dev command
 cli_dev = typer.Typer(
-    name="dev", help="🔧 Execute pipeline in development mode with hot reload"
+    name="dev", help="Execute pipeline in development mode with hot reload"
 )
 
 
