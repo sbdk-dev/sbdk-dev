@@ -1,11 +1,12 @@
 # 🚀 SBDK.dev - Sandbox Development Kit for Data Pipelines
 
+[![PyPI version](https://img.shields.io/pypi/v/sbdk-dev.svg)](https://pypi.org/project/sbdk-dev/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/sbdk-dev.svg)](https://pypi.org/project/sbdk-dev/)
+[![Python 3.9+](https://img.shields.io/pypi/pyversions/sbdk-dev.svg)](https://pypi.org/project/sbdk-dev/)
 [![GitHub stars](https://img.shields.io/github/stars/sbdk-dev/sbdk-dev?style=social)](https://github.com/sbdk-dev/sbdk-dev/stargazers)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![PyPI Version](https://img.shields.io/badge/PyPI-1.1.0-blue.svg)](https://pypi.org/project/sbdk-dev/)
+[![License: MIT](https://img.shields.io/pypi/l/sbdk-dev.svg)](https://github.com/sbdk-dev/sbdk-dev/blob/main/LICENSE)
 [![Test Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](#-testing)
 [![uv Compatible](https://img.shields.io/badge/uv-compatible-green.svg)](https://github.com/astral-sh/uv)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![dbt](https://img.shields.io/badge/dbt-1.7+-orange.svg)](https://www.getdbt.com/)
 [![DuckDB](https://img.shields.io/badge/DuckDB-0.9+-yellow.svg)](https://duckdb.org/)
 [![Built with AI](https://img.shields.io/badge/Built%20with-AI-purple.svg)](https://www.anthropic.com/)
@@ -47,16 +48,22 @@ sbdk init my_pipeline && cd my_pipeline && sbdk run  # 30 seconds to data
 ## 🚀 Quick Sandbox Setup
 
 ### Option 1: Install from PyPI (Recommended)
+
+**📦 Package Registry:** [https://pypi.org/project/sbdk-dev/](https://pypi.org/project/sbdk-dev/)
+
 ```bash
 # Lightning-fast installation with uv (11x faster than pip)
 uv pip install sbdk-dev
+
+# Or use pip
+pip install sbdk-dev
 
 # Create your first data pipeline
 sbdk init my_analytics_project
 cd my_analytics_project
 
-# Run with intelligent interactive interface
-sbdk run --visual
+# Run the pipeline
+sbdk run
 ```
 
 ### Option 2: Development Installation
@@ -790,7 +797,15 @@ cd my_awesome_pipeline && sbdk run --visual
 
 ### 🚀 **The future of data pipelines is local-first** 🚀
 
-**[⭐ Star on GitHub](https://github.com/sbdk-dev/sbdk-dev)** • **[📖 Documentation (Coming Soon)](https://docs.sbdk.dev)**
+**[⭐ Star on GitHub](https://github.com/sbdk-dev/sbdk-dev)** • **[📦 View on PyPI](https://pypi.org/project/sbdk-dev/)** • **[📖 Documentation (Coming Soon)](https://docs.sbdk.dev)**
+
+### 📦 Package Information
+
+**Language**: Python (PyPI) • **Not available on npm** (this is a Python package, not JavaScript)
+
+**Official Package Registries:**
+- 🐍 [PyPI (Python Package Index)](https://pypi.org/project/sbdk-dev/) - Install with `pip` or `uv`
+- 🐙 [GitHub Releases](https://github.com/sbdk-dev/sbdk-dev/releases) - Standalone binaries for all platforms
 
 *Built with ❤️ and ☕ by developers who believe data tools should be delightful*
 
@@ -798,4 +813,4 @@ cd my_awesome_pipeline && sbdk run --visual
 
 ---
 
-*SBDK.dev v1.1.0 - Professional CLI with enhanced developer experience*
+*SBDK.dev v1.1.2 - Professional CLI with Windows binary support and query functionality*
