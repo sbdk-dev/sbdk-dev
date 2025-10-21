@@ -29,7 +29,7 @@ console = Console()
 # Create app with enhanced configuration
 app = typer.Typer(
     name="sbdk",
-    help="🚀 SBDK.dev - Local-first data pipeline sandbox",
+    help="SBDK.dev - Local-first data pipeline sandbox",
     rich_markup_mode="rich",
     add_completion=True,  # Enable shell completion
     no_args_is_help=True,  # Show help if no args
@@ -132,21 +132,21 @@ def main(
             sbdk_ctx.logger.debug(f"Output format: {output_format}")
 
         if dry_run:
-            sbdk_ctx.logger.info("🔍 DRY RUN MODE: No changes will be made")
+            sbdk_ctx.logger.info("DRY RUN MODE: No changes will be made")
 
 
 # Register CLI commands
-app.command("init", help="🏗️ Initialize a new SBDK project")(cli_init)
-app.command("run", help="🚀 Execute data pipeline")(cli_run)
-app.command("query", help="🔍 Query DuckDB database")(cli_query)
-app.add_typer(cli_dev, name="dev", help="🔧 Execute pipeline in development mode")
-app.command("webhooks", help="🔗 Start webhook listener server")(cli_webhooks)
-app.command("debug", help="🔍 Debug SBDK configuration and environment")(cli_debug)
+app.command("init", help="Initialize a new SBDK project")(cli_init)
+app.command("run", help="Execute data pipeline")(cli_run)
+app.command("query", help="Query DuckDB database")(cli_query)
+app.add_typer(cli_dev, name="dev", help="Execute pipeline in development mode")
+app.command("webhooks", help="Start webhook listener server")(cli_webhooks)
+app.command("debug", help="Debug SBDK configuration and environment")(cli_debug)
 
 
 @app.command("interactive")
 def interactive():
-    """🎯 Start interactive CLI interface"""
+    """Start interactive CLI interface"""
     from sbdk.cli.interactive import start_interactive
     start_interactive(".")
 

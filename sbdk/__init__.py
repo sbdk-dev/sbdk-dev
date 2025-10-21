@@ -5,7 +5,7 @@ A comprehensive toolkit for building data pipelines using DLT, DuckDB, and dbt.
 Perfect for local development, prototyping, and testing data workflows.
 """
 
-__version__ = "1.1.0"
+__version__ = "1.1.2"
 __author__ = "SBDK.dev Team"
 __email__ = "hello@sbdk.dev"
 __description__ = "🚀 SBDK.dev - Local-first data pipeline sandbox toolkit"

@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2025-10-21
+
+### Fixed
+
+#### Windows Binary Support
+- **Removed Unicode emojis from CLI help text** to fix Windows standalone binary crashes
+  - Windows console doesn't support UTF-8 emojis by default, causing `UnicodeEncodeError`
+  - Removed emojis from all command help strings and log messages
+  - Windows binary now works correctly on all Windows systems
+  - All functionality remains the same, only visual presentation simplified
+
+**Impact**: Windows users can now use the standalone binary without crashes. Python package users see no functional changes.
+
+---
+
 ## [1.1.1] - 2025-10-21
 
 ### Changed

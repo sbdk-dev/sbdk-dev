@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sbdk-dev"
-version = "1.1.1"
+version = "1.1.2"
 description = "🚀 Local-first data pipeline sandbox: DuckDB + dbt + DLT with interactive SQL query - Zero setup, instant analytics"
 readme = "README.md"
 license = {text = "MIT"}
