@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2025-10-21
+
+### Changed
+
+#### Package Metadata Optimization
+- Enhanced package description for better discoverability
+- Expanded keywords from 9 to 20 for improved PyPI search visibility
+  - Added: sql, query, olap, data-warehouse, transformation, database
+- Expanded classifiers from 14 to 31 for better categorization
+  - Added Framework :: Pydantic and Framework :: Pydantic :: 2
+  - Added Intended Audience :: Information Technology and Education
+  - Added Programming Language :: Python :: 3.13
+  - Added Programming Language :: SQL
+  - Added Topic :: Scientific/Engineering :: Information Analysis
+  - Added Typing :: Typed
+- Optimized for search terms: "sql query", "data pipeline", "local-first", "DuckDB analytics"
+
+**No functional changes** - This release only updates package metadata to improve discoverability on PyPI.
+
+---
+
 ## [1.1.0] - 2025-10-21
 
 ### Major Enhancements - Phase 1 & 2: CLI Transformation
