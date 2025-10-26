@@ -6,9 +6,11 @@
 set -e  # Exit on error
 
 # Configuration
-WIKI_URL="http://local_proxy@127.0.0.1:59050/git/sbdk-dev/sbdk-dev.wiki.git"
+WIKI_URL="https://github.com/sbdk-dev/sbdk-dev.wiki.git"
 WIKI_DIR="$HOME/sbdk-wiki"
-SOURCE_DIR="/tmp/sbdk-wiki"
+# Get the directory where this script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SOURCE_DIR="$SCRIPT_DIR"
 
 # Colors for output
 RED='\033[0;31m'
