@@ -299,3 +299,6 @@ credentials/
 *.pem
 *.key
 *.cert
+
+# Wiki content (nested git repo)
+wiki-content/.git
