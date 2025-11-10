@@ -1,1199 +1,1338 @@
-# SBDK Platform Vision: Local-First Data Development Sandbox
+# SBDK Platform Vision: The AI-Native Data Development Platform with Semantic Intelligence
 
-**Version**: 2.0
+**Version**: 4.0
 **Date**: January 2025
-**Author**: Platform Strategy Team
+**Status**: Unified Vision - Foundation to Semantic to Autonomous Platform
 
 ---
 
 ## Executive Summary
 
-SBDK is not trying to be an all-in-one AI analytics platform. Instead, **SBDK is the foundational local-first data development sandbox** that enables rapid iteration, safe experimentation, and modern data pipeline development practices.
+SBDK is evolving from a local-first data development sandbox into **the AI-native data development platform with semantic intelligence** that fundamentally transforms how data pipelines are built, understood, and maintained.
 
-> **"SBDK is your local data workshop - the place where you build, test, and iterate on data pipelines before they go to production."**
+> **"SBDK: Where human creativity meets AI capability and semantic understanding to build data pipelines faster, safer, and smarter."**
 
-### The Real Problem SBDK Solves
+### The Three Horizons of SBDK
 
-**Modern data development is broken**:
-- ❌ **Expensive iteration**: $200+ cloud costs to test a simple pipeline change
-- ❌ **Slow feedback**: 10-30 minutes to see if your dbt model works
-- ❌ **Unsafe experimentation**: Can't test breaking changes without affecting teammates
-- ❌ **Complex setup**: Hours to spin up a development environment
-- ❌ **Inconsistent environments**: "Works on my machine" but fails in production
-
-**SBDK fixes this** with a local-first data development lifecycle:
-- ✅ **Instant feedback**: 30 seconds from idea to working pipeline
-- ✅ **Zero cost iteration**: Unlimited experiments for $0
-- ✅ **Safe sandbox**: Break anything, reset in seconds
-- ✅ **Consistent environments**: Same setup across team members
-- ✅ **Production parity**: Local development mirrors production patterns
-
-### SBDK's Role in the Ecosystem
-
-**SBDK is the foundation layer**:
 ```
-┌─────────────────────────────────────────────────────┐
-│              AI Analytics Layer                      │
-│  (knowDB, Claude+MCP, Cursor, Custom Tools)        │
-└─────────────────────────────────────────────────────┘
-                       │ ↑
-                   Uses │ │ Queries
-                       ▼ │
-┌─────────────────────────────────────────────────────┐
-│               SBDK Foundation                       │
-│  • Data Pipeline Development (DLT)                 │
-│  • Local Database (DuckDB)                         │
-│  • Transformations (dbt)                           │
-│  • CLI & Developer Experience                      │
-│  • Testing & Quality Assurance                     │
-│  • Project Management                              │
-└─────────────────────────────────────────────────────┘
+Horizon 1 (Now → Q2 2026): Foundation Excellence
+├─ Local-first data development sandbox
+├─ 30-second iteration cycles
+├─ Production parity with zero cloud costs
+└─ MCP server for AI integration (CRITICAL PATH)
+
+Horizon 2 (Q3 2026 → Q2 2027): AI + Semantic Intelligence
+├─ AI agents with semantic understanding
+├─ Portable data transformations (Ibis)
+├─ Automated testing and optimization
+└─ Intelligent error detection and fixing
+
+Horizon 3 (Q3 2027+): Autonomous Data Platform
+├─ Self-building pipelines from specifications
+├─ Continuous optimization and healing
+├─ Semantic reasoning and adaptation
+└─ Human-in-the-loop for strategic decisions only
 ```
 
-**Division of responsibilities**:
-- **SBDK**: Pipeline development, local execution, testing, iteration
-- **knowDB**: AI data analyst, semantic layer, natural language queries
-- **Other tools**: Visualization, deployment, production monitoring
+### Core Identity Evolution
+
+**SBDK remains**:
+- ✅ The foundational local-first data development platform
+- ✅ Focused on rapid iteration and developer experience
+- ✅ The base layer that other tools build upon
+
+**SBDK becomes**:
+- 🚀 AI-powered with agent swarms for accelerated development
+- 🚀 Semantically aware with business logic understanding
+- 🚀 Backend-portable with Ibis-powered transformations
+- 🚀 Self-healing with autonomous bug detection and fixing
+- 🚀 The bridge between human intent and data infrastructure
 
 ---
 
 ## Table of Contents
 
-1. [The Data Development Lifecycle](#1-the-data-development-lifecycle)
-2. [SBDK's Core Mission](#2-sbdks-core-mission)
-3. [Current State & Gaps](#3-current-state--gaps)
-4. [Platform Architecture](#4-platform-architecture)
-5. [Development Experience Vision](#5-development-experience-vision)
-6. [Integration Strategy](#6-integration-strategy)
-7. [Roadmap: Building the Foundation](#7-roadmap-building-the-foundation)
-8. [Success Metrics](#8-success-metrics)
+1. [The Unified Vision](#1-the-unified-vision)
+2. [Core Mission & Principles](#2-core-mission--principles)
+3. [The AI-Data Development Gap](#3-the-ai-data-development-gap)
+4. [Platform Architecture Evolution](#4-platform-architecture-evolution)
+5. [Three-Horizon Roadmap](#5-three-horizon-roadmap)
+6. [AI Integration Strategy](#6-ai-integration-strategy)
+7. [Semantic Layer Strategy](#7-semantic-layer-strategy)
+8. [Development Workflows](#8-development-workflows)
+9. [Integration Ecosystem](#9-integration-ecosystem)
+10. [Success Metrics](#10-success-metrics)
+11. [Strategic Impact](#11-strategic-impact)
 
 ---
 
-## 1. The Data Development Lifecycle
+## 1. The Unified Vision
 
-### 1.1 Understanding Modern Data Development
+### 1.1 The Evolution Story
 
-The **Analytics Development Lifecycle (ADLC)** is fundamentally different from software development:
+**Today**: Data engineers spend 80% of their time on repetitive tasks - writing boilerplate, debugging schemas, fixing broken pipelines, and managing environments.
 
-**Traditional Software Development**:
-- Linear: Requirements → Design → Code → Test → Deploy
-- Predictable inputs and outputs
-- Clear success criteria
+**Tomorrow**: AI agents handle the repetitive work while humans focus on business logic, data modeling decisions, and strategic architecture.
 
-**Data Development**:
-- **Iterative**: Explore → Hypothesis → Test → Learn → Repeat
-- **Experimental**: 80% of data experiments fail
-- **Discovery-driven**: You don't know what you'll find until you look
-- **Quality-focused**: Bad data = bad decisions
+**SBDK is the platform that makes this transition possible.**
 
-### 1.2 The Six Phases of Data Development
+### 1.2 The Platform Strategy
 
-Based on industry research, modern data development follows this cycle:
+```
+┌─────────────────────────────────────────────────┐
+│         AI Applications & Tools                  │
+│   (knowDB, Claude Analyst, Agentic Builder)     │
+└──────────────────┬──────────────────────────────┘
+                   │ Uses
+┌──────────────────▼──────────────────────────────┐
+│         AI Agent Orchestration Layer             │
+│   (Claude Code SDK, LangGraph, AgentDB)         │
+└──────────────────┬──────────────────────────────┘
+                   │ Controls
+┌──────────────────▼──────────────────────────────┐
+│         SBDK AI-Native Platform                  │
+│   • Agent-Driven Development                     │
+│   • Autonomous Testing & Optimization            │
+│   • Self-Healing Pipelines                       │
+└──────────────────┬──────────────────────────────┘
+                   │ Built on
+┌──────────────────▼──────────────────────────────┐
+│         SBDK Foundation Layer                    │
+│   • Local DuckDB Execution                       │
+│   • dbt Transformations                          │
+│   • DLT Pipeline Engine                          │
+│   • CLI & Developer Tools                        │
+└──────────────────────────────────────────────────┘
+```
 
-#### Phase 1: **Discovery** 📊
-*"What problem are we solving?"*
-- Understanding business questions
-- Identifying available data sources
-- Forming hypotheses about what insights might exist
+### 1.3 Why SBDK for AI-Native Development?
 
-**SBDK's role**: Quickly explore and understand data structure
-
-#### Phase 2: **Data Preparation** 🔧
-*"How do we get the data into usable shape?"*
-- Extract data from sources
-- Clean and validate data quality
-- Create consistent schemas
-
-**SBDK's role**: Local ETL pipeline development with instant feedback
-
-#### Phase 3: **Model Planning** 🎯
-*"What analytical approach should we take?"*
-- Design data models and transformations
-- Plan aggregations and business logic
-- Define metrics and KPIs
-
-**SBDK's role**: dbt model development with rapid iteration
-
-#### Phase 4: **Model Building** ⚗️
-*"Let's build and test the solution"*
-- Implement transformations
-- Test with realistic data volumes
-- Validate business logic
-
-**SBDK's role**: Local model building with synthetic data at scale
-
-#### Phase 5: **Communication** 📈
-*"What did we learn?"*
-- Create visualizations and reports
-- Present findings to stakeholders
-- Document insights and methodology
-
-**SBDK's role**: Integration with visualization tools, export capabilities
-
-#### Phase 6: **Operationalization** 🚀
-*"How do we put this into production?"*
-- Deploy to production systems
-- Set up monitoring and alerting
-- Create maintenance procedures
-
-**SBDK's role**: Production deployment patterns, environment parity
-
-### 1.3 The Critical Need for Sandboxes
-
-**Analytics sandbox requirements** (from industry research):
-- ✅ **Wide data processing capability**: Handle diverse data types and sources
-- ✅ **Team collaboration**: Multiple analysts working simultaneously
-- ✅ **Preferred tools**: Let developers use what they know
-- ✅ **Rapid prototyping**: Test ideas quickly without setup overhead
-- ✅ **Safe experimentation**: No risk to production systems
-
-**Traditional sandbox problems**:
-- **Cloud-based**: Expensive, slow, requires internet
-- **Shared environments**: Resource conflicts, version mismatches
-- **Complex setup**: Days to configure, IT involvement required
-- **Limited iteration**: Cost and speed discourage experimentation
-
-**SBDK's sandbox approach**:
-- **Local-first**: Instant startup, unlimited experimentation
-- **Individual**: No resource conflicts, experiment freely
-- **Zero setup**: Works out of the box in 30 seconds
-- **Unlimited iteration**: No cost barrier to trying ideas
+**Unique Position**:
+- **Local-First**: AI agents can iterate instantly without cloud costs
+- **Safe Sandbox**: Agents can experiment freely without breaking production
+- **Fast Feedback**: 30-second cycles perfect for AI learning loops
+- **Clean APIs**: Designed for programmatic access from day one
+- **Semantic Understanding**: Business logic layer for AI comprehension
+- **Backend Portable**: Develop locally, deploy anywhere (via Ibis)
 
 ---
 
-## 2. SBDK's Core Mission
+## 2. Core Mission & Principles
 
-### 2.1 Mission Statement
+### 2.1 Evolved Mission Statement
 
-> **"SBDK provides the fastest, safest, and most cost-effective way to develop data pipelines locally, enabling data professionals to iterate rapidly and build with confidence."**
+> **"SBDK provides the fastest path from data idea to production pipeline, combining human creativity with AI capability to enable 10x developer productivity while maintaining quality and control."**
 
-### 2.2 Core Principles
+### 2.2 Enhanced Core Principles
 
-#### Principle 1: **Local-First Development**
-- Everything runs on your laptop
-- No cloud dependencies for core functionality
-- Instant feedback loops
-- Work offline, sync when ready
+#### Principle 1: **Local-First, AI-Enhanced**
+- Everything runs locally for instant feedback
+- AI agents have full access to safe sandbox
+- Zero cloud dependencies for development
+- Unlimited AI experimentation at zero cost
 
-#### Principle 2: **Rapid Iteration**
-- 30-second cycle from idea to result
-- Hot-reload development
-- Instant reset and retry
-- No ceremony or overhead
+#### Principle 2: **Human-AI Collaboration**
+- Humans define intent and business logic
+- AI handles implementation and optimization
+- Clear boundaries between strategic and tactical
+- Always human-reviewable and overrideable
 
-#### Principle 3: **Production Parity**
-- Local development mirrors production patterns
-- Same tools: DuckDB → BigQuery, Local dbt → Production dbt
-- Validate patterns before expensive cloud deployment
-- Reduce deployment surprises
+#### Principle 3: **Rapid Iteration with Intelligence**
+- 30-second manual cycles
+- 3-second AI-assisted cycles
+- Continuous learning from every iteration
+- Persistent memory across sessions
 
-#### Principle 4: **Developer Experience First**
-- Zero setup complexity
-- Intuitive CLI with smart defaults
-- Rich feedback and error messages
-- Extensible for power users
+#### Principle 4: **Production Parity with Safety**
+- Local patterns match production exactly
+- AI learns from production patterns
+- Safe experimentation before deployment
+- Automatic rollback capabilities
 
-#### Principle 5: **Foundation, Not Platform**
-- Be the best at core data pipeline development
-- Integrate with specialized tools (don't replace them)
-- Provide clean APIs and integration points
-- Let the ecosystem flourish on top
+#### Principle 5: **Foundation for Innovation**
+- Core platform enables AI innovation
+- Clean APIs for agent integration
+- Extensible for custom workflows
+- Ecosystem-friendly architecture
 
-### 2.3 What SBDK Is and Isn't
+### 2.3 What SBDK Is Becoming
 
-#### ✅ What SBDK **IS**:
-- Local-first data pipeline development kit
-- DuckDB-based sandbox for testing ideas
-- dbt development environment with hot reload
-- CLI for data pipeline workflows
-- Foundation for other tools to build upon
-- Educational tool for learning modern data stack
+#### ✅ **SBDK IS**:
+- The AI-native data development platform
+- A collaborative environment for humans and AI agents
+- The fastest way to build production-ready pipelines
+- The foundation for autonomous data operations
 
-#### ❌ What SBDK **IS NOT**:
-- Production data warehouse (use BigQuery, Snowflake)
-- BI/Visualization tool (use Tableau, Observable, knowDB)
-- AI data analyst (knowDB provides this layer)
-- Collaboration platform (Git provides version control)
-- Monitoring/Observability system (use Monte Carlo, dbt Cloud)
-
-### 2.4 Success Metrics
-
-SBDK succeeds when:
-1. **Data engineers can test pipeline changes in <30 seconds**
-2. **Teams can onboard new members in <5 minutes**
-3. **Cloud development costs drop 60-80%** (dev/test moved local)
-4. **Deployment failures decrease** (better local testing)
-5. **Other tools integrate easily** (healthy ecosystem grows on top)
+#### ❌ **SBDK IS NOT**:
+- A no-code/low-code platform (it's pro-code with AI assistance)
+- A replacement for data engineers (it's their superpower)
+- A black-box AI system (everything is transparent and auditable)
+- A production orchestrator (deploy patterns to Airflow/dbt Cloud)
 
 ---
 
-## 3. Current State & Gaps
+## 3. The AI-Data Development Gap
 
-### 3.1 Current SBDK Strengths (v1.1.2)
+### 3.1 Current Problems
 
-#### ✅ **Solid Foundation**
-- **Local execution**: DuckDB + dbt + DLT integration
-- **Professional CLI**: Global options, shell completion, multi-format output
-- **Zero setup**: 30 seconds from install to working pipeline
-- **Quality assurance**: 100% test coverage, production-ready architecture
-- **Data generation**: Realistic synthetic data with relationships
+#### **The Human Bottleneck**
+- ❌ **Repetitive Work**: 60% of data engineering is boilerplate
+- ❌ **Context Switching**: Lost productivity between tasks
+- ❌ **Knowledge Silos**: Expertise trapped in individual minds
+- ❌ **Slow Learning**: Mistakes repeated across teams
 
-#### ✅ **Developer Experience**
-- **Intelligent guided UI**: Smart first-run detection
-- **Development workflow**: `--watch` mode, hot reload
-- **Query capabilities**: Built-in SQL query tools
-- **Modern tooling**: uv (11x faster), Typer + Rich CLI
+#### **The AI Limitation**
+- ❌ **No Sandbox**: AI can't safely test data pipelines
+- ❌ **No Memory**: Context lost between sessions
+- ❌ **No Feedback**: Can't learn from execution results
+- ❌ **No Integration**: Isolated from data infrastructure
 
-### 3.2 Critical Gaps for Data Development
+### 3.2 SBDK's Solution
 
-#### ❌ **Limited Data Sources**
-- **Current**: Only synthetic data generation
-- **Need**: Connect to APIs, databases, files for realistic development
-- **Impact**: Can't test real-world data integration scenarios
+#### **For Humans**
+- ✅ **AI Handles Boilerplate**: Focus on business logic
+- ✅ **Continuous Context**: AI maintains project state
+- ✅ **Shared Knowledge**: AI learns from entire team
+- ✅ **Accelerated Learning**: AI prevents repeated mistakes
 
-#### ❌ **No Environment Management**
-- **Current**: Single project configuration
-- **Need**: Multiple environments (dev, staging, prod configs)
-- **Impact**: Can't test deployment scenarios locally
-
-#### ❌ **Basic Pipeline Testing**
-- **Current**: dbt tests only
-- **Need**: Data quality testing, pipeline validation, regression tests
-- **Impact**: Quality issues slip into production
-
-#### ❌ **No Incremental Development**
-- **Current**: Full rebuilds only
-- **Need**: Incremental processing, change detection, smart rebuilds
-- **Impact**: Slow iteration on large datasets
-
-#### ❌ **Limited Deployment Integration**
-- **Current**: Local-only
-- **Need**: Deploy patterns, config translation, CI/CD integration
-- **Impact**: Manual deployment process, environment drift
-
-#### ❌ **No Team Collaboration Features**
-- **Current**: Single-user tool
-- **Need**: Shared project templates, environment sharing
-- **Impact**: Inconsistent setups across team members
-
-### 3.3 Developer Pain Points
-
-Based on data engineering interviews and industry research:
-
-#### **Pain Point 1: Expensive Cloud Development** 💰
-- "I spend $500/month on Snowflake just for testing"
-- "Can't afford to iterate quickly on BigQuery"
-- "Development costs more than production"
-
-#### **Pain Point 2: Slow Feedback Loops** ⏱️
-- "Takes 15 minutes to see if my dbt model works"
-- "Pipeline fails after 2 hours, then I have to start over"
-- "Can't experiment quickly"
-
-#### **Pain Point 3: Environment Inconsistency** 🔄
-- "Works on my machine, fails in staging"
-- "Different team members have different local setups"
-- "Onboarding takes a week to get environment working"
-
-#### **Pain Point 4: Fear of Breaking Production** 😰
-- "Can't test risky changes safely"
-- "Scared to experiment with new approaches"
-- "Rollbacks are expensive and painful"
-
-#### **Pain Point 5: Complex Toolchain Management** 🛠️
-- "Docker, Kubernetes, 5 config files just to run dbt"
-- "Spend more time managing tools than building pipelines"
-- "Every project requires different setup"
+#### **For AI Agents**
+- ✅ **Safe Sandbox**: Unlimited experimentation locally
+- ✅ **Persistent Memory**: AgentDB stores learning
+- ✅ **Instant Feedback**: Execute and learn immediately
+- ✅ **Deep Integration**: Full access to data stack
 
 ---
 
-## 4. Platform Architecture
+## 4. Platform Architecture Evolution
 
-### 4.1 SBDK Architecture Principles
+### 4.1 Current Architecture (v2.x)
 
-#### **1. Layered Architecture**
 ```
 ┌──────────────────────────────────────────────┐
 │           Developer Interface                │
-│  CLI | TUI | VS Code Extension | MCP Server  │
+│    CLI │ TUI │ VS Code Extension            │
 ├──────────────────────────────────────────────┤
 │          Pipeline Development                │
-│  dbt | DLT | Data Quality | Testing         │
+│      dbt │ DLT │ Data Quality              │
 ├──────────────────────────────────────────────┤
 │            Data Platform                     │
-│         DuckDB | File System                │
-├──────────────────────────────────────────────┤
-│           Foundation                         │
-│   Python | uv | Rich | Typer | pytest      │
+│         DuckDB │ File System                │
 └──────────────────────────────────────────────┘
 ```
 
-#### **2. Plugin Architecture**
-- **Core**: Minimal, fast, reliable foundation
-- **Extensions**: Add capabilities without bloat
-- **Integrations**: Clean APIs for external tools
+### 4.2 AI-Enhanced Architecture with Semantic Layer (v4.x)
 
-#### **3. Environment-First Design**
-- **Environments**: dev, staging, prod configurations
-- **Profiles**: User-specific settings and credentials
-- **Templates**: Reusable project patterns
-
-### 4.2 Core Components (Enhanced)
-
-#### **Component 1: Project Manager**
-```bash
-sbdk env create dev --template analytics
-sbdk env create staging --copy-from dev --target bigquery
-sbdk env switch dev
-sbdk env status
+```
+┌──────────────────────────────────────────────┐
+│         Human Interface Layer                │
+│   CLI │ VS Code │ Web UI │ Chat            │
+├──────────────────────────────────────────────┤
+│         AI Agent Layer                       │
+│   Architect │ Developer │ Tester │          │
+│   Reviewer │ Optimizer │ Deployer           │
+├──────────────────────────────────────────────┤
+│       Agent Orchestration                    │
+│   LangGraph │ Claude Code SDK │ AgentDB     │
+├──────────────────────────────────────────────┤
+│       MCP Server (CRITICAL INTEGRATION)      │
+│   Semantic Query │ Pipeline Ops │ Quality   │
+├──────────────────────────────────────────────┤
+│       SBDK Core Platform                     │
+│   Pipeline Engine │ Quality Framework       │
+│   Environment Manager │ Semantic Layer      │
+├──────────────────────────────────────────────┤
+│       Semantic & Transformation Layer        │
+│   Metric Definitions │ Business Logic       │
+│   Ibis (Portable SQL) │ dbt (SQL-first)    │
+├──────────────────────────────────────────────┤
+│         Data Foundation                      │
+│   DuckDB │ DLT │ File System               │
+└──────────────────────────────────────────────┘
 ```
 
-**Features**:
-- Multiple environment configurations
-- Template-based project creation
-- Environment switching and isolation
-- Configuration validation
+### 4.3 Component Evolution
 
-#### **Component 2: Data Connector**
-```bash
-sbdk source add postgres --name prod_db
-sbdk source add csv --path ./data/*.csv
-sbdk source add api --url https://api.example.com
-sbdk source sync --env dev --sample 10000
-```
-
-**Features**:
-- Multiple data source connectors
-- Sampling for local development
-- Schema detection and validation
-- Incremental sync capabilities
-
-#### **Component 3: Pipeline Engine** (Enhanced)
-```bash
-sbdk pipeline run --incremental
-sbdk pipeline test --coverage
-sbdk pipeline profile --performance
-sbdk pipeline deploy --env staging --dry-run
-```
-
-**Features**:
-- Incremental processing
-- Comprehensive testing framework
-- Performance profiling
-- Deployment preparation
-
-#### **Component 4: Quality Assurance**
-```bash
-sbdk quality check --rules ./quality_rules.yml
-sbdk quality profile --table users --history 30d
-sbdk quality report --format html
-```
-
-**Features**:
-- Data profiling and anomaly detection
-- Custom quality rules
-- Historical quality tracking
-- Quality reporting
-
-#### **Component 5: Developer Tools**
-```bash
-sbdk dev serve --watch --port 8080
-sbdk dev docs --live-reload
-sbdk dev debug --table users --query
-```
-
-**Features**:
-- Hot-reload development server
-- Live documentation
-- Interactive debugging
-- Performance monitoring
-
-### 4.3 Integration Architecture
-
-#### **MCP Server for AI Tools**
+#### **New: Agent Orchestration Layer**
 ```python
-# SBDK MCP Server enables AI tool integration
-from sbdk.mcp import SBDKServer
+from sbdk.agents import DevelopmentSwarm
 
-server = SBDKServer()
+# Create a 5-agent swarm for pipeline development
+swarm = DevelopmentSwarm()
+swarm.develop_pipeline(
+    spec="requirements.yml",
+    agents=["architect", "developer", "tester", "reviewer", "deployer"],
+    mode="collaborative"
+)
+```
+
+#### **New: Semantic Understanding**
+```python
+from sbdk.semantic import BusinessContext
+
+# AI understands business metrics
+context = BusinessContext()
+context.define_metric("churn_rate",
+    definition="customers_lost / total_customers",
+    timeframe="monthly"
+)
+
+# AI can now answer: "What's our churn trend?"
+```
+
+#### **New: Continuous Learning**
+```python
+from sbdk.memory import ProjectMemory
+
+# AI remembers project context
+memory = ProjectMemory()
+memory.store_decision(
+    "why_partition_by_date",
+    reason="Query patterns show 90% filter by date"
+)
+
+# AI uses this knowledge in future decisions
+```
+
+#### **New: Ibis Integration for Portability** (Horizon 2-3)
+```python
+from sbdk.semantic import IbisTransform
+import ibis
+
+# Define transformation once - works on ANY backend
+@IbisTransform
+def calculate_customer_lifetime_value(customers, orders):
+    """Portable transformation using Ibis"""
+    return (customers
+        .join(orders, customers.customer_id == orders.customer_id)
+        .group_by("customer_id")
+        .aggregate(clv=orders.order_total.sum())
+    )
+
+# Local development (DuckDB)
+local_result = calculate_customer_lifetime_value.execute(backend="duckdb")
+
+# Production deployment (BigQuery) - SAME CODE
+prod_result = calculate_customer_lifetime_value.execute(backend="bigquery")
+```
+
+#### **New: MCP Server Integration** (Horizon 1-2 CRITICAL PATH)
+```python
+from sbdk.mcp import MCPServer
+
+# Expose SBDK capabilities to AI agents
+server = MCPServer()
 
 @server.tool
-def execute_query(sql: str, env: str = "dev") -> dict:
-    """Execute SQL query in SBDK environment"""
+def query_metric(metric_name: str, dimensions: List[str], filters: dict):
+    """AI-friendly semantic query interface"""
+    return sbdk.semantic.query(metric_name, dimensions, filters)
+
+@server.tool
+def explain_pipeline(pipeline_name: str):
+    """Explain pipeline logic in business terms"""
+    return sbdk.semantic.explain(pipeline_name)
+
+# AI agents connect via MCP protocol
+server.run(port=3000)
+```
+
+---
+
+## 5. Three-Horizon Roadmap
+
+### 5.1 Horizon 1: Foundation Excellence (Now → Q2 2026)
+
+**Goal**: Perfect the local-first development experience and establish MCP integration layer
+
+#### Phase 1.1: Enhanced Foundation (Q1 2026)
+```bash
+# What users can do
+sbdk env create dev --template analytics  # ✅ COMPLETED Nov 2025
+sbdk env switch staging  # ✅ COMPLETED Nov 2025
+sbdk source add postgres --sample 10000  # In Progress
+sbdk pipeline run --incremental --watch  # Planned
+sbdk quality check --auto-fix  # Planned
+```
+
+**Deliverables**:
+- ✅ Environment management system (COMPLETED Nov 2025)
+- 🔨 Multi-source data connectors (Postgres, MySQL, CSV)
+- 🔨 Incremental processing engine
+- 🔨 Quality framework v1
+- ✅ 30-second iteration cycles (core capability)
+- 🔨 Enhanced error handling and logging
+
+**Current Status**: ~70% complete. Environment management done, connectors and incremental processing in progress.
+
+#### Phase 1.2: Developer Excellence + MCP Foundation (Q2 2026)
+```bash
+# Enhanced developer experience
+sbdk dev serve --hot-reload
+sbdk test suite --coverage
+sbdk docs generate --interactive
+sbdk deploy export --target dbt-cloud
+
+# NEW: MCP server for AI integration (CRITICAL PATH)
+sbdk mcp serve --port 3000
+sbdk mcp list-tools
+```
+
+**Deliverables**:
+- ✅ Hot-reload development mode
+- ✅ Comprehensive testing framework
+- ✅ Auto-documentation generation
+- ✅ CI/CD integration guides
+- ✅ VS Code extension v1
+- 🤖 **MCP server implementation (CRITICAL - blocks all AI work)**
+- 🤖 Basic semantic models (dbt semantic manifest integration)
+- 🤖 Foundation for AI agent access
+
+**Priority**: MCP server is CRITICAL PATH. All Horizon 2 AI features depend on this.
+
+### 5.2 Horizon 2: AI + Semantic Intelligence (Q3 2026 → Q2 2027)
+
+**Goal**: Integrate AI agents with semantic understanding as development partners
+
+#### Phase 2.1: AI Integration + Basic Semantics (Q3 2026)
+```python
+# AI assists development with semantic understanding
+sbdk agent assist --task "optimize slow query"
+sbdk agent review --check quality,performance
+sbdk semantic define metric monthly_revenue "SUM(orders.total)"
+sbdk semantic query "monthly_revenue by customer_segment"
+```
+
+**Deliverables**:
+- 🤖 Claude Code SDK integration
+- 🤖 AgentDB for memory and learning
+- 🤖 Basic agent capabilities (query, explain, suggest)
+- 🧠 **Custom semantic models** (YAML-based metric definitions)
+- 🧠 Semantic query interface (business terms → SQL)
+- 🤖 AI-assisted debugging with context
+
+**Prerequisites**: MCP server operational (Phase 1.2)
+
+#### Phase 2.2: Intelligent Automation + Advanced Semantics (Q4 2026)
+```python
+# AI handles routine tasks with semantic reasoning
+sbdk agent fix --issue "schema mismatch"
+sbdk agent generate --spec "customer_analytics.yml"
+sbdk semantic discover --database prod --suggest-metrics
+sbdk semantic export --format dbt-semantic-layer
+```
+
+**Deliverables**:
+- 🤖 Auto-fix capabilities
+- 🤖 Pipeline generation from specifications
+- 🤖 Performance optimization
+- 🧠 **Semantic model discovery** (auto-suggest metrics from data)
+- 🧠 Semantic layer export (dbt, Cube, LookML formats)
+- 🤖 Synthetic data generation matching semantics
+- 🤖 Pattern learning and recommendations
+
+#### Phase 2.3: Swarms + Ibis Portability (Q1-Q2 2027)
+```python
+# Multi-agent collaboration with portable transformations
+sbdk swarm deploy --agents 5 --task "build recommendation engine"
+sbdk ibis transform create customer_clv --backends duckdb,bigquery
+sbdk ibis deploy --target production-bigquery
+sbdk swarm review --comprehensive
+```
+
+**Deliverables**:
+- 🤖 LangGraph integration for orchestration
+- 🤖 5-agent swarms (Architect, Developer, Tester, Reviewer, Coordinator)
+- 🤖 Collaborative workflows
+- 🚀 **Ibis integration** (portable transformations)
+- 🚀 Backend-agnostic deployment (DuckDB → BigQuery/Snowflake)
+- 🤖 Cross-agent learning
+- 🤖 Swarm templates and patterns
+
+**Major Milestone**: Portable semantic layer enabling local dev → cloud production with same code
+
+### 5.3 Horizon 3: Autonomous Platform with Semantic Reasoning (Q3 2027+)
+
+**Goal**: Self-building, self-healing data pipelines with deep semantic understanding
+
+#### Phase 3.1: Autonomous Development (Q3 2027)
+```python
+# Fully autonomous pipeline creation with semantic understanding
+sbdk auto create --requirements "business_requirements.md"
+sbdk auto maintain --sla "99.9% uptime"
+sbdk auto evolve --optimize-for "cost,quality,speed"
+sbdk semantic auto-optimize --learn-from production
+```
+
+**Deliverables**:
+- 🚀 Requirements-to-pipeline automation (natural language → working pipeline)
+- 🚀 Self-healing pipelines (detect & fix issues autonomously)
+- 🚀 Continuous optimization (performance, cost, quality)
+- 🚀 Predictive maintenance (prevent failures before they happen)
+- 🧠 **Semantic self-evolution** (metrics adapt to usage patterns)
+- 🚀 Auto-scaling based on semantic understanding
+
+#### Phase 3.2: Cognitive Platform (Q4 2027+)
+```python
+# Platform that understands, anticipates, and reasons
+sbdk cognitive predict --need "future data requirements"
+sbdk cognitive recommend --improve "pipeline architecture"
+sbdk cognitive learn --from "production patterns"
+sbdk semantic reason --explain "revenue drop last week"
+```
+
+**Deliverables**:
+- 🚀 Predictive capabilities (forecast data needs)
+- 🚀 Architectural recommendations (optimize designs)
+- 🚀 Production learning loops (continuous improvement)
+- 🚀 Proactive optimization (before problems occur)
+- 🧠 **Business alignment** (understand business goals, suggest data solutions)
+- 🧠 **Semantic reasoning** (explain anomalies in business terms)
+- 🧠 **Cross-project learning** (patterns from entire ecosystem)
+
+---
+
+## 6. AI Integration Strategy
+
+### 6.0 MCP Server: The Critical Integration Layer
+
+**PRIORITY**: MCP (Model Context Protocol) server is the CRITICAL PATH for all AI integration. Without MCP, AI agents cannot access SBDK capabilities.
+
+#### **Why MCP is Critical**
+- **Standard Protocol**: Emerging standard for AI-tool integration (Anthropic-backed)
+- **Self-Describing**: AI agents discover capabilities automatically
+- **Bidirectional**: Enables rich agent-platform interactions
+- **Ecosystem Ready**: Compatible with Claude Desktop, other AI tools
+
+#### **MCP Server Architecture**
+```python
+from sbdk.mcp import MCPServer
+from mcp import Tool, Resource
+
+# Initialize MCP server
+server = MCPServer(name="sbdk", version="4.0")
+
+# Expose SBDK capabilities as MCP tools
+@server.tool
+def query_data(sql: str, env: str = "dev") -> dict:
+    """Execute SQL query in specified environment"""
     return sbdk.query(sql, environment=env)
 
 @server.tool
-def get_schema(table: str) -> dict:
-    """Get table schema and metadata"""
-    return sbdk.describe(table)
+def run_pipeline(pipeline: str, incremental: bool = False) -> dict:
+    """Execute data pipeline"""
+    return sbdk.pipeline.run(pipeline, incremental=incremental)
 
 @server.tool
-def run_pipeline(models: list = None) -> dict:
-    """Run specific dbt models or full pipeline"""
-    return sbdk.run(models=models)
+def query_semantic(metric: str, dimensions: List[str], filters: dict) -> dict:
+    """Query semantic layer using business terms"""
+    return sbdk.semantic.query(metric, dimensions, filters)
+
+@server.tool
+def explain_metric(metric: str) -> dict:
+    """Explain metric definition and dependencies"""
+    return sbdk.semantic.explain(metric)
+
+@server.tool
+def optimize_query(sql: str) -> dict:
+    """Optimize SQL query for performance"""
+    return sbdk.optimizer.optimize(sql)
+
+# Serve on localhost
+server.run(host="localhost", port=3000)
 ```
 
-**Integration Examples**:
-- **knowDB**: Query SBDK data for AI analysis
-- **Cursor**: Execute dbt models from IDE
-- **Claude**: Generate and test SQL queries
-- **Custom tools**: Build on SBDK foundation
+#### **Implementation Timeline**
+- **Phase 1.2 (Q2 2026)**: MCP server with basic tools (CRITICAL MILESTONE)
+- **Phase 2.1 (Q3 2026)**: Semantic query tools added
+- **Phase 2.2 (Q4 2026)**: Advanced agent tools (generate, fix, optimize)
+- **Phase 2.3 (Q1-Q2 2027)**: Full swarm coordination tools
 
-#### **CI/CD Integration**
+**All Horizon 2 AI features depend on MCP server completion.**
+
+---
+
+### 6.1 Core AI Components
+
+#### **Claude Code SDK Integration**
+```python
+from claude_code_sdk import Agent
+from sbdk import SBDK
+
+class SBDKAgent(Agent):
+    """Base agent for SBDK operations"""
+
+    def __init__(self):
+        super().__init__()
+        self.sbdk = SBDK()
+        self.memory = AgentDB()
+
+    @tool
+    def execute_query(self, sql: str):
+        """Execute SQL with understanding"""
+        result = self.sbdk.query(sql)
+        self.memory.learn_from(sql, result)
+        return result
+
+    @tool
+    def build_pipeline(self, spec: dict):
+        """Build pipeline from specification"""
+        # AI understands intent and builds implementation
+        pipeline = self.generate_pipeline(spec)
+        self.sbdk.deploy(pipeline)
+        return pipeline
+```
+
+#### **LangGraph for Orchestration**
+```python
+from langgraph import Graph
+
+def create_development_swarm():
+    """5-agent development swarm"""
+
+    graph = Graph()
+
+    # Add specialized agents
+    graph.add_node("architect", ArchitectAgent())
+    graph.add_node("developer", DeveloperAgent())
+    graph.add_node("tester", TesterAgent())
+    graph.add_node("reviewer", ReviewerAgent())
+    graph.add_node("coordinator", CoordinatorAgent())
+
+    # Define collaboration flow
+    graph.add_edge("coordinator", "architect")
+    graph.add_edge("architect", "developer")
+    graph.add_edge("developer", "tester")
+    graph.add_edge("tester", "reviewer")
+    graph.add_conditional_edge("reviewer",
+        lambda x: "developer" if x.needs_revision else "coordinator"
+    )
+
+    return graph
+```
+
+#### **AgentDB for Memory**
+```python
+from agentdb import Client
+
+class ProjectMemory:
+    """Persistent memory across sessions"""
+
+    def __init__(self, project_id):
+        self.db = Client()
+        self.project = project_id
+
+    def remember_pattern(self, pattern, context):
+        """Store successful patterns"""
+        self.db.store({
+            "project": self.project,
+            "pattern": pattern,
+            "context": context,
+            "timestamp": now()
+        })
+
+    def recall_similar(self, situation):
+        """Recall similar situations"""
+        return self.db.search(
+            similarity_to=situation,
+            limit=5
+        )
+```
+
+### 6.2 AI Capabilities Matrix
+
+| Capability | Human Does | AI Assists | AI Autonomous |
+|------------|-----------|------------|---------------|
+| **Design** | Business logic | Schema suggestions | Pattern application |
+| **Development** | Complex logic | Boilerplate code | Standard pipelines |
+| **Testing** | Edge cases | Test generation | Comprehensive suites |
+| **Debugging** | Root cause | Issue detection | Auto-fixing |
+| **Optimization** | Strategy | Tactical changes | Continuous tuning |
+| **Documentation** | Concepts | Technical docs | Full automation |
+| **Deployment** | Approval | Validation | Rollout execution |
+
+---
+
+## 7. Semantic Layer Strategy
+
+### 7.1 The Semantic Layer Vision
+
+**What is a Semantic Layer?**
+A semantic layer is a business logic abstraction that sits between raw data and consumers (humans, dashboards, AI agents). It defines:
+- **Metrics**: Business calculations (revenue, churn rate, CLV)
+- **Dimensions**: How to slice data (time, geography, customer segment)
+- **Relationships**: How entities connect (customers → orders → line items)
+- **Business Logic**: Rules and definitions in one place
+
+**Why SBDK Needs a Semantic Layer:**
+- **AI Understanding**: AI agents need business context, not just raw SQL
+- **Consistency**: Metrics defined once, used everywhere
+- **Portability**: Business logic decoupled from execution engine
+- **Governance**: Single source of truth for definitions
+
+### 7.2 SBDK's Unique Approach: Development-Time Semantics
+
+**Traditional Semantic Layers** (Cube, dbt Semantic Layer, LookML):
+- Live in production
+- Require deployment to use
+- Slow iteration cycles
+- Not designed for AI agents
+
+**SBDK Semantic Layer**:
+- **Local-first**: Define and test metrics locally
+- **AI-native**: Designed for agent consumption via MCP
+- **Portable**: Ibis-powered transformations work anywhere
+- **Incremental**: Start simple, evolve to complex
+- **Export-friendly**: Sync to production semantic layers
+
+### 7.3 Four-Phase Semantic Evolution
+
+#### **Phase 1: dbt Semantic Manifest (Q2 2026)**
 ```yaml
-# .github/workflows/data-pipeline.yml
-name: Data Pipeline Tests
+# Use dbt's existing semantic layer locally
+# dbt_project.yml
+semantic-models:
+  - name: orders
+    model: ref('orders')
+    entities:
+      - name: order_id
+        type: primary
+    dimensions:
+      - name: order_date
+        type: time
+    measures:
+      - name: total_revenue
+        agg: sum
+        expr: order_total
 
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Install SBDK
-        run: pip install sbdk-dev
-
-      - name: Run Pipeline Tests
-        run: |
-          sbdk env create ci --template minimal
-          sbdk pipeline test --coverage --junit results.xml
-          sbdk quality check --fail-on-error
-
-      - name: Deploy to Staging
-        if: github.ref == 'refs/heads/main'
-        run: |
-          sbdk deploy staging --config-only
-          # Use cloud-specific deployment tools
-```
-
----
-
-## 5. Development Experience Vision
-
-### 5.1 The Ideal Developer Workflow
-
-#### **Morning: New Feature Development**
-
-```bash
-# 9:00 AM: Start new feature branch
-git checkout -b feature/user-segmentation
-sbdk env create feature --copy-from dev
-
-# 9:02 AM: Explore available data
-sbdk source sync --sample 1000  # Quick sample for exploration
-sbdk query "SELECT COUNT(*) FROM users"
-
-# 9:05 AM: Build new dbt model
-sbdk dev serve --watch &  # Starts hot-reload server
-# Edit models/marts/user_segments.sql in VS Code
-# File saves → automatic rebuild + tests
-
-# 9:20 AM: Test with larger dataset
-sbdk source sync --sample 100000  # More realistic volume
-sbdk pipeline run models/marts/user_segments.sql
-
-# 9:25 AM: Validate results
-sbdk quality check --table user_segments
-sbdk query "SELECT segment, COUNT(*) FROM user_segments GROUP BY 1"
-
-# 9:30 AM: Ready for review
-git add . && git commit -m "Add user segmentation model"
-git push origin feature/user-segmentation
-```
-
-**Total time**: 30 minutes from idea to reviewable code
-
-#### **Afternoon: Debugging Production Issue**
-
-```bash
-# 2:00 PM: Production issue reported
-sbdk env create hotfix --copy-from prod
-
-# 2:02 PM: Reproduce issue locally
-sbdk source sync orders --filter "date >= '2025-01-01'"
-sbdk pipeline run --models orders_daily
-
-# 2:05 PM: Issue reproduced locally
-sbdk query "SELECT * FROM orders_daily WHERE revenue IS NULL"
-
-# 2:10 PM: Fix and test
-# Edit models/marts/orders_daily.sql
-sbdk pipeline run --models orders_daily
-sbdk quality check --table orders_daily
-
-# 2:15 PM: Deploy fix
-sbdk deploy prod --models orders_daily --confirm
-```
-
-**Total time**: 15 minutes from issue to fix
-
-### 5.2 Enhanced CLI Experience
-
-#### **Smart Context Awareness**
-```bash
-# SBDK knows where you are and what you're doing
-$ sbdk run
-✅ Detected 3 changed models since last run
-✅ Running incremental build: stg_orders → orders_daily → revenue_summary
-✅ Pipeline completed in 12.3s
-
-$ sbdk test
-✅ Running tests for changed models only
-✅ Found 2 new data quality issues (non-blocking)
-ℹ️  Run 'sbdk quality report' for details
-
-$ sbdk deploy
-⚠️  WARNING: You're about to deploy to production
-📊 Impact: 3 tables, ~500K rows affected
-🔍 Changes: orders_daily logic updated
-❓ Continue? (y/N)
-```
-
-#### **Rich Error Messages with Suggestions**
-```bash
-$ sbdk pipeline run
-
-❌ Error: dbt model failed
-📍 File: models/marts/user_metrics.sql:15
-🔍 Issue: Column 'signup_date' not found
-
-💡 Suggestions:
-1. Column might be 'created_at' in users table
-2. Run 'sbdk query "DESCRIBE users"' to see available columns
-3. Check if upstream model 'stg_users' has this column
-
-🛠️  Quick fix:
-   sbdk dev debug --model user_metrics --explore-columns
-```
-
-#### **Intelligent Autocomplete & Help**
-```bash
-$ sbdk source add [TAB]
-postgres    csv    json    api    snowflake    bigquery
-
-$ sbdk env create --help
-Create new SBDK environment
-
-Options:
-  --template TEXT    Use project template [analytics|ml|basic]
-  --copy-from TEXT   Copy configuration from existing environment
-  --target TEXT      Target database [duckdb|postgres|bigquery]
-
-Examples:
-  sbdk env create dev --template analytics
-  sbdk env create staging --copy-from dev --target bigquery
-```
-
-### 5.3 Visual Development Interface (Optional)
-
-#### **TUI Dashboard**
-```
-┌─ SBDK Development Environment ──────────────────────────────────┐
-│ Project: analytics-pipeline    Environment: dev    Status: ✅   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│ 📊 Pipeline Status              🔍 Recent Activity             │
-│ ┌─────────────────────────┐     ┌─────────────────────────────┐ │
-│ │ ✅ extract_users        │     │ 10:30 - Pipeline completed │ │
-│ │ ✅ stg_users           │     │ 10:25 - Quality check pass │ │
-│ │ ⏳ orders_daily        │     │ 10:20 - Model rebuild      │ │
-│ │ ⏸️ user_segments       │     │ 10:15 - Source sync        │ │
-│ └─────────────────────────┘     └─────────────────────────────┘ │
-│                                                                 │
-│ 🎯 Quick Actions                📈 Data Overview              │
-│ ┌─────────────────────────┐     ┌─────────────────────────────┐ │
-│ │ [R] Run Pipeline        │     │ Users: 1.2M rows           │ │
-│ │ [T] Run Tests          │     │ Orders: 450K rows          │ │
-│ │ [Q] Query Builder      │     │ Events: 15.7M rows         │ │
-│ │ [D] Documentation      │     │ Updated: 2 mins ago        │ │
-│ └─────────────────────────┘     └─────────────────────────────┘ │
-│                                                                 │
-│ 💬 Command Line                                                │
-│ > sbdk query "SELECT COUNT(*) FROM users WHERE active = true"  │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 6. Integration Strategy
-
-### 6.1 The SBDK Ecosystem
-
-SBDK succeeds by being the **best foundation** that other tools build upon:
-
-```
-                    ┌─ knowDB (AI Data Analyst)
-                    │
-┌─ Visualization ───┼─ Observable Plot
-│                   │
-│                   └─ Tableau / Looker / Custom
-├─ AI Tools ────────┼─ Claude + MCP
-│                   │
-│                   └─ Cursor / GitHub Copilot
-│
-├─ Deployment ──────┼─ dbt Cloud
-│                   │
-│                   └─ Airflow / Prefect / Custom
-│
-├─ Monitoring ──────┼─ Monte Carlo
-│                   │
-│                   └─ Datadog / Custom
-│
-└─ SBDK Foundation ─┼─ Pipeline Development
-                    │
-                    ├─ Local Database (DuckDB)
-                    │
-                    ├─ Developer Experience (CLI)
-                    │
-                    └─ Quality Assurance
-```
-
-### 6.2 Integration Patterns
-
-#### **Pattern 1: MCP Server (AI Tools)**
-```python
-# Enable AI tools to query and manipulate SBDK
-from sbdk import Environment
-
-@mcp_tool
-def sbdk_query(sql: str, env: str = "dev"):
-    """Execute SQL query in SBDK environment"""
-    environment = Environment.load(env)
-    return environment.query(sql)
-
-@mcp_tool
-def sbdk_run_models(models: list, env: str = "dev"):
-    """Run specific dbt models"""
-    environment = Environment.load(env)
-    return environment.run(models=models)
-```
-
-**Use cases**:
-- knowDB queries SBDK for data analysis
-- Claude generates and tests SQL
-- Cursor runs models from IDE
-
-#### **Pattern 2: Config Export (Deployment)**
-```bash
-# Export configuration for production deployment
-sbdk deploy export --env staging --format dbt-cloud
-sbdk deploy export --env prod --format airflow
-sbdk deploy export --env prod --format terraform
-```
-
-**Generated files**:
-- `dbt_project.yml` with production settings
-- `profiles.yml` with cloud warehouse config
-- `airflow_dag.py` with scheduling logic
-
-#### **Pattern 3: Data Export (Analysis)**
-```bash
-# Export data for external analysis tools
-sbdk export --table user_metrics --format parquet --path ./analysis/
-sbdk export --query "SELECT * FROM daily_revenue" --format csv
-sbdk export --all --format duckdb --path ./backup.db
-```
-
-**Use cases**:
-- Feed data to Jupyter notebooks
-- Import into Tableau/Observable
-- Backup for disaster recovery
-
-#### **Pattern 4: Quality Integration (Monitoring)**
-```python
-# Export quality metrics for external monitoring
-from sbdk.quality import QualityReporter
-
-reporter = QualityReporter()
-metrics = reporter.export_metrics(format="prometheus")
-# Send to Datadog, Monte Carlo, etc.
-```
-
-### 6.3 Specific Tool Integrations
-
-#### **Integration 1: knowDB (AI Data Analyst)**
-```python
-# knowDB queries SBDK as its data source
-from sbdk import Environment
-from knowdb import SemanticLayer
-
-# SBDK provides the data platform
-env = Environment.load("dev")
-
-# knowDB provides AI analysis on top
-semantic_layer = SemanticLayer(duckdb_connection=env.db_connection)
-semantic_layer.load_schema_from_dbt(env.dbt_manifest)
-
-# AI can now query with business context
-result = semantic_layer.query("What's our customer churn rate by cohort?")
+metrics:
+  - name: monthly_revenue
+    type: simple
+    measure: total_revenue
+    time_grain: month
 ```
 
 **Benefits**:
-- SBDK: Fast local data pipeline development
-- knowDB: AI-powered analysis and visualization
-- Together: Complete local-first data development + AI analysis
+- ✅ Leverage existing dbt infrastructure
+- ✅ No new syntax to learn
+- ✅ Works with dbt Cloud semantic layer
+- ✅ Quick to implement
 
-#### **Integration 2: VS Code Extension**
-```typescript
-// VS Code extension for SBDK
-export class SBDKExtension {
+**Limitations**:
+- ⚠️ Tied to dbt
+- ⚠️ Limited AI interface
+- ⚠️ Not backend-portable
 
-  // Run dbt model with single click
-  async runModel(model: string) {
-    const terminal = vscode.window.createTerminal('SBDK');
-    terminal.sendText(`sbdk pipeline run --models ${model}`);
-  }
+#### **Phase 2: Custom Semantic Models (Q3-Q4 2026)**
+```yaml
+# sbdk_semantic.yml - SBDK native format
+version: 1.0
 
-  // Preview query results inline
-  async previewQuery(sql: string) {
-    const result = await sbdk.query(sql);
-    return new vscode.WebviewPanel(formatResults(result));
-  }
-}
+entities:
+  customers:
+    table: raw.customers
+    primary_key: customer_id
+    attributes:
+      - name: segment
+        type: categorical
+        values: [enterprise, mid_market, smb]
+      - name: created_at
+        type: timestamp
+
+  orders:
+    table: raw.orders
+    primary_key: order_id
+    relationships:
+      - entity: customers
+        type: many_to_one
+        via: customer_id
+
+metrics:
+  monthly_recurring_revenue:
+    description: "MRR from active subscriptions"
+    type: measure
+    expression: "SUM(subscriptions.amount)"
+    filters:
+      - "subscriptions.status = 'active'"
+    time_grain: month
+    owners: [finance, analytics]
+
+  customer_lifetime_value:
+    description: "Total revenue per customer"
+    type: derived
+    expression: "SUM(orders.total) / COUNT(DISTINCT customers.customer_id)"
+    dependencies: [orders, customers]
+
+dimensions:
+  customer_segment:
+    entity: customers
+    column: segment
+    type: categorical
+
+  order_month:
+    entity: orders
+    expression: "DATE_TRUNC('month', order_date)"
+    type: time
 ```
 
-#### **Integration 3: Observable Plot**
-```javascript
-// Observable notebook using SBDK data
-import * as duckdb from "npm:@duckdb/duckdb-wasm";
+**Benefits**:
+- ✅ SBDK-native (not tied to dbt)
+- ✅ AI-friendly YAML format
+- ✅ Rich metadata for agents
+- ✅ MCP server integration
+- ✅ Git-friendly (clear diffs)
 
-// Connect to SBDK database
-const db = await duckdb.open("./path/to/sbdk/data/project.duckdb");
+**Capabilities**:
+```python
+# Python API
+from sbdk.semantic import SemanticLayer
 
-// Query and visualize
-const users = await db.query("SELECT * FROM user_metrics");
-Plot.plot({
-  marks: [Plot.dot(users, {x: "signup_date", y: "lifetime_value"})]
-})
+sl = SemanticLayer("sbdk_semantic.yml")
+
+# Query by metric name
+result = sl.query(
+    metrics=["monthly_recurring_revenue", "customer_lifetime_value"],
+    dimensions=["customer_segment"],
+    filters={"order_month": "2024-01"}
+)
+
+# Natural language query
+result = sl.query_natural("Show me MRR by customer segment last month")
+
+# Explain metric
+explanation = sl.explain("customer_lifetime_value")
+# Returns: dependencies, SQL, owners, usage stats
+```
+
+#### **Phase 3: Ibis-Powered Portability (Q1-Q2 2027)**
+```python
+# Semantic layer backed by Ibis for multi-backend support
+from sbdk.semantic import IbisSemanticLayer
+import ibis
+
+# Define metric logic using Ibis (portable)
+@semantic_metric("customer_lifetime_value")
+def calculate_clv(customers, orders):
+    """CLV metric - works on any backend"""
+    return (customers
+        .join(orders, customers.customer_id == orders.customer_id)
+        .group_by("customer_id")
+        .aggregate(clv=orders.order_total.sum())
+    )
+
+# Local development (DuckDB)
+sl_local = IbisSemanticLayer(backend="duckdb://local.db")
+local_result = sl_local.query("customer_lifetime_value")
+
+# Production deployment (BigQuery) - SAME METRIC DEFINITION
+sl_prod = IbisSemanticLayer(backend="bigquery://project-id")
+prod_result = sl_prod.query("customer_lifetime_value")
+```
+
+**Benefits**:
+- ✅ **Backend portability**: DuckDB → BigQuery → Snowflake → Postgres
+- ✅ **Type safety**: Ibis validates at dev time
+- ✅ **Composability**: Metrics built from other metrics
+- ✅ **Performance**: Ibis generates optimal SQL per backend
+- ✅ **Python-native**: No context switching
+
+**Trade-offs**:
+- ❌ More complex than YAML
+- ❌ Learning curve for Ibis API
+- ❌ Abstraction overhead
+
+**When to Use Ibis**:
+- ✅ Multi-backend deployment needed
+- ✅ Complex metric logic
+- ✅ Type safety critical
+- ❌ Simple metrics (stick with YAML)
+
+#### **Phase 4: AI Semantic Reasoning (2027+)**
+```python
+# AI agents understand and reason about business logic
+from sbdk.ai import SemanticAgent
+
+agent = SemanticAgent(semantic_layer=sl)
+
+# Agent discovers metrics automatically
+agent.discover_metrics(database="prod")
+# Suggests: "You're calculating revenue in 5 places. Should we create a metric?"
+
+# Agent explains anomalies in business terms
+anomaly = agent.detect_anomaly("monthly_recurring_revenue")
+# Returns: "MRR dropped 15% due to 3 enterprise customers churning (segment analysis)"
+
+# Agent suggests new metrics based on usage
+suggestions = agent.suggest_metrics(query_logs="query_log.csv")
+# Returns: "Users query SUM(revenue)/COUNT(orders) often. Suggest 'average_order_value' metric"
+
+# Agent generates semantic models from requirements
+semantic_model = agent.generate_semantic_model(
+    requirements="Track customer engagement across web, mobile, email"
+)
+```
+
+### 7.4 Semantic Layer Export & Sync
+
+**Export to Production Semantic Layers:**
+```python
+from sbdk.semantic.export import export_semantic_layer
+
+# Export SBDK semantic model to dbt Semantic Layer
+export_semantic_layer(
+    source="sbdk_semantic.yml",
+    target="dbt",
+    output_path="dbt_models/semantic/"
+)
+
+# Export to Cube.dev
+export_semantic_layer(
+    source="sbdk_semantic.yml",
+    target="cube",
+    output_path="cube/schema/"
+)
+
+# Export to LookML (Looker)
+export_semantic_layer(
+    source="sbdk_semantic.yml",
+    target="lookml",
+    output_path="looker/models/"
+)
+```
+
+**Bi-directional Sync:**
+```python
+from sbdk.semantic.sync import SemanticSync
+
+sync = SemanticSync(
+    local="sbdk_semantic.yml",
+    remote="dbt-cloud://project/semantic-layer"
+)
+
+# Pull production metrics to local
+sync.pull()
+
+# Preview changes before deployment
+changes = sync.preview_push()
+
+# Deploy local changes to production
+sync.push(validate=True, rollback_on_error=True)
+```
+
+### 7.5 Competitive Positioning
+
+| Feature | dbt Semantic | Cube | LookML | SBDK Semantic Layer |
+|---------|-------------|------|---------|---------------------|
+| **Local Development** | Limited | No | No | ✅ Native |
+| **AI Integration** | Basic | Limited | No | ✅ MCP-native |
+| **Backend Portability** | dbt only | Multi-backend | Looker only | ✅ Ibis-powered |
+| **Deployment** | dbt Cloud | Cube Cloud | Looker | ✅ Flexible (any) |
+| **Learning Curve** | Medium | High | High | Low → Medium |
+| **Cost** | $$ | $$$ | $$$$ | $ (local) |
+
+**SBDK's Advantage**:
+- Only semantic layer designed for **local-first AI-native development**
+- Develop locally (free, fast) → Deploy anywhere (production choices)
+
+### 7.6 Implementation Roadmap
+
+**Q2 2026: Phase 1 - dbt Integration**
+- dbt semantic manifest parser
+- Local semantic query interface
+- Basic MCP tools for metrics
+
+**Q3-Q4 2026: Phase 2 - Custom Semantics**
+- SBDK-native YAML format
+- Rich metadata support
+- Natural language query interface
+- Export to dbt/Cube/LookML
+
+**Q1-Q2 2027: Phase 3 - Ibis Portability**
+- Ibis integration for transformations
+- Multi-backend metric execution
+- Performance optimization per backend
+- Type-safe metric definitions
+
+**Q3 2027+: Phase 4 - AI Reasoning**
+- Semantic discovery and suggestions
+- Anomaly explanation in business terms
+- Auto-generation from requirements
+- Cross-project pattern learning
+
+---
+
+## 8. Development Workflows
+
+### 8.1 Human-AI Collaborative Workflow
+
+#### **Morning: Strategic Planning**
+```bash
+# Human defines intent
+$ sbdk spec create "Build customer churn prediction pipeline"
+
+# AI swarm handles implementation
+$ sbdk swarm execute customer_churn_spec.yml
+🤖 Architect: Designing schema and data flow...
+🤖 Developer: Implementing dbt models...
+🤖 Tester: Creating test coverage...
+🤖 Reviewer: Optimizing performance...
+✅ Pipeline ready for review in 12 minutes
+```
+
+#### **Afternoon: Issue Resolution**
+```bash
+# Production issue detected
+$ sbdk monitor
+⚠️ Pipeline failure detected: orders_daily
+
+# AI investigates and fixes
+$ sbdk agent fix orders_daily
+🤖 Analyzing failure pattern...
+🤖 Root cause: Schema change in upstream system
+🤖 Generating compatibility fix...
+🤖 Testing fix with production sample...
+✅ Fix validated and ready to deploy
+
+# Human reviews and approves
+$ sbdk review fixes/orders_daily_schema_fix.sql
+$ sbdk deploy --approved
+```
+
+### 8.2 Autonomous Workflow
+
+#### **Continuous Pipeline Evolution**
+```python
+@continuous_optimization
+def optimize_pipelines():
+    """Pipelines continuously improve themselves"""
+
+    while True:
+        # Monitor performance
+        metrics = monitor_all_pipelines()
+
+        for pipeline in metrics.needs_optimization:
+            # AI analyzes bottlenecks
+            bottleneck = analyze_performance(pipeline)
+
+            # Generate optimization
+            optimization = generate_optimization(bottleneck)
+
+            # Test in sandbox
+            if test_optimization(optimization):
+                # Apply if successful
+                apply_optimization(pipeline, optimization)
+
+                # Learn from success
+                memory.store_successful_pattern(optimization)
+```
+
+### 8.3 Swarm Development Workflow
+
+#### **5-Agent Pipeline Development**
+```bash
+# Define requirements
+$ cat requirements.yml
+name: revenue_attribution
+description: Multi-touch attribution model
+sources: [salesforce, marketo, google_analytics]
+output: attribution_mart
+
+# Launch swarm
+$ sbdk swarm develop requirements.yml
+
+[Architect Agent]
+✓ Designed dimensional model
+✓ Defined grain: customer-campaign-touchpoint
+✓ Created bus matrix
+
+[Developer Agent]
+✓ Generated 12 dbt models
+✓ Created DLT pipeline for ingestion
+✓ Implemented attribution logic
+
+[Tester Agent]
+✓ Generated 47 test cases
+✓ Created data quality checks
+✓ Validated business rules
+
+[Reviewer Agent]
+✓ Optimized query performance (3.2x faster)
+✓ Reduced complexity score by 40%
+✓ Added documentation
+
+[Coordinator Agent]
+✓ Pipeline complete and validated
+✓ Ready for deployment
+✓ Total time: 18 minutes
 ```
 
 ---
 
-## 7. Roadmap: Building the Foundation
+## 9. Integration Ecosystem
 
-### 7.1 Roadmap Philosophy
+### 9.1 Three-Layer Integration
 
-**Focus**: Build the best possible foundation for data pipeline development
-**Not**: Try to be everything to everyone
+```
+Layer 3: AI Applications
+├─ knowDB (AI Data Analyst)
+├─ Claude Analyst (Automated Analysis)
+├─ Agentic Builder (Pipeline Builder)
+└─ Custom AI Tools
 
-**Principles**:
-- ✅ **Core excellence**: Perfect the fundamentals first
-- ✅ **Integration-ready**: Clean APIs for ecosystem growth
-- ✅ **User-centric**: Solve real developer pain points
-- ❌ **Feature creep**: Resist adding non-core capabilities
-- ❌ **Premature optimization**: Ship, learn, iterate
+Layer 2: Developer Tools
+├─ VS Code Extension
+├─ Cursor Integration
+├─ GitHub Copilot
+└─ JetBrains IDEs
 
-### 7.2 Phase 1: Enhanced Foundation (Q1 2026)
-
-**Release**: SBDK v2.0 "Developer Foundation"
-
-#### **1.1 Environment Management**
-```bash
-# Multiple environments with easy switching
-sbdk env create dev --template analytics
-sbdk env create staging --copy-from dev --target postgres
-sbdk env create prod --target bigquery
-
-sbdk env switch dev
-sbdk env list
-sbdk env status
+Layer 1: Infrastructure
+├─ dbt Cloud (Production)
+├─ Airflow (Orchestration)
+├─ Monte Carlo (Monitoring)
+└─ Git (Version Control)
 ```
 
-**Implementation**:
-- Environment-specific configurations
-- Profile management (credentials, settings)
-- Template system for common patterns
-- Environment isolation and validation
+### 9.2 MCP Server Capabilities
 
-#### **1.2 Enhanced Data Sources**
-```bash
-# Connect to real data sources for development
-sbdk source add postgres prod_db --host localhost --sample 0.1
-sbdk source add csv ./data/*.csv --schema-detect
-sbdk source add api payments_api --url https://api.stripe.com --auth-token $TOKEN
-
-sbdk source sync --env dev --incremental
-sbdk source status
-```
-
-**Implementation**:
-- Database connectors (Postgres, MySQL, Snowflake)
-- File format support (CSV, JSON, Parquet)
-- API connectors with authentication
-- Smart sampling for local development
-- Schema detection and validation
-
-#### **1.3 Advanced Pipeline Features**
-```bash
-# Incremental processing and smart rebuilds
-sbdk pipeline run --incremental --changed-only
-sbdk pipeline test --coverage --parallel
-sbdk pipeline profile --performance --bottlenecks
-
-# Deployment preparation
-sbdk deploy plan --env staging --diff
-sbdk deploy export --format dbt-cloud
-```
-
-**Implementation**:
-- Incremental processing engine
-- Change detection for smart rebuilds
-- Comprehensive testing framework
-- Performance profiling and optimization
-- Deployment configuration export
-
-#### **Success Criteria**:
-- ✅ Connect to 5+ data source types
-- ✅ Environment switching in <2 seconds
-- ✅ Incremental rebuilds 10x faster than full
-- ✅ 95% of users can onboard in <5 minutes
-
----
-
-### 7.3 Phase 2: Quality & Reliability (Q2 2026)
-
-**Release**: SBDK v2.2 "Quality Assurance"
-
-#### **2.1 Data Quality Engine**
-```bash
-# Comprehensive data quality monitoring
-sbdk quality profile --table users --dimensions all
-sbdk quality check --rules ./rules.yml --severity error
-sbdk quality report --format html --history 30d
-
-# Anomaly detection
-sbdk quality monitor --auto-threshold --alert-on-change
-```
-
-**Implementation**:
-- Statistical profiling (distributions, nulls, cardinality)
-- Custom quality rules engine
-- Anomaly detection algorithms
-- Historical quality tracking
-- Quality reporting and alerting
-
-#### **2.2 Testing Framework**
-```bash
-# Multi-level testing
-sbdk test unit --models marts.user_metrics
-sbdk test integration --full-pipeline
-sbdk test regression --baseline last-prod
-
-# Performance testing
-sbdk test performance --benchmark --memory-profile
-sbdk test scale --rows 10000000
-```
-
-**Implementation**:
-- Unit tests for individual models
-- Integration tests for full pipelines
-- Regression testing against baselines
-- Performance and scale testing
-- Memory profiling and optimization
-
-#### **2.3 Developer Tools**
-```bash
-# Enhanced development experience
-sbdk dev serve --watch --debugger --port 8080
-sbdk dev docs --live-reload --coverage-report
-sbdk dev debug --sql --explain-plan --suggestions
-
-# Interactive exploration
-sbdk dev explore --table users --profile --sample 1000
-```
-
-**Implementation**:
-- Hot-reload development server
-- Live documentation generation
-- Interactive SQL debugger
-- Query plan analysis and optimization
-- Data exploration tools
-
-#### **Success Criteria**:
-- ✅ Detect 90%+ of data quality issues before production
-- ✅ Test suite completes in <60 seconds
-- ✅ Developer feedback loop <10 seconds
-- ✅ Zero-downtime hot reload
-
----
-
-### 7.4 Phase 3: Integration & Ecosystem (Q3 2026)
-
-**Release**: SBDK v2.4 "Ecosystem Integration"
-
-#### **3.1 MCP Server Suite**
 ```python
 # Comprehensive MCP server for AI tools
-sbdk mcp serve --tools all --port 3000
+from sbdk.mcp import server
 
-# Available tools:
-# - execute_query(sql, env)
-# - run_pipeline(models, env)
-# - get_schema(table)
-# - profile_data(table, columns)
-# - export_data(table, format, path)
+@server.tool
+def execute_query(sql: str, env: str = "dev"):
+    """Execute SQL with semantic understanding"""
+    return sbdk.query(sql, environment=env)
+
+@server.tool
+def generate_pipeline(spec: dict):
+    """Generate pipeline from specification"""
+    return sbdk.agents.generate(spec)
+
+@server.tool
+def analyze_data_quality(table: str):
+    """Comprehensive quality analysis"""
+    return sbdk.quality.analyze(table)
+
+@server.tool
+def optimize_performance(pipeline: str):
+    """AI-driven performance optimization"""
+    return sbdk.agents.optimize(pipeline)
+
+# Serve on port 3000
+server.run(port=3000)
 ```
 
-**Implementation**:
-- Full MCP server with comprehensive tool set
-- Authentication and authorization
-- Rate limiting and resource management
-- Error handling and recovery
-- Documentation and examples
+### 9.3 Ecosystem Partnerships
 
-#### **3.2 CI/CD Integration**
-```yaml
-# GitHub Actions integration
-- name: Test Data Pipeline
-  uses: sbdk-dev/github-action@v1
-  with:
-    environment: ci
-    run-tests: true
-    quality-checks: true
-    coverage-threshold: 90
-```
+#### **Foundation Partners**
+- **DuckDB Labs**: Core database engine
+- **dbt Labs**: Transformation framework
+- **DLT Hub**: Data loading framework
 
-**Implementation**:
-- GitHub Actions integration
-- GitLab CI templates
-- Jenkins pipeline examples
-- Terraform modules for cloud deployment
-- Kubernetes deployment patterns
+#### **AI Partners**
+- **Anthropic**: Claude Code SDK
+- **LangChain**: LangGraph orchestration
+- **OpenAI**: Alternative LLM support
 
-#### **3.3 VS Code Extension**
-```typescript
-// Rich IDE integration
-sbdk.commands = {
-  "sbdk.runModel": runSelectedModel,
-  "sbdk.testModel": testSelectedModel,
-  "sbdk.explainQuery": explainSQLQuery,
-  "sbdk.profileTable": profileTableData
-}
-```
-
-**Implementation**:
-- VS Code extension with rich features
-- Syntax highlighting for SBDK configs
-- Integrated terminal and query results
-- Code completion and validation
-- Real-time error checking
-
-#### **Success Criteria**:
-- ✅ 10+ external tools integrate via MCP
-- ✅ GitHub Actions used by 50%+ of projects
-- ✅ VS Code extension 1000+ installs
-- ✅ Community contributes 3+ integrations
+#### **Tool Partners**
+- **knowDB**: AI data analyst layer
+- **Observable**: Visualization layer
+- **Monte Carlo**: Monitoring layer
 
 ---
 
-### 7.5 Phase 4: Team Collaboration (Q4 2026)
+## 10. Success Metrics
 
-**Release**: SBDK v2.6 "Team Development"
+### 10.1 Developer Productivity Metrics
 
-#### **4.1 Shared Templates & Patterns**
-```bash
-# Team template management
-sbdk template create team-analytics --from ./project
-sbdk template publish team-analytics --registry company
-sbdk template install company/analytics-standard
+#### **Speed Improvements**
+| Metric | Current | With AI (2027) | Improvement |
+|--------|---------|----------------|-------------|
+| Pipeline Development | 2-3 days | 2-3 hours | 10x faster |
+| Bug Resolution | 4 hours | 20 minutes | 12x faster |
+| Test Coverage Creation | 1 day | 1 hour | 8x faster |
+| Documentation | 4 hours | Automatic | ∞ faster |
+| Optimization | 2 days | Continuous | Always optimal |
 
-# Shared configurations
-sbdk config sync --team --git-repo company/sbdk-configs
-sbdk config validate --standards team-analytics
-```
+#### **Quality Improvements**
+- **Bug Detection**: 95% caught before production (vs 60% today)
+- **Test Coverage**: 95% automated (vs 40% today)
+- **Documentation**: 100% up-to-date (vs 30% today)
+- **Performance**: 3x average improvement through AI optimization
 
-**Implementation**:
-- Template creation and sharing system
-- Configuration synchronization
-- Team standards enforcement
-- Pattern libraries and reusable components
+### 10.2 Business Impact Metrics
 
-#### **4.2 Project Orchestration**
-```bash
-# Multi-project workflows
-sbdk workspace create data-platform
-sbdk workspace add project analytics-core
-sbdk workspace add project ml-features
-sbdk workspace run --parallel --dependencies
+#### **Cost Reduction**
+- **Development Costs**: 70% reduction through automation
+- **Cloud Costs**: 60% reduction through local development
+- **Debugging Costs**: 80% reduction through AI detection
+- **Maintenance Costs**: 50% reduction through self-healing
 
-# Cross-project dependencies
-sbdk project link analytics-core.user_metrics ml-features.user_features
-sbdk project test --dependency-order
-```
+#### **Revenue Impact**
+- **Time to Market**: 5x faster feature delivery
+- **Innovation Rate**: 3x more experiments possible
+- **Reliability**: 99.9% uptime through self-healing
+- **Scalability**: Unlimited through AI automation
 
-**Implementation**:
-- Workspace management for multiple projects
-- Cross-project dependency tracking
-- Parallel execution with dependency resolution
-- Shared data artifacts between projects
+### 10.3 Platform Adoption Metrics
 
-#### **4.3 Documentation & Knowledge Sharing**
-```bash
-# Enhanced documentation
-sbdk docs build --interactive --lineage --metrics
-sbdk docs publish --team-site --auto-update
-sbdk docs search "customer churn" --across-projects
+#### **2026 Targets (Foundation)**
+- 10,000+ active developers
+- 50,000+ PyPI downloads/month
+- 100+ integrated tools
+- 5,000+ GitHub stars
 
-# Knowledge base
-sbdk knowledge add --topic "Customer Analysis" --models user_metrics
-sbdk knowledge query "How do we calculate LTV?"
-```
+#### **2027 Targets (AI-Enhanced)**
+- 50,000+ active developers
+- 200,000+ PyPI downloads/month
+- 500+ integrated AI agents
+- 15,000+ GitHub stars
 
-**Implementation**:
-- Interactive documentation with lineage graphs
-- Cross-project documentation search
-- Knowledge base with semantic search
-- Automated documentation updates
-
-#### **Success Criteria**:
-- ✅ 80% of teams use shared templates
-- ✅ Cross-project dependencies work seamlessly
-- ✅ Documentation search resolves 70%+ questions
-- ✅ Team onboarding time <1 day
+#### **2028 Targets (Autonomous)**
+- 200,000+ active developers
+- 1M+ PyPI downloads/month
+- Industry standard for data development
+- 30,000+ GitHub stars
 
 ---
 
-## 8. Success Metrics
+## 11. Strategic Impact
 
-### 8.1 Developer Experience Metrics
+### 11.1 Industry Transformation
 
-#### **Speed & Efficiency**
-- **Setup time**: <5 minutes from install to first pipeline run
-- **Iteration speed**: <30 seconds from code change to result
-- **Environment switching**: <2 seconds between environments
-- **Pipeline testing**: <60 seconds for full test suite
+**Before SBDK v3**:
+- Data engineering is 80% repetitive work
+- High barrier to entry for new engineers
+- Slow iteration cycles limit innovation
+- Quality issues discovered in production
 
-#### **Reliability & Quality**
-- **Test coverage**: 100% of core functionality
-- **Quality issue detection**: 90%+ caught before production
-- **Deployment success rate**: 95%+ successful deployments
-- **Zero breaking changes**: Backward compatible releases
+**After SBDK v4**:
+- Data engineering is 80% creative work
+- AI assists newcomers to be productive immediately
+- Instant iteration enables rapid experimentation
+- Quality guaranteed through AI validation
+- Semantic layer enables business-focused development
 
-#### **Learning & Adoption**
-- **Time to productivity**: <1 day for experienced data engineers
-- **Documentation quality**: 95%+ of questions answered in docs
-- **Error message helpfulness**: 80%+ of errors include actionable fix
-- **Community contributions**: 10+ external contributors per quarter
+### 11.2 Competitive Advantage
 
-### 8.2 Business Impact Metrics
+**SBDK's Unique Position**:
 
-#### **Cost Savings**
-- **Cloud development costs**: 60-80% reduction (dev/test moved local)
-- **Onboarding costs**: 75% reduction in time-to-productivity
-- **Infrastructure costs**: 50% reduction in non-production environments
-- **Training costs**: 60% reduction with better documentation
+| Competitor | Strength | SBDK Advantage |
+|------------|----------|----------------|
+| **dbt Cloud** | Production deployment | Local-first + AI agents |
+| **Hex/Deepnote** | Notebooks | Full pipeline development |
+| **DataRobot** | AutoML | Data pipeline automation |
+| **Palantir** | Enterprise scale | Developer-friendly + open |
+| **Custom Tools** | Tailored solutions | Platform + ecosystem |
 
-#### **Productivity Gains**
-- **Development velocity**: 3x faster iteration cycles
-- **Quality improvements**: 50% fewer production issues
-- **Team efficiency**: 25% more time on valuable work (less setup/maintenance)
-- **Deployment frequency**: 2x more frequent, safer deployments
+**Moat**:
+1. **Local-first architecture** perfect for AI iteration
+2. **Semantic layer** designed for AI-native development
+3. **Backend portability** via Ibis (unique in market)
+4. **Open ecosystem** enables innovation
+5. **Developer experience** unmatched in market
+6. **AI-native design** from ground up
 
-### 8.3 Ecosystem Health Metrics
+### 11.3 Long-Term Vision (2030+)
 
-#### **Integration & Usage**
-- **Active projects**: 1,000+ using SBDK for development
-- **Integration count**: 20+ tools integrate with SBDK (MCP, APIs)
-- **Template usage**: 500+ downloads of community templates
-- **Community contributions**: 50+ PRs per quarter
+**SBDK becomes the foundational platform where**:
+- Every data pipeline starts with SBDK
+- AI agents are standard development partners
+- Self-building systems are the norm
+- Human creativity drives innovation while AI handles implementation
 
-#### **Platform Adoption**
-- **PyPI downloads**: 50K+/month by end of 2026
-- **GitHub stars**: 5,000+ stars
-- **Documentation views**: 100K+/month
-- **Community size**: 2,000+ Discord members
-
-### 8.4 Competitive Position
-
-#### **Market Leadership**
-- **Local-first data development**: #1 tool for local pipeline development
-- **DuckDB ecosystem**: Recognized as best development experience on DuckDB
-- **Integration platform**: 80% of new data tools consider SBDK integration
-- **Educational adoption**: Used in 50+ data engineering bootcamps/courses
-
-#### **Ecosystem Partner Recognition**
-- **dbt Labs**: Official community partner for local development
-- **DuckDB Labs**: Featured in DuckDB ecosystem showcase
-- **MotherDuck**: Recommended local development tool
-- **AI tool vendors**: Standard integration for data platforms
+**Market Position**:
+- **$10B+ market opportunity** in data development tools
+- **1M+ developers** using SBDK daily
+- **10,000+ companies** depend on SBDK
+- **Standard in education** for teaching data engineering
 
 ---
 
-## Competitive Positioning
+## Implementation Strategy
 
-### 8.5 SBDK vs. Alternatives
+### Phase 1: Foundation (Q1-Q2 2026)
+**Focus**: Perfect the sandbox
+- Complete environment management
+- Multi-source connectors
+- Enhanced testing framework
+- Production deployment patterns
 
-| Capability | SBDK v2.6 | dbt Cloud | Hex/Deepnote | Airflow Local | Docker Compose |
-|------------|-----------|-----------|--------------|---------------|----------------|
-| **Development** | | | | | |
-| Setup time | 30 seconds | 5-10 minutes | Cloud signup | 20+ minutes | 15+ minutes |
-| Local execution | ✅ 100% | ❌ Cloud-only | ❌ Cloud-only | ✅ Yes | ✅ Yes |
-| Hot reload | ✅ <5 seconds | ❌ No | ❌ No | ❌ No | ❌ No |
-| Cost (dev/test) | ✅ $0 | 💰 $$ | 💰 $$$ | ✅ $0 | ✅ $0 |
-| **Pipeline Development** | | | | | |
-| dbt integration | ✅ Native | ✅ Native | ✅ Yes | ⚠️ Manual | ⚠️ Manual |
-| Data sources | ✅ 10+ | ✅ Many | ✅ Many | ✅ Many | ⚠️ Manual |
-| Quality testing | ✅ Built-in | ✅ Yes | ⚠️ Limited | ❌ No | ❌ No |
-| Incremental processing | ✅ Yes | ✅ Yes | ⚠️ Limited | ✅ Yes | ⚠️ Manual |
-| **Team Collaboration** | | | | | |
-| Environment management | ✅ Built-in | ✅ Yes | ✅ Yes | ❌ No | ❌ Manual |
-| Version control | ✅ Git-based | ✅ Git-based | ✅ Yes | ✅ Git-based | ✅ Git-based |
-| Shared templates | ✅ Yes | ✅ Yes | ⚠️ Limited | ❌ No | ❌ No |
-| Documentation | ✅ Auto-gen | ✅ Yes | ✅ Yes | ❌ Manual | ❌ Manual |
-| **Integration** | | | | | |
-| AI tools (MCP) | ✅ Native | ❌ No | ⚠️ Limited | ❌ No | ❌ No |
-| VS Code extension | ✅ Rich | ⚠️ Basic | ❌ No | ❌ No | ❌ No |
-| CI/CD integration | ✅ Templates | ✅ Native | ⚠️ Limited | ✅ Yes | ⚠️ Manual |
-| Deployment export | ✅ Multiple | ✅ dbt Cloud | ❌ No | ❌ Manual | ❌ Manual |
+### Phase 2: AI Integration (Q3-Q4 2026)
+**Focus**: Add intelligence
+- Claude Code SDK integration
+- AgentDB implementation
+- Basic agent capabilities
+- MCP server deployment
 
-**SBDK's unique value proposition**:
-1. **Fastest local development experience** (30s setup, 5s hot reload)
-2. **Zero-cost development and testing** (no cloud fees)
-3. **AI-native integration** (MCP servers, VS Code extension)
-4. **Complete pipeline lifecycle** (dev → test → deploy)
+### Phase 3: Swarm Development (Q1-Q2 2027)
+**Focus**: Multi-agent collaboration
+- LangGraph orchestration
+- 5-agent swarms
+- Collaborative workflows
+- Pattern learning
+
+### Phase 4: Autonomy (Q3 2027+)
+**Focus**: Self-managing systems
+- Auto-building pipelines
+- Self-healing capabilities
+- Continuous optimization
+- Predictive maintenance
+
+---
+
+## Risk Management
+
+### Technical Risks
+- **AI Reliability**: Mitigate with human review loops
+- **Complexity**: Maintain simple core, complex optional
+- **Performance**: Local-first ensures speed
+- **Security**: Sandbox isolation protects systems
+
+### Market Risks
+- **Adoption**: Start with early adopters, prove value
+- **Competition**: Move fast, stay open, build ecosystem
+- **Regulation**: Ensure transparency and control
+- **Skills Gap**: Provide education and documentation
 
 ---
 
 ## Conclusion
 
-### The Vision: SBDK as Data Development Foundation
+SBDK v4.0 represents a fundamental shift in how data pipelines are built, understood, and maintained. By combining the solid foundation of local-first development with AI agents and semantic intelligence, SBDK enables a future where:
 
-SBDK will become **the standard local-first data development platform** - the tool every data engineer installs first when starting a new project. Like Git for version control or Docker for containerization, SBDK will be the obvious choice for local data pipeline development.
+- **Developers focus on what matters**: Business logic and strategic data modeling
+- **AI handles the repetitive**: Boilerplate, testing, optimization, and maintenance
+- **Semantic layer provides understanding**: Business concepts, not just SQL
+- **Quality is guaranteed**: Through automated validation and testing
+- **Innovation accelerates**: Through instant iteration and experimentation
+- **Portability is built-in**: Develop locally on DuckDB, deploy anywhere via Ibis
 
-### Key Success Factors
+**SBDK is not trying to replace data engineers - it's giving them superpowers.**
 
-1. **Focus on Core Mission**: Be the best at data pipeline development, integrate with specialists
-2. **Developer Experience First**: Optimize for speed, simplicity, and reliability
-3. **Ecosystem Integration**: Provide clean APIs and MCP servers for tool ecosystem
-4. **Community-Driven**: Open source with strong community feedback loops
+The journey from foundation → semantic intelligence → autonomous platform will transform not just how we build data pipelines, but what's possible to build. With SBDK, the future of data engineering is:
+- **AI-powered**: Agents that understand and assist
+- **Semantically aware**: Business logic in code
+- **Backend-portable**: Write once, run anywhere
+- **Human-directed**: You decide, AI executes
 
-### 18-Month Milestones
+### The Critical Path Forward
 
-- **Month 6 (Q2 2026)**: 10K+ developers using SBDK for local development
-- **Month 12 (Q4 2026)**: Standard tool for data pipeline development, 50K+ downloads/month
-- **Month 18 (Q2 2027)**: Platform ecosystem with 20+ integrated tools, 100K+ downloads/month
+**2026**: Build the foundation (Q1-Q2) → Launch MCP server (Q2 CRITICAL) → Add semantic layer (Q3-Q4)
+**2027**: Integrate Ibis portability (Q1-Q2) → Enable full autonomy (Q3+)
 
-### Strategic Impact
-
-**For individual developers**: 10x faster iteration, unlimited experimentation, zero cloud costs
-
-**For data teams**: Consistent environments, faster onboarding, better testing, lower costs
-
-**For the ecosystem**: Stable foundation enabling innovation in AI tools, visualization, and specialized analytics
+**Success depends on**:
+1. ✅ Completing foundation work (environment management ✅ done, connectors in progress)
+2. 🎯 **MCP server in Q2 2026** (CRITICAL - blocks all AI features)
+3. 🧠 Semantic layer incremental adoption (dbt → custom → Ibis)
+4. 🤖 AI agents built on solid MCP foundation
+5. 🚀 Ibis integration when portability is validated need
 
 ---
 
-**SBDK will not try to be everything. Instead, SBDK will be the best possible foundation that enables everything else to flourish.**
+**The mission evolves**: Be the best **AI-native** foundation for data pipeline development, with semantic understanding and backend portability, enabling developers to build faster while maintaining control and creativity.
 
 ---
 
-*Document Version: 2.0*
+*Document Version: 4.0 - Unified Vision with Semantic Intelligence*
 *Last Updated: January 2025*
-*Next Review: After Phase 1 completion (Q2 2026)*
+*Next Review: After MCP Server completion (Q2 2026)*
