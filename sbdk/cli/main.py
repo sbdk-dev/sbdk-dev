@@ -23,6 +23,7 @@ from sbdk.cli.commands.run import cli_run
 from sbdk.cli.commands.webhooks import cli_webhooks
 from sbdk.cli.debug import cli_debug
 from sbdk.cli.env import app as env_app
+from sbdk.cli.mcp import app as mcp_app
 from sbdk.cli.source import app as source_app
 from sbdk.context import create_context
 
@@ -144,6 +145,7 @@ app.command("query", help="Query DuckDB database")(cli_query)
 app.add_typer(cli_dev, name="dev", help="Execute pipeline in development mode")
 app.add_typer(env_app, name="env", help="Environment management commands")
 app.add_typer(source_app, name="source", help="Data source management commands")
+app.add_typer(mcp_app, name="mcp", help="MCP (Model Context Protocol) server management")
 app.command("webhooks", help="Start webhook listener server")(cli_webhooks)
 app.command("debug", help="Debug SBDK configuration and environment")(cli_debug)
 
