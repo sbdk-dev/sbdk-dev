@@ -25,7 +25,17 @@ from sbdk.sources.base import (
     SourceType,
 )
 
+# Import concrete connectors
+from sbdk.sources.connectors import (
+    CSVConnector,
+    CSVConnectorConfig,
+    ColumnType,
+    Encoding,
+    FileFormat,
+)
+
 __all__ = [
+    # Base classes
     "BaseConnector",
     "DatabaseConnector",
     "FileConnector",
@@ -35,4 +45,28 @@ __all__ = [
     "SchemaInfo",
     "SourceConnectionConfig",
     "SourceType",
+    # CSV Connector
+    "CSVConnector",
+    "CSVConnectorConfig",
+    "ColumnType",
+    "Encoding",
+    "FileFormat",
 ]
+
+# Optional PostgreSQL connector (if dependencies available)
+try:
+    from sbdk.sources.connectors import (
+        PostgresConfig,
+        PostgresConnector,
+        PostgresCursorMode,
+        PostgresSSLMode,
+    )
+    __all__.extend([
+        "PostgresConfig",
+        "PostgresConnector",
+        "PostgresCursorMode",
+        "PostgresSSLMode",
+    ])
+except (ImportError, Exception):
+    # PostgreSQL dependencies not installed
+    pass
