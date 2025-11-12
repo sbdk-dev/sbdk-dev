@@ -1,0 +1,21 @@
+{
+  "pipeline_name": "example_pipeline",
+  "run_id": "df6ed140-4c6d-4bcb-ad08-0d922c0e00ac",
+  "started_at": "2025-11-12T01:42:52.443794",
+  "completed_at": "2025-11-12T01:42:52.445560",
+  "status": "completed",
+  "incremental": {
+    "strategy": "timestamp",
+    "last_value": "2025-01-15T11:00:00",
+    "last_updated": "2025-11-12T01:42:52.445535",
+    "records_processed": 3,
+    "metadata": {}
+  },
+  "metrics": {
+    "records_processed": 3,
+    "duration_seconds": 0,
+    "max_timestamp": "2025-01-15T11:00:00"
+  },
+  "errors": [],
+  "config_hash": null
+}

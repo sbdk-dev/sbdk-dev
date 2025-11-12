@@ -20,6 +20,8 @@ from sbdk.cli.commands.dev import cli_dev
 from sbdk.cli.commands.init import cli_init
 from sbdk.cli.commands.query import cli_query
 from sbdk.cli.commands.run import cli_run
+from sbdk.cli.commands.test import cli_test
+from sbdk.cli.commands.watch import cli_watch
 from sbdk.cli.commands.webhooks import cli_webhooks
 from sbdk.cli.debug import cli_debug
 from sbdk.cli.env import app as env_app
@@ -143,6 +145,8 @@ app.command("init", help="Initialize a new SBDK project")(cli_init)
 app.command("run", help="Execute data pipeline")(cli_run)
 app.command("query", help="Query DuckDB database")(cli_query)
 app.add_typer(cli_dev, name="dev", help="Execute pipeline in development mode")
+app.add_typer(cli_test, name="test", help="Run tests for SBDK project")
+app.add_typer(cli_watch, name="watch", help="Watch files and auto-reload pipeline on changes")
 app.add_typer(env_app, name="env", help="Environment management commands")
 app.add_typer(source_app, name="source", help="Data source management commands")
 app.add_typer(mcp_app, name="mcp", help="MCP (Model Context Protocol) server management")

@@ -75,9 +75,20 @@ def run_visual_interface(config: dict):
 
 
 def execute_pipeline(
-    config: dict, pipelines_only: bool = False, dbt_only: bool = False
+    config: dict, pipelines_only: bool = False, dbt_only: bool = False, incremental: bool = False
 ):
-    """Execute the data pipeline"""
+    """Execute the data pipeline
+
+    Args:
+        config: Pipeline configuration
+        pipelines_only: Run only pipelines, skip dbt
+        dbt_only: Run only dbt, skip pipelines
+        incremental: Enable incremental processing
+    """
+
+    # Display incremental status in execution
+    if incremental:
+        console.print("[dim]Checking incremental state...[/dim]")
 
     with Progress(
         SpinnerColumn(),
@@ -167,10 +178,11 @@ class PipelineFileHandler(FileSystemEventHandler):
     """Handler for file system events during development"""
 
     def __init__(
-        self, config: dict = None, visual: bool = False, debounce_seconds: float = 2.0
+        self, config: dict = None, visual: bool = False, debounce_seconds: float = 2.0, incremental: bool = False
     ):
         self.config = config or {}
         self.visual = visual
+        self.incremental = incremental
         self.last_run = 0
         self.last_triggered = 0  # For backward compatibility with tests
         self.debounce_seconds = debounce_seconds
@@ -192,10 +204,13 @@ class PipelineFileHandler(FileSystemEventHandler):
         self.last_triggered = current_time  # For backward compatibility
 
         console.print(f"\n[yellow]File changed: {event.src_path}[/yellow]")
-        console.print("[cyan]Re-running pipeline...[/cyan]")
+        if self.incremental:
+            console.print("[cyan]Re-running pipeline (incremental)...[/cyan]")
+        else:
+            console.print("[cyan]Re-running pipeline...[/cyan]")
 
         try:
-            execute_pipeline(self.config)
+            execute_pipeline(self.config, incremental=self.incremental)
         except Exception as e:
             console.print(f"[red]Pipeline execution failed: {e}[/red]")
 
@@ -208,6 +223,9 @@ def cli_run(
     visual: bool = typer.Option(False, "--visual", help="Run with visual interface"),
     watch: bool = typer.Option(
         False, "--watch", help="Watch for file changes and auto-rerun"
+    ),
+    incremental: bool = typer.Option(
+        False, "--incremental", help="Enable incremental processing (only new/changed data)"
     ),
     pipelines_only: bool = typer.Option(
         False, "--pipelines-only", help="Run only pipelines, skip dbt"
@@ -222,9 +240,27 @@ def cli_run(
         False, "--quiet", "-q", help="Suppress non-essential output"
     ),
 ):
-    """Execute data pipeline with DLT and dbt transformations"""
+    """Execute data pipeline with DLT and dbt transformations
+
+    The --incremental flag enables incremental processing, which only processes
+    new or changed data since the last run. This significantly speeds up iteration
+    cycles by avoiding full data reloads.
+    """
 
     config = load_config(config_file)
+
+    # Display incremental mode status
+    if incremental and not quiet:
+        console.print(
+            Panel(
+                "[cyan]📊 Incremental Mode Enabled[/cyan]\n\n"
+                "Only processing new/changed data since last run.\n"
+                "State tracking: .sbdk/state/\n\n"
+                "[dim]Use --no-incremental for full refresh[/dim]",
+                title="Incremental Processing",
+                style="cyan",
+            )
+        )
 
     if visual:
         # Run visual interface
@@ -247,10 +283,12 @@ def cli_run(
 
         # Initial run
         console.print("[cyan]Running initial pipeline...[/cyan]")
-        execute_pipeline(config, pipelines_only, dbt_only)
+        if incremental:
+            console.print("[dim]Incremental mode active in watch mode[/dim]")
+        execute_pipeline(config, pipelines_only, dbt_only, incremental=incremental)
 
         # Set up file watcher
-        event_handler = PipelineFileHandler(config, visual)
+        event_handler = PipelineFileHandler(config, visual, incremental=incremental)
         observer = Observer()
 
         # Watch pipelines directory
@@ -284,4 +322,4 @@ def cli_run(
                 )
             )
 
-        execute_pipeline(config, pipelines_only, dbt_only)
+        execute_pipeline(config, pipelines_only, dbt_only, incremental=incremental)

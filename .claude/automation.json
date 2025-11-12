@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "automation": {
+    "pre_task": {
+      "enabled": true,
+      "steps": [
+        "load_context",
+        "read_specs",
+        "check_environment"
+      ]
+    },
+    "post_task": {
+      "enabled": true,
+      "steps": [
+        "run_tests",
+        "update_documentation",
+        "update_memory",
+        "commit_changes",
+        "visual_validation"
+      ]
+    },
+    "continuous": {
+      "enabled": true,
+      "watch_patterns": ["src/**/*.py", "tests/**/*.py"],
+      "auto_test": true,
+      "auto_commit": false
+    }
+  },
+  "documentation": {
+    "auto_update": true,
+    "targets": [
+      "CLAUDE.md",
+      "README.md",
+      "docs/**/*.md"
+    ],
+    "cleanup_old": true
+  },
+  "testing": {
+    "auto_run": true,
+    "coverage_threshold": 95,
+    "visual_test": true
+  },
+  "swarm": {
+    "enabled": true,
+    "tools": [
+      "agentdb",
+      "claude-flow",
+      "agentic-flow"
+    ],
+    "auto_spawn": true
+  }
+}

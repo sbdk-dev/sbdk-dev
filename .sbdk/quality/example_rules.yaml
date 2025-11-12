@@ -1,0 +1,112 @@
+# Example Quality Rules for SBDK
+# This file demonstrates various validation rules
+
+name: example_quality_rules
+
+rules:
+  # Critical validations - primary key and required fields
+  - table: users
+    column: id
+    validator: unique
+    severity: critical
+    description: User ID must be unique (primary key)
+    enabled: true
+    tags:
+      - critical
+      - primary_key
+
+  - table: users
+    column: email
+    validator: not_null
+    severity: error
+    description: Email is a required field
+    enabled: true
+    tags:
+      - required
+      - user_data
+
+  - table: users
+    column: username
+    validator: unique
+    severity: error
+    description: Username must be unique
+    enabled: true
+    tags:
+      - identity
+
+  # Range validations
+  - table: users
+    column: age
+    validator: range
+    min_value: 0
+    max_value: 150
+    severity: error
+    description: Age must be realistic (0-150)
+    enabled: true
+    tags:
+      - business_rule
+
+  - table: products
+    column: price
+    validator: range
+    min_value: 0
+    max_value: 1000000
+    severity: error
+    description: Price must be positive and reasonable
+    enabled: true
+    tags:
+      - business_rule
+      - financial
+
+  # Pattern validations
+  - table: users
+    column: email
+    validator: pattern
+    pattern: '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+    severity: warning
+    description: Email must be in valid format
+    enabled: true
+    tags:
+      - format
+
+  - table: products
+    column: sku
+    validator: pattern
+    pattern: '^SKU-\d{6}$'
+    severity: warning
+    description: SKU must follow format SKU-XXXXXX
+    enabled: true
+    tags:
+      - format
+      - inventory
+
+  # Schema validation
+  - table: users
+    validator: schema
+    expected_columns:
+      id: INTEGER
+      email: VARCHAR
+      username: VARCHAR
+      age: INTEGER
+      created_at: TIMESTAMP
+    allow_extra_columns: true
+    severity: error
+    description: User table schema validation
+    enabled: true
+    tags:
+      - schema
+
+  - table: products
+    validator: schema
+    expected_columns:
+      id: INTEGER
+      name: VARCHAR
+      price: DOUBLE
+      sku: VARCHAR
+      category: VARCHAR
+    allow_extra_columns: false
+    severity: error
+    description: Product table schema validation
+    enabled: true
+    tags:
+      - schema
