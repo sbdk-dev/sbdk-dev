@@ -1,0 +1,182 @@
+{
+  "name": "SBDK Phase 2 - Agentic Flow Configuration",
+  "version": "1.0.0",
+  "flows": [
+    {
+      "id": "phase2_1_implementation",
+      "name": "Phase 2.1: AI Integration + Semantic Layer",
+      "description": "Implement multi-environment system and basic semantic layer",
+      "steps": [
+        {
+          "id": "env_management",
+          "name": "Multi-Environment Management",
+          "type": "development",
+          "agent": "backend_dev",
+          "tasks": [
+            {
+              "task": "Design environment configuration schema",
+              "output": "sbdk/environment/schema.py",
+              "validation": "schema validates all test cases"
+            },
+            {
+              "task": "Implement environment manager with CRUD operations",
+              "output": "sbdk/environment/manager.py",
+              "validation": "pytest tests/environment/test_manager.py passes"
+            },
+            {
+              "task": "Add environment switching with state preservation",
+              "output": "sbdk/environment/switcher.py",
+              "validation": "can switch between environments without data loss"
+            },
+            {
+              "task": "Create environment templates (dev, staging, prod)",
+              "output": "sbdk/environment/templates/",
+              "validation": "all templates create valid environments"
+            },
+            {
+              "task": "Build CLI commands for environment management",
+              "output": "sbdk/cli/commands/env.py",
+              "validation": "sbdk env --help shows all commands"
+            }
+          ]
+        },
+        {
+          "id": "semantic_layer",
+          "name": "Semantic Layer Foundation",
+          "type": "development",
+          "agent": "ai_specialist",
+          "tasks": [
+            {
+              "task": "Design semantic model YAML schema",
+              "output": "sbdk/semantic/schema.yaml",
+              "validation": "schema supports metrics, dimensions, relationships"
+            },
+            {
+              "task": "Implement semantic model parser and validator",
+              "output": "sbdk/semantic/parser.py",
+              "validation": "parses YAML and validates structure"
+            },
+            {
+              "task": "Build semantic query engine (business terms → SQL)",
+              "output": "sbdk/semantic/query.py",
+              "validation": "translates 'monthly revenue' to correct SQL"
+            },
+            {
+              "task": "Create semantic model examples",
+              "output": "examples/semantic/",
+              "validation": "examples run without errors"
+            },
+            {
+              "task": "Add CLI commands for semantic queries",
+              "output": "sbdk/cli/commands/semantic.py",
+              "validation": "sbdk semantic query works"
+            }
+          ]
+        },
+        {
+          "id": "agentdb_integration",
+          "name": "AgentDB Integration",
+          "type": "integration",
+          "agent": "ai_specialist",
+          "tasks": [
+            {
+              "task": "Set up AgentDB connection and schema",
+              "output": "sbdk/ai/agentdb.py",
+              "validation": "can connect and store memories"
+            },
+            {
+              "task": "Implement memory storage for agent learnings",
+              "output": "sbdk/ai/memory.py",
+              "validation": "stores and retrieves context correctly"
+            },
+            {
+              "task": "Add learning from Phase 1 patterns",
+              "output": "sbdk/ai/learning.py",
+              "validation": "learns from Phase 1 success patterns"
+            },
+            {
+              "task": "Create memory query interface",
+              "output": "sbdk/ai/query.py",
+              "validation": "can query past learnings"
+            }
+          ]
+        },
+        {
+          "id": "ai_agent_integration",
+          "name": "Claude Code SDK Integration",
+          "type": "integration",
+          "agent": "ai_specialist",
+          "tasks": [
+            {
+              "task": "Integrate Claude Code SDK",
+              "output": "sbdk/ai/claude_sdk.py",
+              "validation": "SDK initialized and functional"
+            },
+            {
+              "task": "Implement AI-assisted debugging",
+              "output": "sbdk/ai/debug.py",
+              "validation": "provides helpful debug suggestions"
+            },
+            {
+              "task": "Add AI query assistance",
+              "output": "sbdk/ai/assist.py",
+              "validation": "assists with SQL queries"
+            },
+            {
+              "task": "Create CLI commands for AI features",
+              "output": "sbdk/cli/commands/agent.py",
+              "validation": "sbdk agent assist works"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "name": "Comprehensive Testing",
+          "type": "testing",
+          "agent": "tester",
+          "tasks": [
+            {
+              "task": "Create environment management tests",
+              "output": "tests/environment/",
+              "validation": "95%+ coverage"
+            },
+            {
+              "task": "Create semantic layer tests",
+              "output": "tests/semantic/",
+              "validation": "95%+ coverage"
+            },
+            {
+              "task": "Create AI integration tests",
+              "output": "tests/ai/",
+              "validation": "all integration points tested"
+            },
+            {
+              "task": "Add performance benchmarks",
+              "output": "tests/benchmarks/",
+              "validation": "performance baselines established"
+            }
+          ]
+        }
+      ],
+      "success_criteria": {
+        "all_tasks_complete": true,
+        "tests_passing": "100%",
+        "coverage": ">= 95%",
+        "documentation": "complete"
+      }
+    }
+  ],
+  "execution": {
+    "mode": "parallel",
+    "max_concurrent_agents": 5,
+    "timeout_per_task": 3600,
+    "retry_on_failure": true,
+    "max_retries": 2
+  },
+  "output": {
+    "progress_updates": true,
+    "completion_report": true,
+    "memory_updates": true,
+    "git_integration": true
+  }
+}
