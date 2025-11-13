@@ -1,0 +1,150 @@
+{
+  "passed": false,
+  "timestamp": "2025-11-12T01:43:25.563166",
+  "database_path": null,
+  "total_validations": 6,
+  "failed_validations": 4,
+  "total_issues": 4,
+  "critical_issues": 0,
+  "error_issues": 4,
+  "warning_issues": 0,
+  "execution_time_ms": 26.575000000000003,
+  "results": [
+    {
+      "passed": true,
+      "validator_name": "UniqueValidator",
+      "table": "users",
+      "column": "id",
+      "issue_count": 0,
+      "critical_count": 0,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": [],
+      "execution_time_ms": 3.1809999999999996,
+      "metadata": {}
+    },
+    {
+      "passed": false,
+      "validator_name": "UniqueValidator",
+      "table": "users",
+      "column": "email",
+      "issue_count": 1,
+      "critical_count": 0,
+      "error_count": 1,
+      "warning_count": 0,
+      "issues": [
+        {
+          "severity": "error",
+          "message": "Found 1 duplicate values in column 'email'",
+          "table": "users",
+          "column": "email",
+          "row_count": 1,
+          "sample_values": [
+            "alice@example.com"
+          ],
+          "fixable": true,
+          "fix_suggestion": "Keep only first occurrence: DELETE FROM users WHERE rowid NOT IN (SELECT MIN(rowid) FROM users GROUP BY email)",
+          "metadata": {}
+        }
+      ],
+      "execution_time_ms": 12.111,
+      "metadata": {}
+    },
+    {
+      "passed": false,
+      "validator_name": "UniqueValidator",
+      "table": "users",
+      "column": "username",
+      "issue_count": 1,
+      "critical_count": 0,
+      "error_count": 1,
+      "warning_count": 0,
+      "issues": [
+        {
+          "severity": "error",
+          "message": "Found 1 duplicate values in column 'username'",
+          "table": "users",
+          "column": "username",
+          "row_count": 1,
+          "sample_values": [
+            "alice"
+          ],
+          "fixable": true,
+          "fix_suggestion": "Keep only first occurrence: DELETE FROM users WHERE rowid NOT IN (SELECT MIN(rowid) FROM users GROUP BY username)",
+          "metadata": {}
+        }
+      ],
+      "execution_time_ms": 5.971,
+      "metadata": {}
+    },
+    {
+      "passed": false,
+      "validator_name": "NotNullValidator",
+      "table": "users",
+      "column": "email",
+      "issue_count": 1,
+      "critical_count": 0,
+      "error_count": 1,
+      "warning_count": 0,
+      "issues": [
+        {
+          "severity": "error",
+          "message": "Found 1 NULL values in column 'email'",
+          "table": "users",
+          "column": "email",
+          "row_count": 1,
+          "sample_values": [
+            null
+          ],
+          "fixable": true,
+          "fix_suggestion": "DELETE FROM users WHERE email IS NULL",
+          "metadata": {}
+        }
+      ],
+      "execution_time_ms": 2.1359999999999997,
+      "metadata": {}
+    },
+    {
+      "passed": false,
+      "validator_name": "RangeValidator",
+      "table": "users",
+      "column": "age",
+      "issue_count": 1,
+      "critical_count": 0,
+      "error_count": 1,
+      "warning_count": 0,
+      "issues": [
+        {
+          "severity": "error",
+          "message": "Found 2 values outside range [0, 120] in column 'age'",
+          "table": "users",
+          "column": "age",
+          "row_count": 2,
+          "sample_values": [
+            -5,
+            150
+          ],
+          "fixable": true,
+          "fix_suggestion": "DELETE FROM users WHERE age < 0 OR age > 120",
+          "metadata": {}
+        }
+      ],
+      "execution_time_ms": 2.144,
+      "metadata": {}
+    },
+    {
+      "passed": true,
+      "validator_name": "PatternValidator",
+      "table": "users",
+      "column": "email",
+      "issue_count": 0,
+      "critical_count": 0,
+      "error_count": 0,
+      "warning_count": 0,
+      "issues": [],
+      "execution_time_ms": 0.923,
+      "metadata": {}
+    }
+  ],
+  "metadata": {}
+}

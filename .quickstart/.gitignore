@@ -1,0 +1,15 @@
+# Swarm Infrastructure Logs
+*.log
+swarm-*.json
+
+# API Keys (if stored locally)
+.env
+.env.local
+.env.swarm
+
+# Process PIDs
+*.pid
+
+# Temporary swarm outputs
+.swarm-output/
+.swarm-temp/
