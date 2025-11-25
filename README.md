@@ -1,133 +1,126 @@
 # SBDK: Local-First Data Pipeline Sandbox
 
-**[Public Archive - November 2025]**
+> Build and test complete data pipelines in 30 seconds. Zero cloud setup, zero configuration, zero cost.
 
-> A complete reference implementation of a local-first semantic data development platform with AI integration patterns, demonstrating production-grade architecture for building modern data tools.
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/downloads/)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PyPI](https://img.shields.io/badge/pypi-v1.1.2-blue)](https://pypi.org/project/sbdk-dev/)
+[![Tests](https://img.shields.io/badge/tests-150%2B%20passing-brightgreen)](tests/)
 
-[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![PyPI Version](https://img.shields.io/badge/pypi-v1.1.2-blue)](https://pypi.org/project/sbdk-dev/)
+**[Archived November 2025]** — Complete, production-ready reference implementation.
 
 ---
 
-## Overview
+## What is SBDK?
 
-SBDK (Semantic Bridge Development Kit) demonstrates best practices for building AI-native data platforms with semantic intelligence. This archive showcases a fully-functional local-first data development environment that enables rapid iteration, safe experimentation, and production-ready patterns.
+SBDK is a **local development sandbox** that gives you a complete data platform running on your laptop:
 
-### What This Project Demonstrates
+```bash
+# Install
+pip install sbdk-dev
 
-- **Local-First Architecture**: Complete data platform running on DuckDB with zero cloud dependencies
-- **Semantic Layer Integration**: Business logic abstraction enabling AI-powered analytics
-- **MCP Server Pattern**: Model Context Protocol implementation for AI agent integration
-- **Professional CLI Design**: Enterprise-grade command-line interface with rich error handling
-- **Test-Driven Development**: 100% test coverage with comprehensive quality validation
-- **Modern Python Packaging**: Built with `uv` for 10-100x faster dependency management
+# Create project
+sbdk init my_project
+cd my_project
 
-### Technology Stack
+# Run complete pipeline: data generation → ingestion → transformation
+sbdk run
+
+# Query your data
+sbdk query "SELECT * FROM orders_daily LIMIT 10"
+```
+
+**You get a working data pipeline in under 60 seconds.**
+
+No Docker. No Kubernetes. No cloud accounts. No configuration files to write.
+
+---
+
+## What Problem Does This Solve?
+
+**Before SBDK:**
+- Setting up a data pipeline development environment takes days
+- Testing requires deploying to cloud infrastructure ($$$)
+- Iteration cycles are slow (push → wait → test → repeat)
+- Onboarding new team members is painful
+- Breaking production is expensive
+
+**With SBDK:**
+- Full pipeline environment in 1 command (30 seconds)
+- Test everything locally, safely (zero cost)
+- Iteration cycles are instant (30-second feedback loops)
+- New engineers productive in < 5 minutes
+- Production patterns validated before deployment
+
+---
+
+## Who Is This For?
+
+### Data Engineers
+→ **Job-to-be-done:** Test dbt models and data pipelines without cloud infrastructure
+
+```bash
+# Edit your dbt model
+vim dbt_project/models/marts/orders_daily.sql
+
+# Test changes instantly
+sbdk run --dbt-only
+
+# Query results
+sbdk query --interactive
+```
+
+### Platform Engineers
+→ **Job-to-be-done:** Build and evaluate data tools on realistic infrastructure
+
+SBDK demonstrates production patterns you can adapt:
+- Professional CLI architecture (exception handling, context management)
+- MCP server for AI agent integration
+- Semantic layer for business logic abstraction
+- 100% test coverage patterns
+
+### Data Engineering Students
+→ **Job-to-be-done:** Learn modern data stack without wrestling with deployment
+
+Study working examples of:
+- dbt transformations (staging → intermediate → marts)
+- DLT data pipelines (extraction and loading)
+- DuckDB OLAP queries
+- Data quality frameworks
+- Testing patterns
+
+---
+
+## How Does It Work?
+
+### Architecture
 
 ```
 ┌─────────────────────────────────────────┐
-│         CLI Interface (Typer)            │  Rich terminal UI, global options
+│  CLI (Typer + Rich)                      │  ← Professional command-line interface
 ├─────────────────────────────────────────┤
-│      Data Transformation (dbt)           │  SQL-first transformations
+│  dbt Transformations                     │  ← SQL models: staging → marts
 ├─────────────────────────────────────────┤
-│      Data Ingestion (DLT)                │  Modular pipeline framework
+│  DLT Data Pipelines                      │  ← Extract & load synthetic data
 ├─────────────────────────────────────────┤
-│      Analytics Engine (DuckDB)           │  Embedded OLAP database
-├─────────────────────────────────────────┤
-│      Package Manager (uv)                │  10-100x faster than pip
+│  DuckDB Embedded Database                │  ← Local OLAP engine (no server)
 └─────────────────────────────────────────┘
 ```
 
----
+### What You Get
 
-## Key Features
+**Out of the box:**
+- ✅ **DuckDB database** — Fast embedded OLAP engine
+- ✅ **dbt project** — Pre-configured with staging/intermediate/marts layers
+- ✅ **DLT pipelines** — Synthetic data generation (users, events, orders)
+- ✅ **Quality framework** — Data validation and testing
+- ✅ **CLI interface** — Professional commands with rich error handling
 
-### 1. Complete Local Development Environment
-
-- **30-second iteration cycles**: Instant feedback without cloud latency
-- **Zero configuration**: Works out-of-the-box after installation
-- **Production parity**: Local patterns match production deployment
-- **Isolated sandbox**: Safe experimentation without affecting production
-
-### 2. Professional CLI Architecture
-
-```bash
-# Global options available to all commands
-sbdk --verbose --format json query "SELECT * FROM orders"
-sbdk --dry-run --project-dir ./my-project run
-
-# Rich error handling with actionable suggestions
-sbdk init duplicate_project
-# Error: Project 'duplicate_project' already exists
-# Suggestion: Use 'sbdk init --force' to overwrite
-
-# Multi-format output (text, json, yaml, table, minimal)
-sbdk version --format json
-```
-
-**Architecture Highlights:**
-- Comprehensive exception hierarchy with custom exit codes
-- Centralized context management with lifecycle hooks
-- Pydantic-based configuration validation
-- Multi-format output system for automation
-- Built-in logging and observability
-
-### 3. Semantic Layer Foundation
-
-```python
-# Business logic abstraction for AI agents
-from sbdk.semantic import SemanticLayer
-
-sl = SemanticLayer("sbdk_semantic.yml")
-
-# Query by business metrics, not raw SQL
-result = sl.query(
-    metrics=["monthly_recurring_revenue", "customer_lifetime_value"],
-    dimensions=["customer_segment"],
-    filters={"order_month": "2024-01"}
-)
-
-# Natural language queries
-result = sl.query_natural("Show me MRR by segment last month")
-```
-
-### 4. MCP Server for AI Integration
-
-```python
-# Model Context Protocol server for AI agents
-from sbdk.mcp import MCPServer
-
-server = MCPServer(name="sbdk", version="4.0")
-
-@server.tool
-def query_data(sql: str, env: str = "dev") -> dict:
-    """Execute SQL in specified environment"""
-    return sbdk.query(sql, environment=env)
-
-@server.tool
-def run_pipeline(pipeline: str, incremental: bool = False) -> dict:
-    """Execute data pipeline"""
-    return sbdk.pipeline.run(pipeline, incremental=incremental)
-
-server.run(host="localhost", port=3000)
-```
-
-### 5. Comprehensive Testing Framework
-
-```bash
-# 100% test coverage with multiple test types
-uv run pytest tests/ --cov=sbdk
-
-# Architecture validation
-uv run pytest tests/test_phase1_*.py -v
-
-# Integration tests
-uv run pytest tests/integration/ -v
-
-# Performance benchmarks
-uv run pytest tests/ -m performance
-```
+**Your data pipeline:**
+1. **DLT pipelines** generate synthetic data → load into DuckDB
+2. **dbt models** transform raw data → clean staging → business logic → analytical marts
+3. **Quality tests** validate data integrity
+4. **Interactive queries** explore results
 
 ---
 
@@ -136,183 +129,350 @@ uv run pytest tests/ -m performance
 ### Installation
 
 ```bash
-# Using uv (recommended - 10-100x faster)
+# Using pip
+pip install sbdk-dev
+
+# Using uv (10-100x faster)
 pip install uv
 uv tool install sbdk-dev
-
-# Or using pip
-pip install sbdk-dev
 ```
 
-### Create Your First Project
+### Create Your First Pipeline
 
 ```bash
-# Initialize new project
+# 1. Initialize project
 sbdk init my_analytics_project
 cd my_analytics_project
 
-# Run complete pipeline (ingestion + transformation)
+# 2. Run pipeline (generates data + runs dbt)
 sbdk run
 
-# Query your data
-sbdk query "SELECT * FROM stg_orders LIMIT 10"
+# Output:
+# ✓ Generated 10,000 users
+# ✓ Generated 50,000 events
+# ✓ Generated 20,000 orders
+# ✓ Loaded into DuckDB
+# ✓ Running dbt models...
+# ✓ 12 models completed
+# ✓ All tests passed
+```
 
+### Query Your Data
+
+```bash
 # Interactive SQL mode
 sbdk query --interactive
+
+# Run specific query
+sbdk query "
+  SELECT
+    order_date,
+    COUNT(*) as order_count,
+    SUM(order_total) as revenue
+  FROM marts.orders_daily
+  GROUP BY order_date
+  ORDER BY order_date DESC
+  LIMIT 7
+"
 ```
 
-### Project Structure
+### Iterate on Models
 
-```
-my_analytics_project/
-├── dbt_project/              # dbt transformations
-│   ├── models/
-│   │   ├── staging/         # Data cleaning
-│   │   ├── intermediate/    # Business logic
-│   │   └── marts/           # Final analytics tables
-│   └── tests/               # Data quality tests
-├── pipelines/               # DLT data pipelines
-│   ├── users.py
-│   ├── events.py
-│   └── orders.py
-├── data/                    # DuckDB database files
-│   └── dev.duckdb
-└── sbdk_config.json         # Configuration
+```bash
+# Edit a dbt model
+vim dbt_project/models/staging/stg_orders.sql
+
+# Test just dbt (skip data generation)
+sbdk run --dbt-only
+
+# Verify changes
+sbdk query "SELECT * FROM stg_orders LIMIT 5"
 ```
 
 ---
 
-## Architecture Highlights
+## Real-World Example
 
-### Exception Hierarchy
+### Use Case: Building a Customer Analytics Pipeline
+
+```bash
+# 1. Generate test data
+sbdk init customer_analytics
+cd customer_analytics
+sbdk run
+
+# 2. Your dbt project structure
+dbt_project/
+├── models/
+│   ├── staging/
+│   │   ├── stg_users.sql       # Clean raw user data
+│   │   ├── stg_events.sql      # Clean raw events
+│   │   └── stg_orders.sql      # Clean raw orders
+│   ├── intermediate/
+│   │   ├── int_user_events.sql    # Join users + events
+│   │   └── int_user_orders.sql    # Join users + orders
+│   └── marts/
+│       ├── customer_360.sql        # Complete customer view
+│       ├── orders_daily.sql        # Daily order aggregates
+│       └── user_activity.sql       # User engagement metrics
+
+# 3. Query your mart
+sbdk query "
+  SELECT
+    customer_segment,
+    COUNT(DISTINCT customer_id) as customers,
+    AVG(total_orders) as avg_orders,
+    AVG(lifetime_value) as avg_ltv
+  FROM marts.customer_360
+  GROUP BY customer_segment
+"
+
+# Output:
+# ┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━┓
+# ┃ customer_segment ┃ customers ┃ avg_orders ┃ avg_ltv ┃
+# ┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━┩
+# │ enterprise       │ 127       │ 24.3       │ $45,230 │
+# │ mid_market       │ 453       │ 12.1       │ $12,450 │
+# │ smb              │ 2,341     │ 3.8        │ $1,240  │
+# └──────────────────┴───────────┴────────────┴─────────┘
+```
+
+---
+
+## When Would You Use This?
+
+### Scenario 1: Learning dbt
+**Problem:** You want to learn dbt but don't have a data warehouse
+**Solution:** SBDK gives you instant dbt environment with real data
+
+```bash
+sbdk init learning_dbt
+cd learning_dbt
+# Explore pre-built models, modify them, see results instantly
+```
+
+### Scenario 2: Testing Pipeline Changes
+**Problem:** Need to validate a complex transformation before production
+**Solution:** Test locally, iterate fast, deploy with confidence
+
+```bash
+# Copy your production dbt model
+cp ~/prod-repo/models/revenue_by_region.sql dbt_project/models/marts/
+
+# Test it
+sbdk run --dbt-only
+
+# Verify output matches expectations
+sbdk query "SELECT * FROM marts.revenue_by_region"
+```
+
+### Scenario 3: Building a Data Tool
+**Problem:** You're building a data catalog/lineage/quality tool
+**Solution:** SBDK provides realistic infrastructure to test against
 
 ```python
-# Structured error handling with context
-from sbdk.exceptions import (
-    SBDKException,           # Base exception
-    ConfigurationError,      # Exit code 2
-    PipelineError,           # Exit code 3
-    ValidationError,         # Exit code 4
-    NetworkError            # Exit code 5
+# Your tool can connect to SBDK's DuckDB
+import duckdb
+
+conn = duckdb.connect('data/dev.duckdb')
+tables = conn.execute("SELECT * FROM information_schema.tables").fetchall()
+
+# Test your catalog against real dbt lineage
+```
+
+### Scenario 4: Interview Prep / Demos
+**Problem:** Need to demonstrate data engineering skills
+**Solution:** Working pipeline you can run through in a 30-minute interview
+
+---
+
+## What's Included
+
+### Professional CLI Architecture
+
+```bash
+# Global options on every command
+sbdk --verbose query "SELECT 1"              # Debug logging
+sbdk --format json version                    # JSON output for automation
+sbdk --dry-run run                           # Preview without executing
+sbdk --project-dir ../other-project run      # Run different project
+
+# Rich error messages with suggestions
+$ sbdk query "SELCT * FROM orders"
+✗ Error: SQL syntax error
+
+  SELCT * FROM orders
+  ^^^^^
+  Did you mean: SELECT?
+
+  Suggestion: Check your SQL syntax
+  Exit code: 3
+```
+
+### Comprehensive Testing Framework
+
+```bash
+# Run all tests (150+ tests)
+pytest tests/ -v
+
+# Test categories
+pytest tests/test_phase1_*.py          # Architecture tests
+pytest tests/integration/              # End-to-end tests
+pytest tests/ -m performance           # Performance benchmarks
+
+# Coverage report
+pytest tests/ --cov=sbdk --cov-report=html
+# 100% coverage on core functionality
+```
+
+### Quality Framework
+
+```python
+# Built-in data quality validation
+from sbdk.quality import QualityFramework
+
+qf = QualityFramework()
+
+# Validate data quality
+results = qf.validate_table(
+    table="stg_orders",
+    rules={
+        "primary_key": "order_id",
+        "not_null": ["order_id", "customer_id", "order_total"],
+        "positive": ["order_total"],
+        "valid_date": ["order_date"]
+    }
 )
 
-# Errors include suggestions
-try:
-    config = load_config("invalid.json")
-except ConfigurationError as e:
-    print(e.message)        # "Invalid configuration format"
-    print(e.suggestion)     # "Check JSON syntax with 'jsonlint'"
-    print(e.details)        # {"file": "invalid.json", "line": 12}
+# Automatic reporting
+qf.generate_report(results)
 ```
 
-### Context Management
+### Environment Management
 
-```python
-# Centralized state and lifecycle management
-from sbdk.context import SBDKContext
+```bash
+# Multiple environments (dev, staging, prod patterns)
+sbdk env create staging --template analytics
+sbdk env switch staging
+sbdk env list
 
-with SBDKContext(
-    verbose=True,
-    dry_run=False,
-    format="json"
-) as ctx:
-    # Automatic logging setup
-    ctx.logger.info("Starting pipeline")
-
-    # Resource tracking
-    ctx.register_resource(connection, cleanup_fn)
-
-    # Configuration access
-    config = ctx.config
-
-    # Automatic cleanup on exit
+# Each environment has isolated:
+# - DuckDB database
+# - dbt profiles
+# - Configuration
 ```
 
-### Output Formatting
+---
+
+## Advanced Features
+
+### Semantic Layer Foundation
 
 ```python
-# Multi-format output system
-from sbdk.formatters import OutputFormatter
+# Business logic abstraction (documented pattern, implementation in progress)
+from sbdk.semantic import SemanticLayer
 
-formatter = OutputFormatter(format="json")
+sl = SemanticLayer("sbdk_semantic.yml")
 
-# Format for different consumers
-formatter.format_data({"status": "success"})
-formatter.format_error(exception)
-formatter.format_list(items)
-formatter.format_table(rows, columns)
+# Query by business metrics, not raw SQL
+result = sl.query(
+    metrics=["monthly_recurring_revenue", "customer_lifetime_value"],
+    dimensions=["customer_segment"],
+    filters={"month": "2024-01"}
+)
+```
+
+### MCP Server for AI Integration
+
+```python
+# Model Context Protocol server pattern
+from sbdk.mcp import MCPServer
+
+server = MCPServer(name="sbdk")
+
+@server.tool
+def query_data(sql: str) -> dict:
+    """AI agents can query your data"""
+    return sbdk.query(sql)
+
+@server.tool
+def run_pipeline(incremental: bool = False) -> dict:
+    """AI agents can execute pipelines"""
+    return sbdk.pipeline.run(incremental=incremental)
+
+server.run(port=3000)
 ```
 
 ---
 
 ## Documentation
 
-### Core Documentation
+### Getting Started
+- [**Installation & Setup**](SETUP.md) — Development environment setup
+- [**Quick Start Guide**](#quick-start) — Get running in 60 seconds (above)
+- [**Architecture Overview**](docs/ARCHITECTURE.md) — System design and patterns
 
-- [**ARCHITECTURE.md**](docs/ARCHITECTURE.md) - System architecture and design patterns
-- [**SETUP.md**](SETUP.md) - Development setup and contribution guide
-- [**VISION.md**](VISION.md) - Original platform vision and roadmap
-- [**CHANGELOG.md**](CHANGELOG.md) - Version history and changes
+### Technical Deep Dives
+- [**API Reference**](docs/API_REFERENCE.md) — Complete API documentation
+- [**dbt Models**](docs/DBT_MODELS.md) — Pre-built transformation models
+- [**DLT Pipelines**](docs/DLT_PIPELINE_ARCHITECTURE.md) — Data pipeline architecture
+- [**Testing Framework**](docs/testing-framework.md) — Testing patterns and practices
+- [**Quality Framework**](docs/quality-framework.md) — Data validation patterns
 
-### Technical Documentation
+### Advanced Topics
+- [**Data Sources**](docs/data-sources.md) — Connector architecture (Postgres, CSV)
+- [**Incremental Processing**](docs/incremental-processing.md) — Efficient data loading
+- [**Environment Management**](docs/environment-management.md) — Multi-environment workflows
+- [**MCP Server**](docs/mcp-server.md) — AI agent integration patterns
 
-- [**API Reference**](docs/API_REFERENCE.md) - Complete API documentation
-- [**Configuration Guide**](docs/CONFIGURATION.md) - Configuration schema and options
-- [**Testing Framework**](docs/testing-framework.md) - Testing patterns and practices
-- [**Data Sources**](docs/data-sources.md) - Connector architecture
-- [**Quality Framework**](docs/quality-framework.md) - Data quality validation
-
-### Deployment Guides
-
-- [**Build Binary**](docs/BUILD_BINARY.md) - Creating standalone executables
-- [**CI/CD Guide**](docs/CI_CD_GUIDE.md) - Continuous integration patterns
-- [**GitHub Workflow**](docs/GITHUB_RELEASE_WORKFLOW.md) - Release process
+### Build & Deploy
+- [**Configuration**](docs/CONFIGURATION.md) — Configuration schema and options
+- [**Build Binary**](docs/BUILD_BINARY.md) — Create standalone executables
+- [**CI/CD Guide**](docs/CI_CD_GUIDE.md) — Continuous integration patterns
+- [**Release Workflow**](docs/GITHUB_RELEASE_WORKFLOW.md) — Release process
 
 ---
 
-## Use Cases & Learning Opportunities
+## Comparison: SBDK vs. Alternatives
 
-### For Data Engineers
+| | SBDK | dbt + Snowflake | Dagster + Postgres | Custom Scripts |
+|---|---|---|---|---|
+| **Setup time** | 30 seconds | Hours/Days | Hours | Hours |
+| **Cost (dev)** | $0 | $$ | $ | $0 |
+| **Iteration speed** | Instant | Minutes | Minutes | Varies |
+| **Cloud required** | No | Yes | No | No |
+| **Production-ready patterns** | Yes | Yes | Yes | No |
+| **Learning curve** | Low | Medium | High | N/A |
+| **Full pipeline** | ✅ | ✅ | ✅ | Partial |
+| **Testing framework** | ✅ | Partial | ✅ | No |
+| **Local OLAP** | ✅ DuckDB | ❌ | ❌ | ❌ |
 
-- **Learn local-first development patterns**: Build and test pipelines without cloud costs
-- **Study production-grade CLI design**: Professional command-line interface architecture
-- **Understand semantic layer integration**: Bridge between business logic and data
+**Use SBDK when:**
+- ✅ You need instant local development environment
+- ✅ You want to learn data engineering without cloud costs
+- ✅ You're prototyping data pipelines
+- ✅ You need to test dbt models locally
+- ✅ You're building/testing data engineering tools
 
-### For Platform Engineers
-
-- **MCP server implementation**: Connect AI agents to data infrastructure
-- **Context management patterns**: Lifecycle management and resource cleanup
-- **Error handling architecture**: Structured exceptions with actionable suggestions
-
-### For Tool Builders
-
-- **Modern Python packaging**: Using `uv` for fast dependency management
-- **Test-driven development**: Achieving 100% test coverage
-- **Multi-format output**: Supporting automation and scripting
-
-### For AI/ML Engineers
-
-- **Semantic query patterns**: Business-logic-first data access
-- **AI agent integration**: MCP protocol for tool use
-- **Local development for AI**: Safe sandbox for agent experimentation
+**Use cloud platforms when:**
+- Production deployment at scale
+- Team collaboration on shared infrastructure
+- Processing petabyte-scale datasets
 
 ---
 
 ## Technical Specifications
 
 ### System Requirements
+- **Python**: 3.9, 3.10, 3.11, 3.12, 3.13
+- **OS**: Linux, macOS, Windows
+- **Memory**: 4GB minimum, 8GB recommended
+- **Disk**: 500MB installation + data storage
 
-- **Python**: 3.9 or higher
-- **Operating System**: Linux, macOS, Windows
-- **Memory**: 4GB RAM minimum (8GB recommended)
-- **Disk Space**: 500MB for installation, varies with data
-
-### Dependencies
-
+### Core Dependencies
 ```toml
-# Core dependencies
 duckdb >= 0.9.0        # Embedded OLAP database
-dbt-core >= 1.7.0       # SQL transformations
+dbt-core >= 1.7.0       # SQL transformation framework
 dlt[duckdb] >= 0.4.0    # Data loading framework
 typer >= 0.12.0         # CLI framework
 rich >= 13.7.0          # Terminal formatting
@@ -320,61 +480,143 @@ pydantic >= 2.5.0       # Data validation
 ```
 
 ### Performance
-
-- **Startup time**: < 1 second for most commands
-- **Pipeline execution**: 10-30 seconds for demo dataset
-- **Query latency**: < 100ms for typical queries
+- **Startup**: < 1 second (most commands)
+- **Pipeline execution**: 10-30 seconds (10K users, 50K events, 20K orders)
+- **Query latency**: < 100ms (typical analytical queries)
 - **Memory footprint**: 200-500MB during operation
 
 ---
 
-## Testing
+## Architecture Deep Dive
 
-### Test Suite Overview
+### Exception Hierarchy
 
-```bash
-# Full test suite (150+ tests)
-uv run pytest tests/ -v
+Every error includes context and actionable suggestions:
 
-# Coverage report
-uv run pytest tests/ --cov=sbdk --cov-report=html
+```python
+from sbdk.exceptions import PipelineError, ConfigurationError
 
-# Phase 1 architecture tests (125 tests)
-uv run pytest tests/test_phase1_*.py -v
-
-# Integration tests
-uv run pytest tests/integration/ -v
-
-# Performance benchmarks
-uv run pytest tests/ -m performance
+try:
+    pipeline.run()
+except PipelineError as e:
+    print(e.message)     # "DuckDB connection failed"
+    print(e.suggestion)  # "Check that no other process is using dev.duckdb"
+    print(e.details)     # {"file": "dev.duckdb", "locked_by": "process_123"}
+    sys.exit(e.exit_code)  # Exit code 3
 ```
 
-### Test Categories
+### Context Management
 
-- **Unit Tests**: Individual component validation
-- **Integration Tests**: End-to-end workflow testing
-- **Architecture Tests**: Design pattern validation
-- **Performance Tests**: Benchmark and optimization
-- **Quality Tests**: Data quality validation
+Centralized state and lifecycle management:
+
+```python
+from sbdk.context import SBDKContext
+
+with SBDKContext(verbose=True, format="json") as ctx:
+    # Automatic logging setup
+    ctx.logger.info("Starting pipeline")
+
+    # Resource tracking and cleanup
+    ctx.register_resource(db_connection, cleanup_fn)
+
+    # Configuration access
+    config = ctx.config
+
+    # Automatic cleanup on exit
+```
+
+### Multi-Format Output
+
+Support for automation and scripting:
+
+```bash
+# Text (default) - human-readable
+sbdk version
+# SBDK v1.1.2
+
+# JSON - machine-parseable
+sbdk version --format json
+# {"version": "1.1.2", "python": "3.11.5", "platform": "Darwin"}
+
+# YAML - configuration-friendly
+sbdk version --format yaml
+# version: 1.1.2
+# python: 3.11.5
+# platform: Darwin
+
+# Minimal - shell scripts
+sbdk version --format minimal
+# 1.1.2
+```
 
 ---
 
-## Contributing & Development
+## Project Status
 
-While this project is archived, the codebase serves as a reference for:
+**Archive Status:** Complete reference implementation (November 2025)
 
-1. **Learning**: Study production-grade Python patterns
-2. **Inspiration**: Adapt patterns for your own projects
-3. **Education**: Teaching modern data engineering practices
+### What Works (Production-Ready)
+- ✅ Complete local development environment
+- ✅ DuckDB + dbt + DLT integration
+- ✅ Professional CLI with global options
+- ✅ Multi-format output (text, JSON, YAML, table, minimal)
+- ✅ Comprehensive testing (150+ tests, 100% coverage on core)
+- ✅ Environment management system
+- ✅ Quality validation framework
+- ✅ Interactive SQL query interface
+- ✅ Exception handling with actionable suggestions
+- ✅ Comprehensive documentation
+
+### Architectural Patterns Demonstrated
+- 🏗️ Professional CLI design (Typer + Rich + Pydantic)
+- 🏗️ Context management and resource lifecycle
+- 🏗️ Exception hierarchy with custom exit codes
+- 🏗️ Multi-format output system
+- 🏗️ Test-driven development (TDD)
+- 🏗️ Configuration validation with Pydantic
+- 🏗️ Modern Python packaging (uv support)
+
+### Documented Patterns (Implementation varies)
+- 📚 MCP server integration pattern
+- 📚 Semantic layer architecture
+- 📚 Ibis for backend portability
+- 📚 AI agent integration strategies
+
+---
+
+## Contributing & Learning
+
+While archived, this codebase serves as a **reference implementation** for:
+
+### Data Engineers
+Learn production patterns:
+- How to structure dbt projects (staging → intermediate → marts)
+- Testing strategies for data pipelines
+- Quality framework implementation
+- Local-first development workflows
+
+### Platform Engineers
+Study architectural patterns:
+- Professional CLI design with Typer
+- Exception handling with context and suggestions
+- Multi-format output systems
+- Context management and resource lifecycle
+- Pydantic configuration validation
+
+### Python Developers
+See modern Python practices:
+- Type hints throughout
+- Pydantic for data validation
+- Modern packaging with pyproject.toml
+- uv for 10-100x faster dependency management
+- Comprehensive testing with pytest
 
 ### Development Setup
 
 ```bash
-# Clone repository
+# Clone and install
 git clone https://github.com/sbdk-dev/sbdk.git
 cd sbdk
-
-# Install with development dependencies
 uv sync --extra dev
 
 # Run tests
@@ -382,7 +624,7 @@ uv run pytest tests/ -v
 
 # Code quality
 uv run black sbdk/ tests/
-uv run ruff check sbdk/ tests/
+uv run ruff check sbdk/
 uv run mypy sbdk/
 ```
 
@@ -390,66 +632,58 @@ See [SETUP.md](SETUP.md) for detailed development instructions.
 
 ---
 
-## Project Status
+## FAQ
 
-This project was actively developed from 2024-2025 and is now archived as a complete reference implementation. The codebase represents:
+**Q: Is this ready for production use?**
+A: SBDK is designed for **local development and testing**. For production, deploy your dbt models to production data warehouses (Snowflake, BigQuery, Redshift) using dbt Cloud or orchestration tools like Airflow.
 
-- **100% test coverage** across core functionality
-- **Production-ready architecture** with comprehensive error handling
-- **Complete documentation** for all features and patterns
-- **Real-world usage** validated through extensive testing
+**Q: Can I use my own data instead of synthetic data?**
+A: Yes! SBDK supports multiple data sources:
+```bash
+sbdk source add postgres --connection-string "postgresql://..."
+sbdk source add csv --path ./my-data.csv
+```
 
-### What Works
+**Q: Does this work on Windows?**
+A: Yes, SBDK works on Windows, macOS, and Linux.
 
-- ✅ Complete local development environment
-- ✅ DuckDB + dbt + DLT integration
-- ✅ Professional CLI with global options
-- ✅ Multi-format output (text, JSON, YAML, table)
-- ✅ Comprehensive testing framework
-- ✅ Environment management system
-- ✅ Quality validation framework
-- ✅ Interactive SQL query interface
+**Q: Can I use this to learn dbt?**
+A: Absolutely! That's a primary use case. You get a complete dbt project with realistic data and can experiment freely.
 
-### Future Directions (For Fork/Adaptation)
+**Q: Is DuckDB suitable for production?**
+A: DuckDB is production-ready for embedded analytics. SBDK uses it for local development; production deployments typically use Snowflake/BigQuery/Redshift.
 
-- MCP server full implementation
-- Custom semantic layer (beyond dbt)
-- Ibis integration for backend portability
-- AI agent swarm orchestration
-- Cloud deployment patterns
+**Q: How do I deploy my dbt models to production?**
+A: Export your dbt models and deploy them to your production warehouse:
+```bash
+# Your SBDK dbt models are standard dbt
+cp -r dbt_project/ ~/production-dbt-project/models/
+
+# Deploy with dbt Cloud or your CI/CD pipeline
+dbt run --profiles-dir ~/.dbt --target prod
+```
 
 ---
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) file.
+
+Built with: [DuckDB](https://duckdb.org/) • [dbt](https://www.getdbt.com/) • [DLT](https://dlthub.com/) • [Typer](https://typer.tiangolo.com/) • [Rich](https://rich.readthedocs.io/) • [Pydantic](https://pydantic-docs.helpmanual.io/) • [uv](https://github.com/astral-sh/uv)
 
 ---
 
-## Acknowledgments
+## Connect
 
-Built with these excellent open-source projects:
-
-- [DuckDB](https://duckdb.org/) - Fast in-process analytical database
-- [dbt](https://www.getdbt.com/) - SQL transformation framework
-- [DLT](https://dlthub.com/) - Data loading tool
-- [Typer](https://typer.tiangolo.com/) - CLI framework
-- [Rich](https://rich.readthedocs.io/) - Terminal formatting
-- [Pydantic](https://pydantic-docs.helpmanual.io/) - Data validation
-- [uv](https://github.com/astral-sh/uv) - Fast Python package manager
+- 📦 [PyPI Package](https://pypi.org/project/sbdk-dev/)
+- 📖 [Documentation](docs/)
+- 🐛 [Report Issues](https://github.com/sbdk-dev/sbdk/issues)
+- 💬 [Discussions](https://github.com/sbdk-dev/sbdk/discussions)
+- 📜 [Vision & Roadmap](VISION.md)
+- 📋 [Changelog](CHANGELOG.md)
 
 ---
 
-## Archive Information
+**SBDK: The fastest path from zero to working data pipeline.**
 
-**Archive Date**: November 2025
-**Final Version**: 1.1.2
-**Status**: Complete reference implementation
-
-This project is archived as a complete, working example of modern data engineering practices. The code remains available for learning, inspiration, and adaptation.
-
-For questions or discussion about the patterns demonstrated here, please open a GitHub Discussion.
-
----
-
-**Built with ❤️ by the SBDK team as a contribution to the data engineering community.**
+*Archive Notice: This project was actively developed 2024-2025 and is archived as a complete, production-ready reference implementation. The code demonstrates modern data engineering patterns and remains available for learning and adaptation.*
