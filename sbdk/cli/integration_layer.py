@@ -54,17 +54,17 @@ class SBDKVisualIntegration:
         self.project_path = Path(project_path).resolve()
         self.console = Console()
 
-        # Initialize SBDK project
-        self.sbdk_project = None
-        self.config = None
-        self.load_sbdk_project()
-
         # Component instances
         self.status_panel = create_server_status_panel()
         self.pipeline_panel = create_pipeline_progress()
         self.log_panel = create_activity_log()
         self.metrics_panel = create_performance_metrics()
         self.actions_panel = create_quick_actions()
+
+        # Initialize SBDK project
+        self.sbdk_project = None
+        self.config = self.get_default_config()
+        self.load_sbdk_project()
 
         # Setup action callbacks
         self.setup_action_callbacks()
@@ -77,7 +77,7 @@ class SBDKVisualIntegration:
         """Load existing SBDK project configuration"""
         try:
             # Try to load using existing SBDK config system
-            self.config = load_config(self.project_path)
+            self.config = load_config(str(self.project_path))
             self.sbdk_project = SBDKProject(self.project_path, self.config)
 
             self.log_panel.add_log(
@@ -451,6 +451,7 @@ class SBDKEnhancedCLI(VisualCLI):
 
         # Add integration layer
         self.integration = SBDKVisualIntegration(project_path)
+        self.log_panel = self.integration.log_panel
 
         # Override views to use enhanced components
         self.views["dashboard"] = self.render_enhanced_dashboard

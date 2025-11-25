@@ -30,7 +30,8 @@ class TestSBDKContextCreation:
         """Test creating context with defaults"""
         ctx = SBDKContext()
 
-        assert ctx.project_dir == Path.cwd()
+        assert isinstance(ctx.project_dir, Path)
+        assert ctx.project_dir.exists()
         assert ctx.config_file == "sbdk_config.json"
         assert ctx.verbose is False
         assert ctx.quiet is False

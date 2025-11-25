@@ -322,39 +322,13 @@ class PostgresConnector(DatabaseConnector):
 
         return cls(source_config, pg_config)
 
-    def connect(self) -> None:
-        """
-        Establish connection pool to PostgreSQL database.
-
-        Creates a connection pool for efficient connection management.
-        Uses SimpleConnectionPool for thread-safe connection pooling.
-
-        Raises:
-            DatabaseError: If connection fails
-
-        Example:
-            >>> connector = PostgresConnector(config, pg_config)
-            >>> connector.connect()
-            >>> # Connection pool is now ready
-        """
-        if self._pool is not None:
-            return  # Already connected
-
+    def connect(self) -> "psycopg2.extensions.connection":
+        """Connect to the PostgreSQL database."""
+        if not PSYCOPG2_INSTALLED:
+            raise ImportError("PostgreSQL connector requires psycopg2-binary. Please run 'pip install psycopg2-binary'")
         try:
-            # Create connection pool
-            self._pool = pool.SimpleConnectionPool(
-                minconn=1,
-                maxconn=self.postgres_config.pool_size,
-                **self.postgres_config.to_connection_params()
-            )
-
-            # Test connection by getting one from pool
-            test_conn = self._pool.getconn()
-            test_conn.close()
-            self._pool.putconn(test_conn)
-
-            self._connected = True
-
+            conn = psycopg2.connect(**self.config.dict())
+            return conn
         except psycopg2.OperationalError as e:
             raise DatabaseError(
                 f"Failed to connect to PostgreSQL at {self.postgres_config.host}:{self.postgres_config.port}",

@@ -138,16 +138,16 @@ initialize_agentdb() {
     echo -e "${GREEN}✅ AgentDB initialized${NC}"
 }
 
-# Start Claude Flow hive-mind
+# Start Agent Flow hive-mind
 start_claude_flow() {
-    echo -e "${CYAN}🐝 Starting Claude Flow hive-mind...${NC}"
+    echo -e "${CYAN}🐝 Starting Agent Flow hive-mind...${NC}"
 
     if [ "$DRY_RUN" = true ]; then
-        echo -e "${YELLOW}[DRY RUN] Would start Claude Flow with $NUM_AGENTS agents${NC}"
+        echo -e "${YELLOW}[DRY RUN] Would start Agent Flow with $NUM_AGENTS agents${NC}"
         return
     fi
 
-    # Start Claude Flow in background
+    # Start Agent Flow in background
     npx claude-flow@alpha hive-mind \
         --config "$CONFIG_DIR/claude-flow.config.json" \
         --agents $NUM_AGENTS \
@@ -158,7 +158,7 @@ start_claude_flow() {
     CLAUDE_FLOW_PID=$!
     echo "$CLAUDE_FLOW_PID" > "$PROJECT_ROOT/.sbdk/claude-flow.pid"
 
-    echo -e "${GREEN}✅ Claude Flow started (PID: $CLAUDE_FLOW_PID)${NC}"
+    echo -e "${GREEN}✅ Agent Flow started (PID: $CLAUDE_FLOW_PID)${NC}"
 }
 
 # Execute agentic-flow
@@ -299,12 +299,12 @@ generate_report() {
 cleanup() {
     echo -e "${YELLOW}🧹 Cleaning up...${NC}"
 
-    # Stop Claude Flow if running
+    # Stop Agent Flow if running
     if [ -f "$PROJECT_ROOT/.sbdk/claude-flow.pid" ]; then
         local pid=$(cat "$PROJECT_ROOT/.sbdk/claude-flow.pid")
         if ps -p $pid > /dev/null 2>&1; then
             kill $pid
-            echo -e "${GREEN}✅ Claude Flow stopped${NC}"
+            echo -e "${GREEN}✅ Agent Flow stopped${NC}"
         fi
         rm "$PROJECT_ROOT/.sbdk/claude-flow.pid"
     fi
@@ -360,7 +360,7 @@ main() {
         echo ""
         echo -e "${CYAN}📊 Summary:${NC}"
         echo -e "  ${GREEN}✓${NC} AgentDB initialized with Phase 1 learnings"
-        echo -e "  ${GREEN}✓${NC} Claude Flow hive-mind coordinated $NUM_AGENTS agents"
+        echo -e "  ${GREEN}✓${NC} Agent Flow hive-mind coordinated $NUM_AGENTS agents"
         echo -e "  ${GREEN}✓${NC} Agentic-flow executed all workflows"
         echo -e "  ${GREEN}✓${NC} All tests passing"
         echo -e "  ${GREEN}✓${NC} Documentation updated"

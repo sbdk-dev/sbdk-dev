@@ -190,12 +190,12 @@ temp_test/
 *.duckdb-journal
 
 # ----------------------------------------------------------------------------
-# Claude Flow & Swarm (Temporary Session Files)
+# Agent Flow & Swarm (Temporary Session Files)
 # ----------------------------------------------------------------------------
 # NOTE: Documentation files like CLAUDE.md and CLAUDE_SWARM_BUILDER.md
 # are NOT ignored - they are permanent documentation.
 
-# Claude Flow runtime directories
+# Agent Flow runtime directories
 .claude-flow/
 .claude-flow-cache/
 .claude-flow-sessions/
@@ -216,7 +216,7 @@ task-*.json
 swarm_*
 agent_*
 
-# Claude Flow executables (generated)
+# Agent Flow executables (generated)
 claude-flow
 claude-flow.bat
 claude-flow.ps1
@@ -306,5 +306,4 @@ logs/
 # Git Submodules
 # ----------------------------------------------------------------------------
 
-# Wiki content (nested git repo)
-wiki-content/.git
+# No submodules in this project

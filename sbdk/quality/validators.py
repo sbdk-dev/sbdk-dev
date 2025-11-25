@@ -556,7 +556,7 @@ class PatternValidator(BaseValidator):
     Validates that string column values match expected regex pattern.
 
     Example:
-        >>> validator = PatternValidator(pattern=r'^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$')
+        >>> validator = PatternValidator(pattern=r'^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$')
         >>> result = validator.validate(conn, "users", "email")
         >>> print(result.passed)
         True

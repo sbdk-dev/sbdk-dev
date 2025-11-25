@@ -65,7 +65,7 @@ class SBDKAutomation:
                 print("📊 Starting AgentDB...")
                 # npx agentdb would be started here
             elif tool == "claude-flow":
-                print("🌊 Starting Claude Flow...")
+                print("🌊 Starting Agent Flow...")
                 # npx claude-flow@alpha would be started here
             elif tool == "agentic-flow":
                 print("🔄 Starting Agentic Flow...")

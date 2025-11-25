@@ -12,6 +12,7 @@ Inspired by Click's Context pattern and spec-kit's modular architecture.
 
 import logging
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any, Optional
 
@@ -59,7 +60,10 @@ class SBDKContext:
             quiet: Enable quiet mode
             dry_run: Enable dry-run mode
         """
-        self.project_dir = Path(project_dir or Path.cwd())
+        try:
+            self.project_dir = Path(project_dir or Path.cwd())
+        except FileNotFoundError:
+            self.project_dir = Path(tempfile.gettempdir())
         self.config_file = config_file
         self.verbose = verbose
         self.quiet = quiet

@@ -1,3 +1,7 @@
+---
+**Note:** This project has been archived and is no longer maintained. This document is for reference purposes only.
+---
+
 # Building SBDK Binary Executables
 
 This guide explains how to build standalone binary executables for SBDK that can be distributed without requiring Python or any dependencies to be pre-installed.

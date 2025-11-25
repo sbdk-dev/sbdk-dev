@@ -1,3 +1,7 @@
+---
+**Note:** This project has been archived and is no longer maintained. This document is for reference purposes only.
+---
+
 # 🚀 CI/CD Guide for SBDK.dev v2.0.0
 
 ## Overview

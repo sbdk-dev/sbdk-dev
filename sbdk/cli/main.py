@@ -54,6 +54,14 @@ class GlobalOptions:
 global_options = GlobalOptions()
 
 
+def version_callback(value: bool):
+    if value:
+        import pkg_resources
+        version = pkg_resources.get_distribution("sbdk-dev").version
+        print(f"sbdk version {version}")
+        raise typer.Exit()
+
+
 @app.callback()
 def main(
     ctx: typer.Context,
@@ -87,6 +95,7 @@ def main(
         help="Project directory (default: current directory)",
         exists=False  # Don't validate existence for init command
     ),
+    version: bool = typer.Option(None, "--version", callback=version_callback, is_eager=True, help="Show the version and exit."),
 ):
     """
     SBDK.dev - Build data pipelines with DLT, DuckDB, and dbt

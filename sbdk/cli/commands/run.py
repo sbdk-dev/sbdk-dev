@@ -25,8 +25,11 @@ from watchdog.observers import Observer
 console = Console()
 
 
-def load_config(config_path: str = "sbdk_config.json") -> dict:
+def load_config(path: str = ".") -> dict:
     """Load SBDK configuration"""
+    config_path = Path(path)
+    if config_path.is_dir():
+        config_path = config_path / "sbdk_config.json"
     try:
         with open(config_path) as f:
             return json.load(f)
@@ -317,6 +320,7 @@ def cli_run(
             console.print(
                 Panel(
                     "[cyan]🚀 SBDK Pipeline Execution[/cyan]",
+                   
                     title="Starting Pipeline",
                     style="cyan",
                 )
